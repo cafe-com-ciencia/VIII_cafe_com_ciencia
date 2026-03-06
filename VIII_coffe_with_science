@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIII Café com Ciência 2026 – Dia do Físico</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f9fc;
+            color: #333;
+        }
+
+        /* Cores principais */
+        :root {
+            --azul-petroleo: #1a3b4f;
+            --verde-folha: #4caf7a;
+            --branco: #ffffff;
+            --cinza-claro: #f0f4f8;
+            --cinza-escuro: #2c3e50;
+        }
+
+        /* Header / Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(26, 59, 79, 0.95), rgba(26, 59, 79, 0.85)), 
+                        url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--branco);
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-tag {
+            color: var(--verde-folha);
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+            line-height: 1.4;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero h2 span {
+            color: var(--verde-folha);
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--verde-folha);
+            color: var(--branco);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            border-color: var(--verde-folha);
+            color: var(--verde-folha);
+            transform: scale(1.05);
+        }
+
+        /* Seções gerais */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            color: var(--azul-petroleo);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--verde-folha);
+        }
+
+        .section-subtitle {
+            color: var(--cinza-escuro);
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 800px;
+        }
+
+        /* Sobre - duas colunas */
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .sobre-texto p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .sobre-imagem {
+            text-align: center;
+        }
+
+        .sobre-imagem i {
+            font-size: 12rem;
+            color: var(--azul-petroleo);
+            opacity: 0.8;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+        }
+
+        /* Abas de programação */
+        .tabs {
+            margin-top: 40px;
+        }
+
+        .tab-buttons {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 0;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--azul-petroleo);
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .tab-btn.active {
+            color: var(--verde-folha);
+            background-color: var(--branco);
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+        }
+
+        .tab-btn.active:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: var(--verde-folha);
+        }
+
+        .tab-content {
+            background-color: var(--branco);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Cards de laboratório */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background-color: var(--cinza-claro);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            height: 160px;
+            background-color: var(--azul-petroleo);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .card-img.lab-faraday { background-image: url('https://images.unsplash.com/photo-1581092335871-4c7d9d6d1d9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'); }
+        .card-img.lab-galileu { background-image: url('https://images.unsplash.com/photo-1581092335871-4c7d9d6d1d9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'); }
+        .card-img.lab-planck { background-image: url('https://images.unsplash.com/photo-1581092335871-4c7d9d6d1d9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'); }
+        .card-img.lab-lfca { background-image: url('https://images.unsplash.com/photo-1581092335871-4c7d9d6d1d9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'); }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card h4 {
+            color: var(--azul-petroleo);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .card-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background-color: var(--branco);
+            padding: 0 15px;
+            border-radius: 8px;
+        }
+
+        .card.expanded .card-details {
+            max-height: 200px;
+            padding: 15px;
+        }
+
+        .btn-card {
+            background: none;
+            border: none;
+            color: var(--verde-folha);
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Lista de palestras/minicursos */
+        .event-list {
+            margin-top: 20px;
+        }
+
+        .event-item {
+            padding: 15px;
+            border-left: 4px solid var(--verde-folha);
+            background-color: var(--cinza-claro);
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .event-item .time {
+            color: var(--azul-petroleo);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .event-item .title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .event-item .speaker {
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Filtro escolas */
+        .filtro-escolas {
+            background-color: var(--branco);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin-top: 30px;
+        }
+
+        select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 30px;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: var(--verde-folha);
+        }
+
+        .escola-info {
+            background-color: var(--cinza-claro);
+            padding: 25px;
+            border-radius: 12px;
+            display: none;
+        }
+
+        .escola-info.active {
+            display: block;
+        }
+
+        .info-row {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .info-label {
+            font-weight: 600;
+            width: 120px;
+            color: var(--azul-petroleo);
+        }
+
+        .info-value {
+            flex: 1;
+        }
+
+        /* Logos parceiros */
+        .logos-section {
+            background-color: var(--branco);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .logos-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .logo-item {
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+
+        .logo-item:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+
+        .logo-placeholder {
+            width: 150px;
+            height: 80px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #666;
+            border-radius: 8px;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--azul-petroleo);
+            color: var(--branco);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-info {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .social-icons {
+            margin: 20px 0;
+        }
+
+        .social-icons i {
+            font-size: 1.5rem;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .social-icons i:hover {
+            color: var(--verde-folha);
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero h2 { font-size: 1.4rem; }
+            .sobre-grid { grid-template-columns: 1fr; }
+            .tab-buttons { flex-wrap: wrap; }
+            .tab-btn { width: 100%; text-align: left; }
+        }
+    </style>
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">VIII EDIÇÃO • 2026</div>
+            <h1>Café com Ciência – Dia do Físico</h1>
+            <h2>"esperando o tema: <span>Integração do Saber Acadêmico na Transição Energética</span>"</h2>
+            <a href="#" class="btn" target="_blank">📝 INSCREVA-SE AGORA</a>
+        </div>
+    </section>
+
+    <!-- SOBRE O EVENTO -->
+    <section class="container">
+        <div class="sobre-grid">
+            <div class="sobre-texto">
+                <h2 class="section-title">Sobre o VIII Café com Ciência</h2>
+                <p>No dia <strong>19 de maio (Dia do Físico)</strong>, texto bonitinho que alguem vai colocar. Em 2026, o debate central é a <strong>esperanado o tema </strong>, unindo o saber acadêmico às soluções sustentáveis para a Amazônia e o país.</p>
+                <p style="margin-top: 20px;">O evento reúne professores, pesquisadores, estudantes  (mais texto bunitinho).</p>
+            </div>
+            <div class="sobre-imagem">
+                <i class="fas fa-atom"></i>
+                <i class="fas fa-leaf" style="color: var(--verde-folha); font-size: 8rem; margin-left: -40px;"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAMAÇÃO INTERATIVA -->
+    <section class="container" style="background-color: var(--cinza-claro); border-radius: 40px 40px 0 0;">
+        <h2 class="section-title">Programação</h2>
+        <p class="section-subtitle">Navegue pelos dias e descubra todas as atividades do evento.</p>
+
+        <div class="tabs">
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="openTab(event, 'dia27')">📅 27/05 (Qua) – Exposições</button>
+                <button class="tab-btn" onclick="openTab(event, 'dia28')">📅 28/05 (Qui) – Minicursos & Palestras</button>
+                <button class="tab-btn" onclick="openTab(event, 'dia29')">📅 29/05 (Sex) – Oficina de Mídia</button>
+            </div>
+
+            <!-- DIA 27 - LABORATÓRIOS -->
+            <div id="dia27" class="tab-content active">
+                <h3 style="color: var(--azul-petroleo); margin-bottom: 20px;">🔬 Exploração Científica nos Laboratórios(mudar depois)</h3>
+                <p>Visitas guiadas e experimentos interativos nos principais laboratórios da UFPA.</p>
+                
+                <div class="cards-grid">
+                    <!-- Faraday -->
+                    <div class="card" id="card-faraday">
+                        <div class="card-img lab-faraday"></div>
+                        <div class="card-content">
+                            <h4>Laboratório Faraday</h4>
+                            <p>Prof. Ricardo Mendes • Equipe Eletromagnetismo</p>
+                            <button class="btn-card" onclick="toggleCard('faraday')">
+                                <i class="fas fa-chevron-down"></i> Ver detalhes
+                            </button>
+                            <div class="card-details" id="details-faraday">
+                                <p><strong>Experimento:</strong> Gerador de Faraday e indução eletromagnética aplicada à energia sustentável.</p>
+                                <p><strong>Horário:</strong> 09h - 12h | 14h - 17h</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Galileu -->
+                    <div class="card" id="card-galileu">
+                        <div class="card-img lab-galileu"></div>
+                        <div class="card-content">
+                            <h4>Laboratório Galileu</h4>
+                            <p>Profa. Carla Nunes • Equipe Mecânica</p>
+                            <button class="btn-card" onclick="toggleCard('galileu')">
+                                <i class="fas fa-chevron-down"></i> Ver detalhes
+                            </button>
+                            <div class="card-details" id="details-galileu">
+                                <p><strong>Experimento:</strong> Pêndulos de Newton e conservação de energia.</p>
+                                <p><strong>Horário:</strong> 08h - 12h | 13h - 18h</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Planck -->
+                    <div class="card" id="card-planck">
+                        <div class="card-img lab-planck"></div>
+                        <div class="card-content">
+                            <h4>Laboratório Planck</h4>
+                            <p>Prof. André Santos • Equipe Física Moderna</p>
+                            <button class="btn-card" onclick="toggleCard('planck')">
+                                <i class="fas fa-chevron-down"></i> Ver detalhes
+                            </button>
+                            <div class="card-details" id="details-planck">
+                                <p><strong>Experimento:</strong> Efeito fotoelétrico e células solares.</p>
+                                <p><strong>Horário:</strong> 09h - 12h | 14h - 17h</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LFCA Nano -->
+                    <div class="card" id="card-lfca">
+                        <div class="card-img lab-lfca"></div>
+                        <div class="card-content">
+                            <h4>LFCA – Nano</h4>
+                            <p>Profa. Beatriz Oliveira • Equipe Nanotecnologia</p>
+                            <button class="btn-card" onclick="toggleCard('lfca')">
+                                <i class="fas fa-chevron-down"></i> Ver detalhes
+                            </button>
+                            <div class="card-details" id="details-lfca">
+                                <p><strong>Experimento:</strong> Nanomateriais para armazenamento de energia.</p>
+                                <p><strong>Horário:</strong> 10h - 12h | 15h - 17h</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DIA 28 - MINICURSOS E PALESTRAS -->
+            <div id="dia28" class="tab-content">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                    <div>
+                        <h3 style="color: var(--azul-petroleo); margin-bottom: 20px;">☕ Manhã – Minicursos</h3>
+                        <div class="event-list">
+                            <div class="event-item">
+                                <span class="time">08h30 - 12h00</span>
+                                <div class="title">tema bunitinho</div>
+                                <div class="speaker">Prof. João Paulo(UFPA)</div>
+                                <div>Sala A</div>
+                            </div>
+                            <div class="event-item">
+                                <span class="time">08h30 - 12h00</span>
+                                <div class="title">acabou os nomes</div>
+                                <div class="speaker">Prof. João Henrik(UFPA)</div>
+                                <div>Lab. Computação</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--azul-petroleo); margin-bottom: 20px;">🎤 Tarde – Palestras</h3>
+                        <div class="event-list">
+                            <div class="event-item">
+                                <span class="time">14h00 - 15h30</span>
+                                <div class="title">esse é o último,  eu acho</div>
+                                <div class="speaker">Dr. Eu (CAPS)</div>
+                                <div>Auditório Central</div>
+                            </div>
+                            <div class="event-item">
+                                <span class="time">16h00 - 17h30</span>
+                                <div class="title">tinha mais um</div>
+                                <div class="speaker">Prof. João Roberto(FACET)</div>
+                                <div>Auditório Central</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DIA 29 - OFICINA -->
+            <div id="dia29" class="tab-content">
+                <div style="text-align: center; padding: 40px; background: linear-gradient(135deg, #1a3b4f10, #4caf7a20); border-radius: 20px;">
+                    <i class="fas fa-podcast" style="font-size: 5rem; color: var(--verde-folha); margin-bottom: 20px;"></i>
+                    <h3 style="color: var(--azul-petroleo); font-size: 2rem; margin-bottom: 15px;">🎙️ Oficina: Rádio e Podcast no Spotify</h3>
+                    <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 20px;">Aprenda a produzir conteúdo científico para plataformas digitais. Vagas limitadas!</p>
+                    <div style="background-color: var(--branco); padding: 20px; border-radius: 12px; max-width: 400px; margin: 20px auto;">
+                        <p><strong>📅 Data:</strong> 29/05/2026</p>
+                        <p><strong>⏰ Horário:</strong> 09h às 17h</p>
+                        <p><strong>📍 Local:</strong> Laboratório de Ensino de Física</p>
+                        <p><strong>👥 Vagas:</strong> 20</p>
+                    </div>
+                    <button class="btn" style="margin-top: 20px;">Garantir vaga</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÁREA DAS ESCOLAS (FILTRO) -->
+    <section class="container">
+        <h2 class="section-title">🚌 Programação para Escolas</h2>
+        <p class="section-subtitle">algum TEXTO.</p>
+
+        <div class="filtro-escolas">
+            <select id="escolaSelect" onchange="mostrarEscola()">
+                <option value="">-- Escolha sua escola --</option>
+                <option value="terezinha">EEEFM Terezinha de Souza</option>
+                <option value="visconde">Escola Estadual Visconde de Mauá</option>
+                <option value="apoio">Colégio Apoio</option>
+                <option value="pedro">Escola Pedro Amazonas</option>
+                <option value="santa">Colégio Santa Maria</option>
+            </select>
+
+            <div id="info-terezinha" class="escola-info">
+                <div class="info-row"><span class="info-label">Escola:</span><span class="info-value">EEEFM Terezinha de Souza</span></div>
+                <div class="info-row"><span class="info-label">Horário saída:</span><span class="info-value">08h00</span></div>
+                <div class="info-row"><span class="info-label">Ônibus:</span><span class="info-value">Ônibus 01 (Azul)</span></div>
+                <div class="info-row"><span class="info-label">Rota:</span><span class="info-value">09h Lab. Faraday | 10h Lab. Galileu | 11h Lab. Planck</span></div>
+            </div>
+
+            <div id="info-visconde" class="escola-info">
+                <div class="info-row"><span class="info-label">Escola:</span><span class="info-value">Escola Estadual Visconde de Mauá</span></div>
+                <div class="info-row"><span class="info-label">Horário saída:</span><span class="info-value">08h30</span></div>
+                <div class="info-row"><span class="info-label">Ônibus:</span><span class="info-value">Ônibus 02 (Verde)</span></div>
+                <div class="info-row"><span class="info-label">Rota:</span><span class="info-value">09h Lab. Planck | 10h Lab. Faraday | 11h Lab. Galileu</span></div>
+            </div>
+
+            <div id="info-apoio" class="escola-info">
+                <div class="info-row"><span class="info-label">Escola:</span><span class="info-value">Colégio Apoio</span></div>
+                <div class="info-row"><span class="info-label">Horário saída:</span><span class="info-value">09h00</span></div>
+                <div class="info-row"><span class="info-label">Ônibus:</span><span class="info-value">Ônibus 03 (Amarelo)</span></div>
+                <div class="info-row"><span class="info-label">Rota:</span><span class="info-value">10h Lab. Galileu | 11h Lab. Planck | 14h Lab. Faraday</span></div>
+            </div>
+
+            <div id="info-pedro" class="escola-info">
+                <div class="info-row"><span class="info-label">Escola:</span><span class="info-value">Escola Pedro Amazonas</span></div>
+                <div class="info-row"><span class="info-label">Horário saída:</span><span class="info-value">08h15</span></div>
+                <div class="info-row"><span class="info-label">Ônibus:</span><span class="info-value">Ônibus 04 (Vermelho)</span></div>
+                <div class="info-row"><span class="info-label">Rota:</span><span class="info-value">09h LFCA Nano | 10h Lab. Planck | 11h Lab. Faraday</span></div>
+            </div>
+
+            <div id="info-santa" class="escola-info">
+                <div class="info-row"><span class="info-label">Escola:</span><span class="info-value">Colégio Santa Maria</span></div>
+                <div class="info-row"><span class="info-label">Horário saída:</span><span class="info-value">09h30</span></div>
+                <div class="info-row"><span class="info-label">Ônibus:</span><span class="info-value">Ônibus 05 (Branco)</span></div>
+                <div class="info-row"><span class="info-label">Rota:</span><span class="info-value">10h Lab. Galileu | 11h LFCA Nano | 14h Lab. Planck</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ORGANIZAÇÃO E PATROCÍNIO -->
+    <section class="logos-section">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Organização</h2>
+            <div class="logos-grid">
+                <div class="logo-item"><div class="logo-placeholder">UFPA</div></div>
+                <div class="logo-item"><div class="logo-placeholder">FACET</div></div>
+                <div class="logo-item"><div class="logo-placeholder">MNMA</div></div>
+                <div class="logo-item"><div class="logo-placeholder">LFCA</div></div>
+            </div>
+
+            <h2 class="section-title" style="text-align: center; margin-top: 60px;">Patrocinadores</h2>
+            <div class="logos-grid">
+                <div class="logo-item"><div class="logo-placeholder">Cofruta</div></div>
+                <div class="logo-item"><div class="logo-placeholder">Mamonas</div></div>
+                <div class="logo-item"><div class="logo-placeholder">Paulo Aluguel</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="footer-info">
+            <h3 style="color: var(--verde-folha); margin-bottom: 20px;">VIII Café com Ciência 2026</h3>
+            <p>Curso de Física – Universidade Federal do Pará (UFPA)</p>
+            <p>Campus Universitário de Abaetetuba - PA</p>
+            <div class="social-icons">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-youtube"></i>
+                <i class="fas fa-envelope"></i>
+            </div>
+            <p style="margin-top: 30px; font-size: 0.9rem;">© 2026 VIII Café com Ciência. desenvolvido por cauan Sergio(imagens não licenciadas)</p>
+        </div>
+    </footer>
+
+    <script>
+        // Função para abas
+        function openTab(evt, tabName) {
+            var i, tabcontent, tabbtns;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tabbtns = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabbtns.length; i++) {
+                tabbtns[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // Função para cards expansíveis
+        function toggleCard(cardId) {
+            var details = document.getElementById('details-' + cardId);
+            var card = document.getElementById('card-' + cardId);
+            var btn = card.querySelector('.btn-card i');
+            
+            if (details.style.maxHeight) {
+                details.style.maxHeight = null;
+                card.classList.remove('expanded');
+                btn.className = 'fas fa-chevron-down';
+            } else {
+                details.style.maxHeight = details.scrollHeight + "px";
+                card.classList.add('expanded');
+                btn.className = 'fas fa-chevron-up';
+            }
+        }
+
+        // Função para filtro de escolas
+        function mostrarEscola() {
+            var select = document.getElementById('escolaSelect');
+            var value = select.value;
+            
+            // Esconder todas
+            var infos = document.getElementsByClassName('escola-info');
+            for (var i = 0; i < infos.length; i++) {
+                infos[i].classList.remove('active');
+            }
+            
+            // Mostrar a selecionada
+            if (value) {
+                document.getElementById('info-' + value).classList.add('active');
+            }
+        }
+
+        // Inicializar escondendo todos os detalhes dos cards
+        window.onload = function() {
+            var details = document.getElementsByClassName('card-details');
+            for (var i = 0; i < details.length; i++) {
+                details[i].style.maxHeight = null;
+            }
+        }
+    </script>
+</body>
+</html>
