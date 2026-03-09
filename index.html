@@ -19,6 +19,7 @@
 
         /* Cores principais */
         :root {
+            --vermelho: #dc143c;
             --azul-petroleo: #1a3b4f;
             --verde-folha: #4caf7a;
             --branco: #ffffff;
@@ -32,13 +33,13 @@
                         url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
             background-position: center;
-            height: 90vh;
+            min-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: var(--branco);
-            padding: 0 20px;
+            padding: 40px 20px;
         }
 
         .hero-content {
@@ -86,6 +87,7 @@
             transition: all 0.3s ease;
             border: 2px solid transparent;
             cursor: pointer;
+            margin: 10px;
         }
 
         .btn:hover {
@@ -93,6 +95,95 @@
             border-color: var(--verde-folha);
             color: var(--verde-folha);
             transform: scale(1.05);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--verde-folha);
+            color: var(--branco);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--branco);
+            color: var(--azul-petroleo);
+            border-color: var(--branco);
+        }
+
+        /* Modal para submissão de trabalhos */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: var(--branco);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.3s;
+        }
+
+        .modal-close:hover {
+            color: var(--azul-petroleo);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--azul-petroleo);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--verde-folha);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
         }
 
         /* Seções gerais */
@@ -163,6 +254,7 @@
             margin-bottom: 30px;
             border-bottom: 2px solid #ddd;
             padding-bottom: 0;
+            flex-wrap: wrap;
         }
 
         .tab-btn {
@@ -233,10 +325,10 @@
             position: relative;
         }
 
-        .card-img.lab-faraday { background-image: url('https://images.unsplash.com/photo-1581092335871-4c7d9d6d1d9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'); }
-        .card-img.lab-galileu { background-image: url('https://images.unsplash.com/photo-1581092335871-4c7d9d6d1d9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'); }
-        .card-img.lab-planck { background-image: url('https://images.unsplash.com/photo-1581092335871-4c7d9d6d1d9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'); }
-        .card-img.lab-lfca { background-image: url('https://unsplash.com/pt-br/fotografias/iZsqSgpnRug'); }
+        .card-img.lab-faraday {background-image: url("src/imagens/Faraday.jpg");}
+        .card-img.lab-galileu {background-image: url("src/imagens/galileu.jpg")}
+        .card-img.lab-planck {background-image: url("src/imagens/planck.jpg");}
+        .card-img.lab-lfca {background-image: url("src/imagens/lfcaplaca.jpeg");}
 
         .card-content {
             padding: 20px;
@@ -362,7 +454,7 @@
             flex: 1;
         }
 
-        /* Logos parceiros */
+        /* Logos parceiros - coloridos e mesmo tamanho */
         .logos-section {
             background-color: var(--branco);
             padding: 60px 0;
@@ -379,26 +471,22 @@
         }
 
         .logo-item {
-            filter: grayscale(100%);
-            opacity: 0.7;
-            transition: all 0.3s;
-        }
-
-        .logo-item:hover {
-            filter: grayscale(0);
-            opacity: 1;
-        }
-
-        .logo-placeholder {
-            width: 150px;
-            height: 80px;
-            background-color: #ddd;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            color: #666;
-            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .logo-item:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-img {
+            width: 150px;
+            height: 80px;
+            object-fit: contain;
+            filter: none;
+            opacity: 1;
         }
 
         /* Rodapé */
@@ -433,9 +521,15 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             .hero h2 { font-size: 1.4rem; }
+            .hero .btn { display: block; width: 80%; margin: 10px auto; }
             .sobre-grid { grid-template-columns: 1fr; }
-            .tab-buttons { flex-wrap: wrap; }
+            .tab-buttons { flex-direction: column; }
             .tab-btn { width: 100%; text-align: left; }
+            
+            .logo-img {
+                width: 120px;
+                height: 60px;
+            }
         }
     </style>
     <!-- Font Awesome para ícones -->
@@ -448,9 +542,81 @@
             <div class="hero-tag">VIII EDIÇÃO • 2026</div>
             <h1>Café com Ciência – Dia do Físico</h1>
             <h2>Ciência, Energia e Natureza:<span> o papel da Física na Amazônia</span>"</h2>
-            <a href="#" class="btn" target="_blank">📝 INSCREVA-SE AGORA</a>
+            <div>
+                <a href="#" class="btn" target="_blank">📝 INSCREVA-SE AGORA</a>
+                <a href="#" class="btn btn-outline" onclick="openModal(event)">📄 SUBMETER TRABALHO</a>
+            </div>
         </div>
     </section>
+
+    <!-- MODAL DE SUBMISSÃO DE TRABALHOS -->
+    <div class="modal" id="modalTrabalho">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h2 style="color: var(--azul-petroleo); margin-bottom: 30px;">📄 Submeter Trabalho</h2>
+            
+            <form action="https://formsubmit.co/cauanmarques444@gmail.com" method="POST" enctype="multipart/form-data">
+                <!-- Configurações FormSubmit -->
+                <input type="hidden" name="_subject" value="Nova submissão de trabalho - Café com Ciência 2026">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                
+                <div class="form-group">
+                    <label>Título do Trabalho *</label>
+                    <input type="text" name="titulo" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Autor principal *</label>
+                    <input type="text" name="autor" required>
+                </div>
+
+                <div class="form-group">
+                    <label>E-mail para contato *</label>
+                    <input type="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Coautores (se houver)</label>
+                    <input type="text" name="coautores" placeholder="Nome dos coautores separados por vírgula">
+                </div>
+
+                <div class="form-group">
+                    <label>Instituição *</label>
+                    <input type="text" name="instituicao" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Área temática *</label>
+                    <select name="area" required>
+                        <option value="">Selecione...</option>
+                        <option value="ensino">Ensino de Física</option>
+                        <option value="pesquisa">Pesquisa em Física</option>
+                        <option value="extensao">Extensão Universitária</option>
+                        <option value="energia">Energia e Sustentabilidade</option>
+                        <option value="outra">Outra</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Resumo do trabalho (máx. 250 palavras) *</label>
+                    <textarea name="resumo" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Palavras-chave (separadas por vírgula)</label>
+                    <input type="text" name="palavras_chave" placeholder="Ex: energia solar, ensino, sustentabilidade">
+                </div>
+
+                <div class="form-group">
+                    <label>Anexar arquivo (PDF ou Word) *</label>
+                    <input type="file" name="arquivo" accept=".pdf,.doc,.docx" required>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%;">Enviar Trabalho</button>
+            </form>
+        </div>
+    </div>
 
     <!-- SOBRE O EVENTO -->
     <section class="container">
@@ -661,22 +827,22 @@
         </div>
     </section>
 
-    <!-- ORGANIZAÇÃO E PATROCÍNIO -->
+    <!-- ORGANIZAÇÃO E PATROCÍNIO - ATUALIZADO COM IMAGENS COLORIDAS DO MESMO TAMANHO -->
     <section class="logos-section">
         <div class="container">
             <h2 class="section-title" style="text-align: center;">Organização</h2>
             <div class="logos-grid">
-                <div class="logo-item"><div class="logo-placeholder">UFPA</div></div>
-                <div class="logo-item"><div class="logo-placeholder">FACET</div></div>
-                <div class="logo-item"><div class="logo-placeholder">MNMA</div></div>
-                <div class="logo-item"><div class="logo-placeholder">LFCA</div></div>
+                <div class="logo-item"><img src="src/imagens/logo-ufpa.png" alt="UFPA" class="logo-img"></div>
+                <div class="logo-item"><img src="src/imagens/logo-facet.png" alt="FACET" class="logo-img"></div>
+                <div class="logo-item"><img src="src/imagens/logo-mnma.png" alt="MNMA" class="logo-img"></div>
+                <div class="logo-item"><img src="src/imagens/logo-lfca.png" alt="LFCA" class="logo-img"></div>
             </div>
 
             <h2 class="section-title" style="text-align: center; margin-top: 60px;">Patrocinadores</h2>
             <div class="logos-grid">
-                <div class="logo-item"><div class="logo-placeholder">Cofruta</div></div>
-                <div class="logo-item"><div class="logo-placeholder">Mamonas</div></div>
-                <div class="logo-item"><div class="logo-placeholder">Paulo Aluguel</div></div>
+                <div class="logo-item"><img src="src/imagens/logo-cofruta.png" alt="Cofruta" class="logo-img"></div>
+                <div class="logo-item"><img src="src/imagens/logo-mamonas.png" alt="Mamonas" class="logo-img"></div>
+                <div class="logo-item"><img src="src/imagens/logo-paulo-aluguel.png" alt="Paulo Aluguel" class="logo-img"></div>
             </div>
         </div>
     </section>
@@ -706,6 +872,27 @@
     </footer>
 
     <script>
+        // Função para abrir modal
+        function openModal(event) {
+            event.preventDefault();
+            document.getElementById('modalTrabalho').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Função para fechar modal
+        function closeModal() {
+            document.getElementById('modalTrabalho').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Fechar modal clicando fora
+        window.onclick = function(event) {
+            var modal = document.getElementById('modalTrabalho');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
         // Função para abas
         function openTab(evt, tabName) {
             var i, tabcontent, tabbtns;
