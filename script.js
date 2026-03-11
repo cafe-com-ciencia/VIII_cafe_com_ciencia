@@ -1,21 +1,67 @@
-// ===== FUNÇÃO DE ROLAGEM SUAVE PARA ÂNCORAS =====
-// Função para rolar suavemente até a seção quando carregar a página com # no URL
+// ===== FUNÇÃO DE ROLAGEM SUAVE PARA ÂNCORAS (VERSÃO CORRIGIDA) =====
 function rolarParaAncora() {
     // Verifica se tem hash na URL (ex: #programacao)
     if (window.location.hash) {
         const hash = window.location.hash.substring(1); // Remove o #
+        console.log('Hash detectado:', hash); // Log para debug
         
-        // Aguarda a página carregar completamente
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                const element = document.getElementById(hash);
-                if (element) {
+        // Função para encontrar e rolar até o elemento
+        function encontrarERolar() {
+            const element = document.getElementById(hash);
+            
+            if (element) {
+                console.log('Elemento encontrado, rolando...');
+                
+                // MÉTODO 1: scrollIntoView com smooth (padrão)
+                try {
                     element.scrollIntoView({ 
-                        behavior: 'smooth',
-                        block: 'start'
+                        behavior: 'smooth', 
+                        block: 'start' 
                     });
+                } catch (e) {
+                    console.log('Método 1 falhou, tentando método 2');
                 }
-            }, 300); // Delay para garantir que tudo carregou
+                
+                // MÉTODO 2: Fallback manual com animação
+                setTimeout(() => {
+                    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                    const startPosition = window.pageYOffset;
+                    const distance = elementPosition - startPosition;
+                    const duration = 800; // 800ms
+                    let start = null;
+                    
+                    function animation(currentTime) {
+                        if (start === null) start = currentTime;
+                        const timeElapsed = currentTime - start;
+                        const progress = Math.min(timeElapsed / duration, 1);
+                        
+                        // Easing function para suavizar
+                        const ease = progress < 0.5 
+                            ? 2 * progress * progress 
+                            : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+                        
+                        window.scrollTo(0, startPosition + distance * ease);
+                        
+                        if (timeElapsed < duration) {
+                            requestAnimationFrame(animation);
+                        }
+                    }
+                    
+                    requestAnimationFrame(animation);
+                }, 300);
+            } else {
+                console.log('Elemento não encontrado ainda, tentando novamente...');
+                // Se não encontrou, tenta novamente após um delay
+                setTimeout(encontrarERolar, 500);
+            }
+        }
+        
+        // Tenta encontrar o elemento imediatamente
+        encontrarERolar();
+        
+        // Tenta novamente após a página carregar
+        window.addEventListener('load', function() {
+            setTimeout(encontrarERolar, 500);
         });
     }
 }
@@ -90,6 +136,63 @@ function mostrarEscola() {
     }
 }
 
+// ===== FUNÇÃO PARA MOSTRAR/ESCONDER CAMPO DE EXPERIMENTO =====
+function toggleCampoExperimento() {
+    // Aguarda um pouco para garantir que o DOM está carregado
+    setTimeout(function() {
+        const selectTipo = document.querySelector('select[name="tipo_apresentacao"]');
+        const campoExperimento = document.getElementById('campo_experimento');
+        
+        // Só executa se os elementos existirem na página
+        if (selectTipo && campoExperimento) {
+            const textarea = document.querySelector('textarea[name="descricao_experimento"]');
+            
+            // Função para atualizar a visibilidade do campo
+            function atualizarCampo() {
+                if (selectTipo.value === 'experimento') {
+                    campoExperimento.style.display = 'block';
+                    if (textarea) textarea.required = true;
+                } else {
+                    campoExperimento.style.display = 'none';
+                    if (textarea) textarea.required = false;
+                }
+            }
+            
+            // Executa imediatamente para definir o estado inicial
+            atualizarCampo();
+            
+            // Adiciona evento de mudança
+            selectTipo.addEventListener('change', atualizarCampo);
+            
+            console.log('Campo de experimento configurado com sucesso!');
+        } else {
+            console.log('Elementos de experimento não encontrados nesta página');
+        }
+    }, 200);
+}
+
+// ===== VALIDAÇÃO DO FORMULÁRIO ANTES DE ENVIAR =====
+function setupFormValidation() {
+    const form = document.querySelector('form[action*="formsubmit.co"]');
+    
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            const selectTipo = document.querySelector('select[name="tipo_apresentacao"]');
+            const campoExperimento = document.getElementById('campo_experimento');
+            const textarea = document.querySelector('textarea[name="descricao_experimento"]');
+            
+            // Se for experimento, verifica se a descrição foi preenchida
+            if (selectTipo && selectTipo.value === 'experimento' && textarea) {
+                if (!textarea.value.trim()) {
+                    e.preventDefault();
+                    alert('Por favor, descreva o experimento que deseja apresentar.');
+                    textarea.focus();
+                }
+            }
+        });
+    }
+}
+
 // Inicializar tudo quando a página carregar
 window.onload = function() {
     // Inicializar cards (todos fechados)
@@ -99,5 +202,17 @@ window.onload = function() {
     }
     
     // Chamar a função de rolagem suave
-    rolarParaAncora();
+    setTimeout(rolarParaAncora, 100);
+    
+    // 🔥 ATIVAR O CAMPO DE EXPERIMENTO
+    toggleCampoExperimento();
+    
+    // 🔥 ATIVAR VALIDAÇÃO DO FORMULÁRIO
+    setupFormValidation();
 };
+
+// Também executa quando o DOM estiver pronto (para garantir)
+document.addEventListener('DOMContentLoaded', function() {
+    toggleCampoExperimento();
+    setupFormValidation();
+});

@@ -23,75 +23,93 @@
         </div>
     </section>
 
-    <!-- MODAL DE SUBMISSÃO DE TRABALHOS -->
-    <div class="modal" id="modalTrabalho">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeModal()">&times;</span>
-            <h2 style="color: var(--azul-petroleo); margin-bottom: 30px;">📄 Submeter Trabalho</h2>
+    <!-- PELO AMOR DE DEUS, NÃO MECHE NISSO -->
+<div class="modal" id="modalTrabalho">
+    <div class="modal-content">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <h2 style="color: var(--azul-petroleo); margin-bottom: 30px;">📄 Submeter Trabalho</h2>
+        
+        <form action="https://formsubmit.co/cafe.ciencia0@gmail.com" method="POST" enctype="multipart/form-data">
+            <!-- Configurações FormSubmit -->
+            <input type="hidden" name="_subject" value="Nova submissão de trabalho - Café com Ciência 2026">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://cauansergio.github.io/VII_cafe_com_ciencia/obrigado.html">
             
-            <form action="https://formsubmit.co/cafe.ciencia0@gmail.com" method="POST" enctype="multipart/form-data">
-                <!-- Configurações FormSubmit -->
-                <input type="hidden" name="_subject" value="Nova submissão de trabalho - Café com Ciência 2026">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_next" value="https://cauansergio.github.io/VII_cafe_com_ciencia/obrigado.html">
-                
-                <div class="form-group">
-                    <label>Título do Trabalho *</label>
-                    <input type="text" name="titulo" required>
-                </div>
+            <div class="form-group">
+                <label>Título do Trabalho *</label>
+                <input type="text" name="titulo" required>
+            </div>
 
-                <div class="form-group">
-                    <label>Autor principal *</label>
-                    <input type="text" name="autor" required>
-                </div>
+            <div class="form-group">
+                <label>Autor principal *</label>
+                <input type="text" name="autor" required>
+            </div>
 
-                <div class="form-group">
-                    <label>E-mail para contato *</label>
-                    <input type="email" name="email" required>
-                </div>
+            <div class="form-group">
+                <label>E-mail para contato *</label>
+                <input type="email" name="email" required>
+            </div>
 
-                <div class="form-group">
-                    <label>Coautores (se houver)</label>
-                    <input type="text" name="coautores" placeholder="Nome dos coautores separados por vírgula">
-                </div>
+            <div class="form-group">
+                <label>Coautores (se houver)</label>
+                <input type="text" name="coautores" placeholder="Nome dos coautores separados por vírgula">
+            </div>
 
-                <div class="form-group">
-                    <label>Instituição *</label>
-                    <input type="text" name="instituicao" required>
-                </div>
+            <div class="form-group">
+                <label>Instituição *</label>
+                <input type="text" name="instituicao" required>
+            </div>
 
-                <div class="form-group">
-                    <label>Área temática *</label>
-                    <select name="area" required>
-                        <option value="">Selecione...</option>
-                        <option value="ensino">Ensino de Física</option>
-                        <option value="pesquisa">Pesquisa em Física</option>
-                        <option value="extensao">Extensão Universitária</option>
-                        <option value="energia">Energia e Sustentabilidade</option>
-                        <option value="outra">Outra</option>
-                    </select>
-                </div>
+            <div class="form-group">
+                <label>Área temática *</label>
+                <select name="area" required>
+                    <option value="">Selecione...</option>
+                    <option value="ensino">Ensino de Física</option>
+                    <option value="pesquisa">Pesquisa em Física</option>
+                    <option value="extensao">Extensão Universitária</option>
+                    <option value="energia">Energia e Sustentabilidade</option>
+                    <option value="outra">Outra</option>
+                </select>
+            </div>
 
-                <div class="form-group">
-                    <label>Resumo do trabalho (máx. 250 palavras) *</label>
-                    <textarea name="resumo" required></textarea>
-                </div>
+            <!--  Tipo de Apresentação -->
+            <div class="form-group">
+                <label>Tipo de Apresentação *</label>
+                <select name="tipo_apresentacao" required>
+                    <option value="">Selecione...</option>
+                    <option value="oral">Apresentação Oral</option>
+                    <option value="painel">Pôster / Painel</option>
+                    <option value="experimento">⚗️ Apresentar Experimento</option>
+                </select>
+            </div>
 
-                <div class="form-group">
-                    <label>Palavras-chave (separadas por vírgula)</label>
-                    <input type="text" name="palavras_chave" placeholder="Ex: energia solar, ensino, sustentabilidade">
-                </div>
+            <!--  Descrição do Experimento (aparece condicionalmente) -->
+            <div class="form-group" id="campo_experimento" style="display: none;">
+                <label>Descrição do Experimento *</label>
+                <textarea name="descricao_experimento" placeholder="Descreva o experimento, materiais necessários, espaço físico, duração, etc."></textarea>
+                <small style="color: #666; display: block; margin-top: 5px;">Informe os recursos necessários para a apresentação</small>
+            </div>
 
-                <div class="form-group">
-                    <label>Anexar arquivo (PDF ou Word) *</label>
-                    <input type="file" name="arquivo" accept=".pdf,.doc,.docx" required>
-                </div>
+            <div class="form-group">
+                <label>Resumo do trabalho (máx. 250 palavras) *</label>
+                <textarea name="resumo" required></textarea>
+            </div>
 
-                <button type="submit" class="btn" style="width: 100%;">Enviar Trabalho</button>
-            </form>
-        </div>
+            <div class="form-group">
+                <label>Palavras-chave (separadas por vírgula)</label>
+                <input type="text" name="palavras_chave" placeholder="Ex: energia solar, ensino, sustentabilidade">
+            </div>
+
+            <div class="form-group">
+                <label>Anexar arquivo (PDF ou Word) *</label>
+                <input type="file" name="arquivo" accept=".pdf,.doc,.docx" required>
+            </div>
+
+            <button type="submit" class="btn" style="width: 100%;">Enviar Trabalho</button>
+        </form>
     </div>
+</div>
 
     <!-- SOBRE O EVENTO -->
     <section class="container">
