@@ -1,3 +1,25 @@
+// ===== FUNÇÃO DE ROLAGEM SUAVE PARA ÂNCORAS =====
+// Função para rolar suavemente até a seção quando carregar a página com # no URL
+function rolarParaAncora() {
+    // Verifica se tem hash na URL (ex: #programacao)
+    if (window.location.hash) {
+        const hash = window.location.hash.substring(1); // Remove o #
+        
+        // Aguarda a página carregar completamente
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const element = document.getElementById(hash);
+                if (element) {
+                    element.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }, 300); // Delay para garantir que tudo carregou
+        });
+    }
+}
+
 // Função para abrir modal
 function openModal(event) {
     event.preventDefault();
@@ -68,10 +90,14 @@ function mostrarEscola() {
     }
 }
 
-// Inicializar escondendo todos os detalhes dos cards
+// Inicializar tudo quando a página carregar
 window.onload = function() {
+    // Inicializar cards (todos fechados)
     var details = document.getElementsByClassName('card-details');
     for (var i = 0; i < details.length; i++) {
         details[i].style.maxHeight = null;
     }
-}
+    
+    // Chamar a função de rolagem suave
+    rolarParaAncora();
+};

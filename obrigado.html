@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obrigado! - VIII Café com Ciência</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a3b4f, #0f2a38);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: white;
+            max-width: 600px;
+            width: 100%;
+            padding: 50px 40px;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .icone {
+            font-size: 5rem;
+            color: #4caf7a;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: #1a3b4f;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            color: #555;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #4caf7a;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            margin: 10px;
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            border-color: #4caf7a;
+            color: #4caf7a;
+            transform: scale(1.05);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid #1a3b4f;
+            color: #1a3b4f;
+        }
+        
+        .btn-outline:hover {
+            background-color: #1a3b4f;
+            color: white;
+            border-color: #1a3b4f;
+        }
+        
+        .redes-sociais {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .redes-sociais a {
+            color: #1a3b4f;
+            font-size: 1.8rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+        
+        .redes-sociais a:hover {
+            color: #4caf7a;
+        }
+        
+        @media (max-width: 768px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 2rem; }
+            p { font-size: 1rem; }
+            .btn { display: block; width: 100%; margin: 10px 0; }
+        }
+    </style>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="icone">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        
+        <h1>Trabalho Enviado!</h1>
+        
+        <p>
+            <strong>Obrigado pela sua submissão!</strong><br>
+            Seu trabalho foi recebido com sucesso. 
+            A comissão organizadora do VIII Café com Ciência irá analisar e 
+            retornará o mais breve possível pelo e-mail fornecido.
+        </p>
+        
+        <div style="margin: 30px 0;">
+            <!-- BOTÃO VOLTAR PARA PÁGINA INICIAL -->
+            <a href="index.html" class="btn">
+                <i class="fas fa-home"></i> Voltar para a página inicial
+            </a>
+            
+            <!-- BOTÃO VER PROGRAMAÇÃO - Volta para index.html na seção de programação -->
+            <a href="index.html#programacao" class="btn btn-outline">
+                <i class="fas fa-calendar"></i> Ver programação
+            </a>
+        </div>
+        
+        <div class="redes-sociais">
+            <p style="font-size: 1rem; margin-bottom: 15px;">Acompanhe nas redes sociais:</p>
+            <a href="https://www.instagram.com/cafecomciencia_ufpa/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/share/v/1CzgucBdns/" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://youtube.com/shorts/BmYcSkB1yfk?si=aydjt973rU95ovrd" target="_blank">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+        
+        <p style="margin-top: 30px; font-size: 0.9rem; color: #999;">
+            VIII Café com Ciência 2026 - Dia do Físico
+        </p>
+    </div>
+
+
+</body>
+</html>
