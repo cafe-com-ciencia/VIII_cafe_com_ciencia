@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VIII Café com Ciência 2026 – Dia do Físico</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css>
+    <link rel="stylesheet" href="style.css">
     <!-- Font Awesome para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -131,84 +131,96 @@
         <h2 class="section-title">Programação</h2>
         <p class="section-subtitle">Navegue pelos dias e descubra todas as atividades do evento.</p>
 
-        <div class="tabs">
-            <div class="tab-buttons">
-                <button class="tab-btn active" onclick="openTab(event, 'dia27')">📅 27/05 (Qua) – Exposições</button>
-                <button class="tab-btn" onclick="openTab(event, 'dia28')">📅 28/05 (Qui) – Minicursos & Palestras</button>
-                <button class="tab-btn" onclick="openTab(event, 'dia29')">📅 29/05 (Sex) – Oficina de Mídia</button>
+       <div class="tab-buttons">
+    <button class="tab-btn active" onclick="openTab(event, 'dia27')">📅 27/05 (Qua) – Abertura & Exposições</button>
+    <button class="tab-btn" onclick="openTab(event, 'dia28')">📅 28/05 (Qui) – Minicursos & Palestras</button>
+    <button class="tab-btn" onclick="openTab(event, 'dia29')">📅 29/05 (Sex) – Oficinas</button>
+</div>
+
+         <!-- DIA 27 - EXPOSIÇÕES E ABERTURA -->
+<div id="dia27" class="tab-content active">
+    <h3 style="color: var(--azul-petroleo); margin-bottom: 20px;">🔬 Exploração Científica nos Laboratórios</h3>
+    
+    
+    <!-- PRONUNCIAMENTO DE ABERTURA -->
+    <div style="background: linear-gradient(135deg, #1a3b4f, #2a5f7a); color: white; padding: 25px; border-radius: 20px; margin-bottom: 30px;">
+        <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+            <div style="font-size: 3rem;">🎤</div>
+            <div>
+                <h4 style="color: var(--verde-folha); font-size: 1.5rem; margin-bottom: 10px;">Pronunciamento de Abertura</h4>
+                <p style="font-size: 1.1rem;"><strong>Horário:</strong> 8h00 - 9h00</p>
+                <p style="font-size: 1.1rem;"><strong>Local:</strong> Quadra Poliesportiva</p>
+                <p style="margin-top: 10px;">Mesa redonda com autoridades acadêmicas e abertura do VIII Café com Ciência.</p>
             </div>
-
-            <!-- DIA 27 - LABORATÓRIOS -->
-            <div id="dia27" class="tab-content active">
-                <h3 style="color: var(--azul-petroleo); margin-bottom: 20px;">🔬 Exploração Científica nos Laboratórios(mudar depois)</h3>
-                <p>Visitas guiadas e experimentos interativos nos principais laboratórios da UFPA.</p>
-                
-                <div class="cards-grid">
-                    <!-- Faraday -->
-                    <div class="card" id="card-faraday">
-                        <div class="card-img lab-faraday"></div>
-                        <div class="card-content">
-                            <h4>Laboratório Faraday</h4>
-                            <p>Prof. Luiz Miguel • Equipe Eletromagnetismo</p>
-                            <button class="btn-card" onclick="toggleCard('faraday')">
-                                <i class="fas fa-chevron-down"></i> Ver detalhes
-                            </button>
-                            <div class="card-details" id="details-faraday">
-                                <p><strong>Experimento:</strong> Gerador de Faraday e indução eletromagnética aplicada à energia sustentável.</p>
-                                <p><strong>Horário:</strong> 09h - 12h | 14h - 17h</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Galileu -->
-                    <div class="card" id="card-galileu">
-                        <div class="card-img lab-galileu"></div>
-                        <div class="card-content">
-                            <h4>Laboratório Galileu</h4>
-                            <p>Profa. Cássia Thais • Equipe Mecânica</p>
-                            <button class="btn-card" onclick="toggleCard('galileu')">
-                                <i class="fas fa-chevron-down"></i> Ver detalhes
-                            </button>
-                            <div class="card-details" id="details-galileu">
-                                <p><strong>Experimento:</strong> Pêndulos de Newton e conservação de energia.</p>
-                                <p><strong>Horário:</strong> 08h - 12h | 13h - 18h</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Planck -->
-                    <div class="card" id="card-planck">
-                        <div class="card-img lab-planck"></div>
-                        <div class="card-content">
-                            <h4>Laboratório Planck</h4>
-                            <p>Prof. Pedro Henrique • Equipe Física Moderna</p>
-                            <button class="btn-card" onclick="toggleCard('planck')">
-                                <i class="fas fa-chevron-down"></i> Ver detalhes
-                            </button>
-                            <div class="card-details" id="details-planck">
-                                <p><strong>Experimento:</strong> Efeito fotoelétrico e células solares.</p>
-                                <p><strong>Horário:</strong> 09h - 12h | 14h - 17h</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- LFCA Nano -->
-                    <div class="card" id="card-lfca">
-                        <div class="card-img lab-lfca"></div>
-                        <div class="card-content">
-                            <h4>LFCA – Nano</h4>
-                            <p>Prof. Gabriel • Amazônia na palma da mão</p>
-                            <button class="btn-card" onclick="toggleCard('lfca')">
-                                <i class="fas fa-chevron-down"></i> Ver detalhes
-                            </button>
-                            <div class="card-details" id="details-lfca">
-                                <p><strong>Experimento:</strong> Nanomateriais para armazenamento de energia.</p>
-                                <p><strong>Horário:</strong> 10h - 12h | 15h - 17h</p>
-                            </div>
-                        </div>
-                    </div>
+        </div>
+    </div>
+    <p>Visitas guiadas e experimentos interativos nos principais laboratórios da UFPA.</p>
+    <div class="cards-grid">
+        <!-- Faraday -->
+        <div class="card" id="card-faraday">
+            <div class="card-img lab-faraday"></div>
+            <div class="card-content">
+                <h4>Laboratório Faraday</h4>
+                <p>Prof. Luiz Miguel • Equipe Eletromagnetismo</p>
+                <button class="btn-card" onclick="toggleCard('faraday')">
+                    <i class="fas fa-chevron-down"></i> Ver detalhes
+                </button>
+                <div class="card-details" id="details-faraday">
+                    <p><strong>Experimento:</strong> Gerador de Faraday e indução eletromagnética aplicada à energia sustentável.</p>
+                    <p><strong>Horário:</strong> 09h - 12h | 14h - 17h</p>
                 </div>
             </div>
+        </div>
+
+        <!-- Galileu -->
+        <div class="card" id="card-galileu">
+            <div class="card-img lab-galileu"></div>
+            <div class="card-content">
+                <h4>Laboratório Galileu</h4>
+                <p>Profa. Cássia Thais • Equipe Mecânica</p>
+                <button class="btn-card" onclick="toggleCard('galileu')">
+                    <i class="fas fa-chevron-down"></i> Ver detalhes
+                </button>
+                <div class="card-details" id="details-galileu">
+                    <p><strong>Experimento:</strong> Pêndulos de Newton e conservação de energia.</p>
+                    <p><strong>Horário:</strong> 08h - 12h | 13h - 18h</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Planck -->
+        <div class="card" id="card-planck">
+            <div class="card-img lab-planck"></div>
+            <div class="card-content">
+                <h4>Laboratório Planck</h4>
+                <p>Prof. Pedro Henrique • Equipe Física Moderna</p>
+                <button class="btn-card" onclick="toggleCard('planck')">
+                    <i class="fas fa-chevron-down"></i> Ver detalhes
+                </button>
+                <div class="card-details" id="details-planck">
+                    <p><strong>Experimento:</strong> Efeito fotoelétrico e células solares.</p>
+                    <p><strong>Horário:</strong> 09h - 12h | 14h - 17h</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- LFCA Nano -->
+        <div class="card" id="card-lfca">
+            <div class="card-img lab-lfca"></div>
+            <div class="card-content">
+                <h4>LFCA – Nano</h4>
+                <p>Prof. Gabriel • Amazônia na palma da mão</p>
+                <button class="btn-card" onclick="toggleCard('lfca')">
+                    <i class="fas fa-chevron-down"></i> Ver detalhes
+                </button>
+                <div class="card-details" id="details-lfca">
+                    <p><strong>Experimento:</strong> Nanomateriais para armazenamento de energia.</p>
+                    <p><strong>Horário:</strong> 10h - 12h | 15h - 17h</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
             <!-- DIA 28 - MINICURSOS E PALESTRAS -->
             <div id="dia28" class="tab-content">
@@ -264,23 +276,135 @@
                 </div>
             </div>
 
-            <!-- DIA 29 - OFICINA -->
-            <div id="dia29" class="tab-content">
-                <div style="text-align: center; padding: 40px; background: linear-gradient(135deg, #1a3b4f10, #4caf7a20); border-radius: 20px;">
-                    <i class="fas fa-podcast" style="font-size: 5rem; color: var(--verde-folha); margin-bottom: 20px;"></i>
-                    <h3 style="color: var(--azul-petroleo); font-size: 2rem; margin-bottom: 15px;">🎙️ Oficina de mídia:</h3>
-                    <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 20px;">Aprenda a produzir conteúdo científico para plataformas digitais. Vagas limitadas!</p>
-                    <div style="background-color: var(--branco); padding: 20px; border-radius: 12px; max-width: 400px; margin: 20px auto;">
-                        <p><strong>📅 Data:</strong> 29/05/2026</p>
-                        <p><strong>⏰ Horário:</strong> 09h às 12h</p>
-                        <p><strong>📍 Local:</strong> Laboratório de Informática FACET</p>
-                        <p><strong>👥 Vagas:</strong> 20</p>
-                    </div>
-                    <button class="btn" style="margin-top: 20px;">Garantir vaga</button>
-                </div>
-            </div>
+            <!-- DIA 29 - OFICINAS -->
+<div id="dia29" class="tab-content">
+    <h3 style="color: var(--azul-petroleo); margin-bottom: 30px; text-align: center;">🎯 Oficinas</h3>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 40px;">
+        
+        <!-- Oficina de Mídia - Manhã -->
+        <div style="background: linear-gradient(135deg, #30cfd020, #460b8f20); border-radius: 20px; padding: 25px; display: flex; flex-direction: column;">
+            <div style="font-size: 3rem; margin-bottom: 15px;">🎙️</div>
+            <h4 style="color: var(--azul-petroleo); font-size: 1.5rem; margin-bottom: 15px;">Oficina de Mídia</h4>
+            <div style="background-color: var(--verde-folha); color: white; display: inline-block; padding: 5px 15px; border-radius: 50px; font-weight: bold; margin-bottom: 15px; align-self: flex-start;">MANHÃ</div>
+            <p><strong>⏰ Horário:</strong> 08h00 - 09h50</p>
+            <p><strong>📍 Local:</strong> Laboratório de Informática FACET</p>
+            <p><strong>👥 Vagas:</strong> 20 participantes</p>
+            <p style="margin-top: 10px; flex-grow: 1;">acho que seria interessante adcionar informações sobre o professor q irá ministrar a oficina.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe_UJta8rpUpJsDbgV-jGw8rql_PUpWpO6plnt_N2Hn-l5fFw/viewform?usp=publish-editor" target="_blank" class="btn" style="margin-top: 20px; text-align: center; width: 100%;">📝 INSCREVER-SE</a>
         </div>
-    </section>
+        
+        <!-- Oficina de Oratória - Manhã -->
+        <div style="background: linear-gradient(135deg, #0cec1752, #8324b942); border-radius: 20px; padding: 25px; display: flex; flex-direction: column;">
+            <div style="font-size: 3rem; margin-bottom: 15px;">🗣️</div>
+            <h4 style="color: var(--azul-petroleo); font-size: 1.5rem; margin-bottom: 15px;">Oficina de Oratória</h4>
+            <div style="background-color: var(--verde-folha); color: white; display: inline-block; padding: 5px 15px; border-radius: 50px; font-weight: bold; margin-bottom: 15px; align-self: flex-start;">MANHÃ</div>
+            <p><strong>⏰ Horário:</strong> 10h00 - 12h00</p>
+            <p><strong>📍 Local:</strong> Laboratório de Informática FACET</p>
+            <p><strong>👥 Vagas:</strong> 20 participantes</p>
+            <p style="margin-top: 10px; flex-grow: 1;">Quebre os 2 ovos em uma tigela.
+
+Adicione sal e o leite/água (opcional).
+
+Bata com um garfo por uns 20 segundos.
+
+Aqueça uma frigideira com óleo ou manteiga em fogo médio.
+
+Despeje os ovos batidos.
+
+Quando começar a firmar, coloque o recheio.
+
+Dobre a omelete ao meio e deixe mais 30–40 segundos..</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdacZqt3hfFmyhWm9XpKmh1KnQxXw1OLcEXPILV5uxoQZ1dbQ/viewform?usp=publish-editor" target="_blank" class="btn" style="margin-top: 20px; text-align: center; width: 100%;">📝 INSCREVER-SE</a>
+        </div>
+        
+        <!-- Oficina de Oratória - Tarde -->
+        <div style="background: linear-gradient(135deg, #fa709a20, #fee14020); border-radius: 20px; padding: 25px; display: flex; flex-direction: column;">
+            <div style="font-size: 3rem; margin-bottom: 15px;">🎤</div>
+            <h4 style="color: var(--azul-petroleo); font-size: 1.5rem; margin-bottom: 15px;">Oficina de Oratória</h4>
+            <div style="background-color: var(--laranja-queimado); color: white; display: inline-block; padding: 5px 15px; border-radius: 50px; font-weight: bold; margin-bottom: 15px; align-self: flex-start;">TARDE</div>
+            <p><strong>⏰ Horário:</strong> 14h00 - 15h50</p>
+            <p><strong>📍 Local:</strong> Laboratório de Informática FACET</p>
+            <p><strong>👥 Vagas:</strong> 20 participantes</p>
+            <p style="margin-top: 10px; flex-grow: 1;">Para o pudim
+
+1 lata de leite condensado
+
+2 medidas da lata de leite
+
+3 ovo de galinha
+
+Para a calda
+
+1 xícara de açúcar
+
+½ xícara de água.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeSZNuf8TUTs6sPPWP2ssGZpePuwbtTboL-7uXqE6eiLCkPJQ/viewform?usp=publish-editor" target="_blank" class="btn" style="margin-top: 20px; text-align: center; width: 100%;">📝 INSCREVER-SE</a>
+        </div>
+        
+        <!-- Oficina de Mídia - Tarde -->
+        <div style="background: linear-gradient(135deg, #30cfd020, #460b8f20); border-radius: 20px; padding: 25px; display: flex; flex-direction: column;">
+            <div style="font-size: 3rem; margin-bottom: 15px;">📱</div>
+            <h4 style="color: var(--azul-petroleo); font-size: 1.5rem; margin-bottom: 15px;">Oficina de Mídia</h4>
+            <div style="background-color: var(--laranja-queimado); color: white; display: inline-block; padding: 5px 15px; border-radius: 50px; font-weight: bold; margin-bottom: 15px; align-self: flex-start;">TARDE</div>
+            <p><strong>⏰ Horário:</strong> 16h00 - 17h30</p>
+            <p><strong>📍 Local:</strong> Laboratório de Informática FACET</p>
+            <p><strong>👥 Vagas:</strong> 20 participantes</p>
+            <p style="margin-top: 10px; flex-grow: 1;">1 
+
+Coloque o açúcar em uma panela.
+
+Leve ao fogo médio até derreter e virar caramelo.
+
+Adicione a água com cuidado e mexa até ficar uma calda lisa.
+
+Despeje a calda na forma de pudim e espalhe pelo fundo.
+
+ 2 
+
+No liquidificador coloque:
+
+leite condensado
+
+leite
+
+ovos
+
+Bata por 1 minuto.
+
+3 
+
+Despeje a mistura na forma caramelizada.
+
+Cubra com papel alumínio.
+
+Asse em banho-maria no forno a 180 °C por cerca de 1 hora.
+
+4 
+
+Deixe esfriar.
+
+Leve à geladeira por 3 horas.
+
+Passe uma faca nas bordas e desenforme.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScRjuaAQdDi7Z07-niwN-ssv-e_-pIOKB_loekVwCcP3v6FVg/viewform?usp=publish-editor" target="_blank" class="btn" style="margin-top: 20px; text-align: center; width: 100%;">📝 INSCREVER-SE</a>
+        </div>
+    </div>
+    
+    <!-- Informações adicionais -->
+    <div style="background-color: var(--cinza-claro); padding: 25px; border-radius: 20px; margin-top: 20px;">
+        <h4 style="color: var(--azul-petroleo); margin-bottom: 15px;">📌 Informações importantes:</h4>
+        <ul style="list-style-type: none; padding: 0;">
+            <li style="margin-bottom: 10px;">✓ <strong>Inscrições:</strong> As vagas são limitadas e serão preenchidas por ordem de inscrição</li>
+            <li style="margin-bottom: 10px;">✓ <strong>Certificação:</strong> Haverá certificado de participação para cada oficina (carga horária: 2h)</li>
+            <li style="margin-bottom: 10px;">✓ <strong>Material:</strong> Recomendamos levar notebook ou tablet para as oficinas de mídia</li>
+            <li style="margin-bottom: 10px;">✓ <strong>Contato:</strong> Dúvidas sobre as oficinas? Entre em contato pelo e-mail <a href="mailto:cafe.ciencia0@gmail.com" style="color: var(--azul-petroleo); font-weight: bold;">cafe.ciencia0@gmail.com</a></li>
+            <li style="margin-bottom: 10px;">✓ <strong>Turmas:</strong> As oficinas de oratória terão turmas separadas para melhor aproveitamento</li>
+        </ul>
+    </div>
+    
+    
+</div>
 
     <!-- ÁREA DAS ESCOLAS (FILTRO) -->
     <section class="container">
@@ -370,7 +494,7 @@
                 <a href="https://youtube.com/shorts/BmYcSkB1yfk?si=aydjt973rU95ovrd" target="_blank">
                     <i class="fab fa-youtube"></i>
                 </a>
-                <a href="cafe.ciencia0@gmail.com" target="_blank">
+                <a href="mailto:cafe.ciencia0@gmail.com" target="_blank">
                     <i class="fas fa-envelope"></i>
                 </a>
             </div>
@@ -381,6 +505,4 @@
     <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
-
 </html>
-
