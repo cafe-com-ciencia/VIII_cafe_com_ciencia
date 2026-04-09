@@ -216,3 +216,60 @@ document.addEventListener('DOMContentLoaded', function() {
     toggleCampoExperimento();
     setupFormValidation();
 });
+// ========== FUNÇÕES PARA SEÇÃO CONVIDADOS ==========
+
+// Função para abrir/fechar descrição do convidado
+function toggleDescricao(btn) {
+    const card = btn.closest('.convidado-card');
+    const descricao = card.querySelector('.convidado-descricao');
+    
+    if (descricao.classList.contains('ativo')) {
+        descricao.classList.remove('ativo');
+        btn.innerHTML = '<i class="fas fa-chevron-down"></i> Sobre';
+    } else {
+        // Fecha todas as outras descrições
+        document.querySelectorAll('.convidado-descricao').forEach(desc => {
+            desc.classList.remove('ativo');
+        });
+        document.querySelectorAll('.btn-convidado').forEach(b => {
+            b.innerHTML = '<i class="fas fa-chevron-down"></i> Sobre';
+        });
+        
+        descricao.classList.add('ativo');
+        btn.innerHTML = '<i class="fas fa-chevron-up"></i> Fechar';
+    }
+}
+
+// Função para abrir modal com foto ampliada
+function abrirModalFoto(imgElement) {
+    const modal = document.getElementById('modalFoto');
+    const imgAmpliada = document.getElementById('fotoAmpliada');
+    imgAmpliada.src = imgElement.src;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Função para fechar modal de foto
+function fecharModalFoto() {
+    const modal = document.getElementById('modalFoto');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Adicionar evento de clique nas fotos para ampliar
+document.addEventListener('DOMContentLoaded', function() {
+    const fotos = document.querySelectorAll('.foto-container img');
+    fotos.forEach(foto => {
+        foto.addEventListener('click', function(event) {
+            event.stopPropagation();
+            abrirModalFoto(this);
+        });
+    });
+    
+    // Fechar modal com tecla ESC
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            fecharModalFoto();
+        }
+    });
+});

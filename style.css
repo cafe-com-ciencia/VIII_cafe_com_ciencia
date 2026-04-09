@@ -532,6 +532,190 @@ footer {
     object-fit: contain;
     filter: none;
     opacity: 1;}
+    /* ========== SEÇÃO CONVIDADOS ========== */
+.convidados-section {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.convidados-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.convidado-card {
+    text-align: center;
+    background: white;
+    border-radius: 30px;
+    padding: 30px 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.convidado-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.foto-container {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--verde-folha);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.convidado-card:hover .foto-container {
+    border-color: var(--azul-petroleo);
+    transform: scale(1.05);
+}
+
+.foto-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.convidado-card:hover .foto-container img {
+    transform: scale(1.1);
+}
+
+.convidado-nome {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--azul-petroleo);
+    margin-bottom: 8px;
+}
+
+.convidado-funcao {
+    font-size: 0.9rem;
+    color: var(--verde-folha);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.convidado-instituicao {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.convidado-descricao {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
+    padding: 0 10px;
+    margin-top: 10px;
+    display: none;
+}
+
+.convidado-descricao.ativo {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.btn-convidado {
+    background: transparent;
+    border: 2px solid var(--verde-folha);
+    color: var(--verde-folha);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.btn-convidado:hover {
+    background: var(--verde-folha);
+    color: white;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Modal para foto ampliada */
+.modal-foto {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.modal-foto.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-foto-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.modal-foto-content img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.modal-foto-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-foto-close:hover {
+    color: var(--verde-folha);
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .foto-container {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .convidado-nome {
+        font-size: 1.1rem;
+    }
+    
+    .convidados-grid {
+        gap: 25px;
+    }
+}
 
 /* Responsivo */
 @media (max-width: 768px) {
