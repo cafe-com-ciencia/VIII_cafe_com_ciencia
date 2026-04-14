@@ -273,15 +273,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-function toggleProgramacao(btn) {
-    // Encontra o próximo elemento irmão que contém os detalhes
-    const detalhes = btn.nextElementSibling;
-    
-    if (detalhes.style.display === "none" || detalhes.style.display === "") {
-        detalhes.style.display = "block";
-        btn.innerHTML = '<i class="fas fa-chevron-up"></i> Ocultar programação';
-    } else {
-        detalhes.style.display = "none";
-        btn.innerHTML = '<i class="fas fa-info-circle"></i> Saiba mais sobre a programação';
-    }
-}
