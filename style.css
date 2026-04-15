@@ -23,9 +23,10 @@ body {
 
 /* Header / Hero Section */
 .hero {
-   background-image: url("src/imagens/WhatsApp\ Image\ 2026-04-12\ at\ 12.40.04.jpeg");
-    background-size:auto;
+    background-image: url("src/imagens/fungdo\ gpt.png");
+    background-size: cover; /* Altere de 'auto' para 'cover' */
     background-position: center;
+    background-repeat: no-repeat; /* Adicione para evitar repetição */
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -33,14 +34,33 @@ body {
     text-align: center;
     color: var(--branco);
     padding: 40px 20px;
+    position: relative; /* Para o overlay, se necessário */
 }
 
+/* Se quiser adicionar um overlay escuro para melhorar a legibilidade do texto */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(80, 106, 122, 0.527), rgba(104, 152, 182, 0.507));
+    z-index: 1;
+}
+
+/* Garantir que o conteúdo fique acima do overlay */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+}
 .hero-content {
     max-width: 900px;
 }
 
 .hero-tag {
-    color: var(--verde-folha);
+    color: var(--branco);
     font-size: 1.2rem;
     letter-spacing: 3px;
     margin-bottom: 20px;
@@ -64,13 +84,13 @@ body {
 }
 
 .hero h2 span {
-    color: var(--verde-folha);
+    color: var(--azul-petroleo);
     font-weight: 600;
 }
 
 .btn {
     display: inline-block;
-    background-color: var(--verde-folha);
+    background-color: var(--azul-petroleo);
     color: var(--branco);
     padding: 15px 40px;
     border-radius: 50px;
@@ -85,20 +105,20 @@ body {
 
 .btn:hover {
     background-color: transparent;
-    border-color: var(--verde-folha);
-    color: var(--verde-folha);
+    border-color: var(--branco);
+    color: var(--azul-petroleo);
     transform: scale(1.05);
 }
 
 .btn-outline {
-    background-color: transparent;
-    border: 2px solid var(--verde-folha);
-    color: var(--verde-folha);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 2px solid var(--azul-petroleo);
+    color: var(--azul-petroleo);
 }
 
 .btn-outline:hover {
     background-color: var(--branco);
-    color: var(--verde-folha);
+    color: var(--azul-petroleo);
     border-color: var(--branco);
 }
 
