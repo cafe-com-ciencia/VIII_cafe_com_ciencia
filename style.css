@@ -619,12 +619,15 @@ select:focus {
 }
 
 .logo-img {
-    width: 150px;
-    height: 80px;
-    object-fit: contain;
+    width: 180px;      /* Largura fixa para todos */
+    height: 100px;     /* Altura fixa para todos */
+    object-fit: contain; /* Mantém a proporção da imagem sem cortar */
     filter: none;
     opacity: 1;
+    transition: transform 0.3s ease;
 }
+    
+
 
 /* Rodapé */
 footer {
@@ -929,8 +932,9 @@ footer {
     }
     
     .logo-img {
-        width: 120px;
-        height: 60px;
+        width: 140px;
+        height: 80px;
+        
     }
     
     .card-img {
