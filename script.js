@@ -279,9 +279,9 @@ function toggleProgramacao(btn) {
     
     if (detalhes.style.display === "none" || detalhes.style.display === "") {
         detalhes.style.display = "block";
-        btn.innerHTML = '<i class="fas fa-chevron-up"></i> Ocultar programação';
+        btn.innerHTML = '<i class="fas fa-chevron-up"></i> Ocultar detalhes';
     } else {
         detalhes.style.display = "none";
-        btn.innerHTML = '<i class="fas fa-info-circle"></i> Saiba mais sobre a programação';
+        btn.innerHTML = '<i class="fas fa-info-circle"></i> Mais detalhes';
     }
 }

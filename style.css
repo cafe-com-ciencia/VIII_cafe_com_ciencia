@@ -23,7 +23,7 @@ body {
 
 /* Header / Hero Section */
 .hero {
-    background-image: url("src/imagens/fungdo\ gpt.png");
+    background-image: url("src/imagens/fungdo-gpt.png");
     background-size: cover; /* Altere de 'auto' para 'cover' */
     background-position: center;
     background-repeat: no-repeat; /* Adicione para evitar repetição */
@@ -619,15 +619,12 @@ select:focus {
 }
 
 .logo-img {
-    width: 180px;      /* Largura fixa para todos */
-    height: 100px;     /* Altura fixa para todos */
-    object-fit: contain; /* Mantém a proporção da imagem sem cortar */
+    width: 150px;
+    height: 80px;
+    object-fit: contain;
     filter: none;
     opacity: 1;
-    transition: transform 0.3s ease;
 }
-    
-
 
 /* Rodapé */
 footer {
@@ -932,13 +929,64 @@ footer {
     }
     
     .logo-img {
-        width: 140px;
-        height: 80px;
-        
+        width: 120px;
+        height: 60px;
     }
     
     .card-img {
         width: 120px;
         height: 120px;
+    }
+}
+/* Grid específico para 2 oficinas por linha */
+.oficinas-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+.hero-sponsors {
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sponsors-label {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 16px;
+}
+
+.sponsors-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.sponsors-logos img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    filter: none;
+    opacity: 0.9;
+    transition: opacity 0.3s, transform 0.3s;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 8px 14px;
+    border-radius: 10px;
+}
+
+.sponsors-logos img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .oficinas-grid-2 {
+        grid-template-columns: 1fr;
     }
 }

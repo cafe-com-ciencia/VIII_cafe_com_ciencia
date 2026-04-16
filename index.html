@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VIII Café com Ciência 2026 – Dia do Físico</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS2.css">
     <!-- Font Awesome para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -20,7 +20,19 @@
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSec4xkJXMQehCAMhsRklvFNnPOOvXNdhwg5lZ9LJxS0Gt-omw/viewform?usp=publish-editor" class="btn" target="_blank">📝 INSCREVA-SE AGORA</a>
                 <a href="#" class="btn btn-outline" onclick="openModal(event)">📄 SUBMETER TRABALHO</a>
             </div>
+              <!-- Adicione isso dentro de .hero-content, logo abaixo do <div> com os botões -->
+<div class="hero-sponsors">
+    <p class="sponsors-label">Patrocinadores</p>
+    <div class="sponsors-logos">
+        <img src="src/imagens/logo-cofruta.png" alt="Cofruta">
+        <img src="src/imagens/logo-mamonas.png" alt="Mamonas">
+        <img src="src/imagens/Dhr-logo.png" alt="DHR">
+        <img src="src/imagens/logo-paulo-aluguel.png" alt="Paulo Aluguel">
+    </div>
+</div>
+
         </div>
+      
     </section>
 
     <!-- PELO AMOR DE DEUS, NÃO MECHE NISSO -->
@@ -228,7 +240,7 @@
  
 <!-- DIA 27 - EXPOSIÇÕES E ABERTURA -->
 <div id="dia27" class="tab-content active">
-    <h3 style="color: var(--azul-petroleo); margin-bottom: 20px;">🔬 Exploração Científica nos Laboratórios e Espaços</h3>
+   
     
     <!-- PRONUNCIAMENTO DE ABERTURA -->
     <div style="background: linear-gradient(135deg, #1a3b4f, #2a5f7a); color: white; padding: 25px; border-radius: 20px; margin-bottom: 30px;">
@@ -242,6 +254,7 @@
             </div>
         </div>
     </div>
+     <h3 style="color: var(--azul-petroleo); margin-bottom: 20px;">🔬 Exploração Científica nos Laboratórios e Espaços</h3>
     
     <p style="margin-bottom: 25px; font-size: 1.1rem;">Visitas guiadas e experimentos interativos nos principais laboratórios e espaços da UFPA.</p>
     
@@ -334,12 +347,12 @@
             <div class="card-img lab-facet"></div>
             <div class="card-content">
                 <h4>Sala de Aula FACET</h4>
-                <p>Mostra de Projetos</p>
+                <p>1ª Exposição Científica.</p>
                 <button class="btn-card" onclick="toggleCard('facet')">
                     <i class="fas fa-chevron-down"></i> Ver detalhes
                 </button>
                 <div class="card-details" id="details-facet">
-                    <p><strong>🧪 Atividades:</strong> A prencher.</p>
+                    <p><strong>☢️ Muito além do que se vê :</strong> conheça o universo da Radiação</p>
                    
                 </div>
             </div>
@@ -387,27 +400,27 @@
                                 <span class="time">14h00 - 15h00</span>
                                 <div class="title">a prencher</div>
                                 <div class="speaker">Dr. Messias Costa</div>
-                                <div>Sala A</div>
+                                <div>Auditório central</div>
                             </div>
                             <div class="event-item">
                                 <span class="time">15h00 - 15h45</span>
-                                <div class="title">tema</div>
-                                <div class="speaker">Prof. Mateus Malato</div>
-                                <div>Sala B</div>
+                                <div class="title">Entrevista com o Einstein</div>
+                                <div class="speaker">Turma de física 2024</div>
+                                <div>Auditório central</div>
                                 
                             </div>
                              <div class="event-item">
                                 <span class="time">16h00 - 16h30</span>
-                                <div class="title"> Homenagem ao Dr. Eleutério</div>
-                                <div class="speaker">Alguém</div>
-                                <div>Sala C</div>
+                                <div class="title"> Palestra sobre buracos negros</div>
+                                <div class="speaker">Prof. Mateus Malato</div>
+                                <div>Auditório central</div>
                                 
                             </div>
                             <div class="event-item">
                                 <span class="time">16h30 - 17h10</span>
-                                <div class="title">Entrevista com o Einstein</div>
-                                <div class="speaker">Turma de física 2024</div>
-                                <div>Sala C</div>
+                                <div class="title">Encerramento</div>
+                                <div class="speaker"></div>
+                                <div>Auditório central</div>
                                 
                             </div>
                         </div>
@@ -415,26 +428,47 @@
                 </div>
             </div>
 
-            <!-- DIA 29 - OFICINAS -->
+        
+
 <!-- DIA 29 - OFICINAS -->
 <div id="dia29" class="tab-content">
     <h3 style="color: var(--azul-petroleo); margin-bottom: 30px; text-align: center;">🎯 Oficinas</h3> 
     
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 40px;">
+    <!-- PRIMEIRA LINHA: OFICINAS DA MANHÃ -->
+    <div class="oficinas-grid-2">
         
         <!-- Oficina de Mídia - Manhã -->
         <div style="background: linear-gradient(135deg, #30cfd020, #460b8f20); border-radius: 20px; padding: 25px; display: flex; flex-direction: column;">
             <div style="font-size: 3rem; margin-bottom: 15px;">🎙️</div>
-            <h4 style="color: var(--azul-petroleo); font-size: 1.5rem; margin-bottom: 15px;">Oficina de Mídia</h4>
-            <div style="background-color: var(--verde-folha); color: white; display: inline-block; padding: 5px 15px; border-radius: 50px; font-weight: bold; margin-bottom: 15px; align-self: flex-start;">MANHÃ</div>
-            <p><strong>⏰ Horário:</strong> 08h30 - 09h50</p>
+            <h4 style="color: var(--azul-petroleo); font-size: 1.5rem; margin-bottom: 10px;">Oficina de Mídia</h4>
+            <h5 style="color: var(--azul-petroleo); margin-top: 2px;">Educomunicação e Divulgação Científica: Produção de Mídias Visuais e Audiovisuais</h5>
+            <div style="background-color: var(--verde-folha); color: white; display: inline-block; padding: 5px 15px; border-radius: 50px; font-weight: bold; margin-bottom: 15px; align-self: flex-start; margin-top: 10px;">MANHÃ</div>
+            <p><strong>⏰ Horário:</strong> 10h00 - 12h00</p>
             <p><strong>📍 Local:</strong> Auditório central</p>
             <p><strong>👥 Vagas:</strong> 200 participantes</p>
-            <p style="margin-top: 10px; flex-grow: 1;">Aprenda técnicas de comunicação para mídias digitais, produção de conteúdo científico e divulgação nas redes sociais. <br><br> <strong>Ministrante:</strong> Prof. [Nome do Professor]</p>
+            <p><strong>⏳ Carga horária:</strong> 2h</p>
+          
+            <p><strong>Palestrantes:</strong><br>
+                João Luiz Ferreira de Araujo;<br>
+                Dielson Barros Monteiro;<br>
+                Edson Vasconcelos Nunes;<br>
+                Joseane Rosa Ferreira Lima;<br>
+                Jodiane Cristina Pinheiro Alfais;<br>
+                Cleidilane Sena Costa.
+            </p>
+              <p style="margin-top: 10px; flex-grow: 1;">Aprenda técnicas de comunicação para mídias digitais, produção de conteúdo científico e divulgação nas redes sociais.</p>
+            
+            <button class="btn-saiba-mais" onclick="toggleProgramacao(this)" style="margin-top: 15px;">
+                <i class="fas fa-info-circle"></i> Mais detalhes
+            </button>
+            <div class="programacao-detalhes" style="display: none;">
+                <p>A oficina "Educomunicação e Divulgação Científica: Produção de Mídias Visuais e Audiovisuais" tem como objetivo capacitar estudantes e colaboradores na criação de conteúdos digitais voltados à popularização da ciência e à comunicação institucional. A proposta destaca o uso de ferramentas acessíveis, em sua maioria livres, como Canva e GIMP para produção gráfica, e Kdenlive e CapCut para edição de áudio e vídeo, promovendo a democratização das tecnologias digitais. A atividade será ofertada pela equipe do programa "A Hora da Universidade" e articula fundamentos da educomunicação com práticas colaborativas, permitindo o desenvolvimento de materiais para rádio, redes sociais e ações educativas, com atenção à inclusão e acessibilidade. A oficina busca fortalecer a relação entre universidade e sociedade, incentivando a produção de conteúdos criativos, críticos e socialmente relevantes. A metodologia integra momentos teóricos e práticos, estimulando a autonomia dos participantes na produção de narrativas midiáticas voltadas à ciência, cultura e cidadania.</p>
+            </div>
+            
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSe_UJta8rpUpJsDbgV-jGw8rql_PUpWpO6plnt_N2Hn-l5fFw/viewform?usp=publish-editor" target="_blank" class="btn" style="margin-top: 20px; text-align: center; width: 100%;">📝 INSCREVER-SE</a>
         </div>
         
-        <!-- OFICINA DE ORATÓRIA - MANHÃ (ATUALIZADA) -->
+        <!-- OFICINA DE ORATÓRIA - MANHÃ -->
         <div style="background: linear-gradient(135deg, #0cec1752, #8324b942); border-radius: 20px; padding: 25px; display: flex; flex-direction: column;">
             <div style="font-size: 3rem; margin-bottom: 15px;">🗣️</div>
             <h4 style="color: var(--azul-petroleo); font-size: 1.5rem; margin-bottom: 15px;">Oficina de Oratória</h4>
@@ -442,12 +476,12 @@
             <p><strong>⏰ Horário:</strong> 10h00 - 12h00</p>
             <p><strong>📍 Local:</strong> Auditório central</p>
             <p><strong>👥 Vagas:</strong> 200 participantes</p>
+            <p><strong>⏳ Carga horária:</strong> 4h</p>
             <p style="margin-top: 10px;"><strong>🎤 Palestrante:</strong> Prof. Jorge Luiz Vidal<br><small>Jornalista, Assessor de Comunicação e Marketing</small></p>
             <p style="margin-top: 10px; flex-grow: 1;">Desenvolva sua capacidade de falar em público com segurança, dicção clara e presença de palco.</p>
             
-            <!-- Botão Saiba Mais e Conteúdo Oculto -->
             <button class="btn-saiba-mais" onclick="toggleProgramacao(this)" style="margin-top: 15px;">
-                <i class="fas fa-info-circle"></i> Saiba mais sobre a programação
+                <i class="fas fa-info-circle"></i> Mais detalhes
             </button>
             <div class="programacao-detalhes" style="display: none;">
                 <ul style="margin-top: 15px; padding-left: 20px; text-align: left; font-size: 0.9rem;">
@@ -461,21 +495,25 @@
 
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSdacZqt3hfFmyhWm9XpKmh1KnQxXw1OLcEXPILV5uxoQZ1dbQ/viewform?usp=publish-editor" target="_blank" class="btn" style="margin-top: 20px; text-align: center; width: 100%;">📝 INSCREVER-SE</a>
         </div>
+    </div>
+    
+    <!-- SEGUNDA LINHA: OFICINAS DA TARDE -->
+    <div class="oficinas-grid-2" style="margin-top: 25px;">
         
-        <!-- OFICINA DE ORATÓRIA - TARDE (ATUALIZADA) -->
+        <!-- OFICINA DE ORATÓRIA - TARDE -->
         <div style="background: linear-gradient(135deg, #fa709a20, #fee14020); border-radius: 20px; padding: 25px; display: flex; flex-direction: column;">
             <div style="font-size: 3rem; margin-bottom: 15px;">🎤</div>
             <h4 style="color: var(--azul-petroleo); font-size: 1.5rem; margin-bottom: 15px;">Oficina de Oratória</h4>
             <div style="background-color: var(--laranja-queimado); color: white; display: inline-block; padding: 5px 15px; border-radius: 50px; font-weight: bold; margin-bottom: 15px; align-self: flex-start;">TARDE</div>
-            <p><strong>⏰ Horário:</strong> 14h00 - 15h50</p>
+            <p><strong>⏰ Horário:</strong> 14h00 - 16h00</p>
             <p><strong>📍 Local:</strong> Auditório central</p>
             <p><strong>👥 Vagas:</strong> 200 participantes</p>
+            <p><strong>⏳ Carga horária:</strong> 4h</p>
             <p style="margin-top: 10px;"><strong>🎤 Palestrante:</strong> Prof. Jorge Luiz Vidal<br><small>Jornalista, Assessor de Comunicação e Marketing</small></p>
             <p style="margin-top: 10px; flex-grow: 1;">Desenvolva sua capacidade de falar em público com segurança, dicção clara e presença de palco.</p>
             
-            <!-- Botão Saiba Mais e Conteúdo Oculto -->
             <button class="btn-saiba-mais" onclick="toggleProgramacao(this)" style="margin-top: 15px;">
-                <i class="fas fa-info-circle"></i> Saiba mais sobre a programação
+                <i class="fas fa-info-circle"></i> Mais detalhes
             </button>
             <div class="programacao-detalhes" style="display: none;">
                 <ul style="margin-top: 15px; padding-left: 20px; text-align: left; font-size: 0.9rem;">
@@ -493,25 +531,43 @@
         <!-- Oficina de Mídia - Tarde -->
         <div style="background: linear-gradient(135deg, #30cfd020, #460b8f20); border-radius: 20px; padding: 25px; display: flex; flex-direction: column;">
             <div style="font-size: 3rem; margin-bottom: 15px;">📱</div>
-            <h4 style="color: var(--azul-petroleo); font-size: 1.5rem; margin-bottom: 15px;">Oficina de Mídia</h4>
-            <div style="background-color: var(--laranja-queimado); color: white; display: inline-block; padding: 5px 15px; border-radius: 50px; font-weight: bold; margin-bottom: 15px; align-self: flex-start;">TARDE</div>
-            <p><strong>⏰ Horário:</strong> 16h00 - 17h30</p>
+            <h4 style="color: var(--azul-petroleo); font-size: 1.5rem; margin-bottom: 10px;">Oficina de Mídia</h4>
+            <h5 style="color: var(--azul-petroleo); margin-top: 2px;">Educomunicação e Divulgação Científica: Produção de Mídias Visuais e Audiovisuais</h5>
+            <div style="background-color: var(--laranja-queimado); color: white; display: inline-block; padding: 5px 15px; border-radius: 50px; font-weight: bold; margin-bottom: 15px; align-self: flex-start; margin-top: 10px;">TARDE</div>
+            <p><strong>⏰ Horário:</strong> 14h00 - 16h00</p>
             <p><strong>📍 Local:</strong> Auditório central</p>
             <p><strong>👥 Vagas:</strong> 200 participantes</p>
-            <p style="margin-top: 10px; flex-grow: 1;">Estratégias práticas para melhorar a comunicação visual e textual dos projetos de pesquisa e extensão. <br><br> <strong>Ministrante:</strong> Prof. [Nome do Professor]</p>
+            <p><strong>⏳ Carga horária:</strong> 2h</p>
+          
+            <p><strong>Palestrantes:</strong><br>
+                João Luiz Ferreira de Araujo;<br>
+                Dielson Barros Monteiro;<br>
+                Edson Vasconcelos Nunes;<br>
+                Joseane Rosa Ferreira Lima;<br>
+                Jodiane Cristina Pinheiro Alfais;<br>
+                Cleidilane Sena Costa.
+            </p>
+              <p style="margin-top: 10px; flex-grow: 1;">Estratégias práticas para melhorar a comunicação visual e textual dos projetos de pesquisa e extensão.</p>
+            
+            <button class="btn-saiba-mais" onclick="toggleProgramacao(this)" style="margin-top: 15px;">
+                <i class="fas fa-info-circle"></i> Mais detalhes
+            </button>
+            <div class="programacao-detalhes" style="display: none;">
+                <p>A oficina "Educomunicação e Divulgação Científica: Produção de Mídias Visuais e Audiovisuais" tem como objetivo capacitar estudantes e colaboradores na criação de conteúdos digitais voltados à popularização da ciência e à comunicação institucional. A proposta destaca o uso de ferramentas acessíveis, em sua maioria livres, como Canva e GIMP para produção gráfica, e Kdenlive e CapCut para edição de áudio e vídeo, promovendo a democratização das tecnologias digitais. A atividade será ofertada pela equipe do programa "A Hora da Universidade" e articula fundamentos da educomunicação com práticas colaborativas, permitindo o desenvolvimento de materiais para rádio, redes sociais e ações educativas, com atenção à inclusão e acessibilidade. A oficina busca fortalecer a relação entre universidade e sociedade, incentivando a produção de conteúdos criativos, críticos e socialmente relevantes. A metodologia integra momentos teóricos e práticos, estimulando a autonomia dos participantes na produção de narrativas midiáticas voltadas à ciência, cultura e cidadania.</p>
+            </div>
+                     
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScRjuaAQdDi7Z07-niwN-ssv-e_-pIOKB_loekVwCcP3v6FVg/viewform?usp=publish-editor" target="_blank" class="btn" style="margin-top: 20px; text-align: center; width: 100%;">📝 INSCREVER-SE</a>
         </div>
     </div>
     
     <!-- Informações adicionais -->
-    <div style="background-color: var(--cinza-claro); padding: 25px; border-radius: 20px; margin-top: 20px;">
+    <div style="background-color: var(--cinza-claro); padding: 25px; border-radius: 20px; margin-top: 40px;">
         <h4 style="color: var(--azul-petroleo); margin-bottom: 15px;">📌 Informações importantes:</h4>
         <ul style="list-style-type: none; padding: 0;">
             <li style="margin-bottom: 10px;">✓ <strong>Inscrições:</strong> As vagas são limitadas e serão preenchidas por ordem de inscrição</li>
-            <li style="margin-bottom: 10px;">✓ <strong>Certificação:</strong> Haverá certificado de participação para cada oficina (carga horária: 2h)</li>
+            <li style="margin-bottom: 10px;">✓ <strong>Certificação:</strong> Haverá certificado de participação para cada oficina</li>
             <li style="margin-bottom: 10px;">✓ <strong>Material:</strong> Recomendamos levar notebook ou tablet para as oficinas de mídia</li>
             <li style="margin-bottom: 10px;">✓ <strong>Contato:</strong> Dúvidas sobre as oficinas? Entre em contato pelo e-mail <a href="mailto:cafe.ciencia0@gmail.com" style="color: var(--azul-petroleo); font-weight: bold;">cafe.ciencia0@gmail.com</a></li>
-            <li style="margin-bottom: 10px;">✓ <strong>Turmas:</strong> As oficinas de oratória terão turmas separadas para melhor aproveitamento</li>
         </ul>
     </div>
 </div>
@@ -715,14 +771,17 @@
                 <div class="logo-item"><img src="src/imagens/logo-facet.png" alt="FACET" class="logo-img"></div>
                 <div class="logo-item"><img src="src/imagens/logo-mnma.png" alt="MNMA" class="logo-img"></div>
                 <div class="logo-item"><img src="src/imagens/logo-lfca.png" alt="LFCA" class="logo-img"></div>
-                  <div class="logo-item"><img src="src/imagens/cafe-logo.png" alt="UFPA" class="logo-img"></div>
+                  <div class="logo-item"><img src="src/imagens/cafe-logo.png" alt="Café com Ciência" class="logo-img"></div>
+                  <div class="logo-item"><img src="src/imagens/lfcananologo.png" alt="LFCAnano" class="logo-img"></div>
+            </div>
+
             </div>
 
             <h2 class="section-title" style="text-align: center; margin-top: 60px;">Patrocinadores</h2>
             <div class="logos-grid">
                 <div class="logo-item"><img src="src/imagens/logo-cofruta.png" alt="Cofruta" class="logo-img"></div>
-                <div class="logo-item"><img src="src/imagens/Dhr-logo.png" alt="Dhr" class="logo-img"></div>
                 <div class="logo-item"><img src="src/imagens/logo-mamonas.png" alt="Mamonas" class="logo-img"></div>
+                  <div class="logo-item"><img src="src/imagens/Dhr-logo.png" alt="Dhr" class="logo-img"></div>
                 <div class="logo-item"><img src="src/imagens/logo-paulo-aluguel.png" alt="Paulo Aluguel" class="logo-img"></div>
             </div>
         </div>
