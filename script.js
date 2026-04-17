@@ -285,3 +285,34 @@ function toggleProgramacao(btn) {
         btn.innerHTML = '<i class="fas fa-info-circle"></i> Mais detalhes';
     }
 }
+// Função para rolar suavemente até a seção de patrocinadores
+function scrollToPatrocinadores() {
+    const patrocinadoresSection = document.getElementById('patrocinadores-grid');
+    if (patrocinadoresSection) {
+        patrocinadoresSection.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+        });
+    } else {
+        // Fallback: procura pela seção de patrocinadores de outras formas
+        const patrocinadores = document.querySelector('.patrocinadores-grid');
+        if (patrocinadores) {
+            patrocinadores.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    }
+}
+
+// Adiciona evento de clique a todas as imagens do carrossel
+document.addEventListener('DOMContentLoaded', function() {
+    const carouselImages = document.querySelectorAll('.sponsors-carousel a');
+    
+    carouselImages.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); // Previne comportamento padrão do link
+            scrollToPatrocinadores();
+        });
+    });
+});

@@ -21,13 +21,26 @@
                 <a href="#" class="btn btn-outline" onclick="openModal(event)">📄 SUBMETER TRABALHO</a>
             </div>
               <!-- Adicione isso dentro de .hero-content, logo abaixo do <div> com os botões -->
+<!-- ════════════════════════════════════════════════════
+     1. CARROSSEL DE PATROCINADORES — dentro de .hero-content
+     Substitua o bloco .hero-sponsors existente por este:
+════════════════════════════════════════════════════ -->
+ 
 <div class="hero-sponsors">
     <p class="sponsors-label">Patrocinadores</p>
-    <div class="sponsors-logos">
-        <img src="src/imagens/logo-cofruta.png" alt="Cofruta">
-        <img src="src/imagens/logo-mamonas.png" alt="Mamonas">
-        <img src="src/imagens/Dhr-logo.png" alt="DHR">
-        <img src="src/imagens/logo-paulo-aluguel.png" alt="Paulo Aluguel">
+    <div class="sponsors-carousel-wrapper">
+        <div class="sponsors-carousel" id="sponsorsCarousel">
+            <!-- imagens originais -->
+            <a href="#patrocinadores-grid"><img src="src/imagens/logo-cofruta.png" alt="Cofruta"></a>
+            <a href="#patrocinadores-grid"><img src="src/imagens/castro-logo.png" alt="Castro"></a>
+            <a href="#patrocinadores-grid"><img src="src/imagens/Dhr-logo.png" alt="DHR"></a>
+            <a href="#patrocinadores-grid"><img src="src/imagens/logo-paulo-aluguel.png" alt="Paulo Aluguel"></a>
+            <!-- duplicadas para loop contínuo -->
+            <a href="#patrocinadores-grid"><img src="src/imagens/logo-cofruta.png" alt="Cofruta"></a>
+            <a href="#patrocinadores-grid"><img src="src/imagens/castro-logo.png" alt="Castro"></a>
+            <a href="#patrocinadores-grid"><img src="src/imagens/Dhr-logo.png" alt="DHR"></a>
+            <a href="#patrocinadores-grid"><img src="src/imagens/logo-paulo-aluguel.png" alt="Paulo Aluguel"></a>
+        </div>
     </div>
 </div>
 
@@ -231,7 +244,7 @@
 
        <div class="tab-buttons">
     <button class="tab-btn active" onclick="openTab(event, 'dia27')">📅 27/05 (Qua) – Abertura & Exposições</button>
-    <button class="tab-btn" onclick="openTab(event, 'dia28')">📅 28/05 (Qui) – Minicursos & Palestras</button>
+    <button class="tab-btn" onclick="openTab(event, 'dia28')">📅 28/05 (Qui) – Apresentações Orais & Palestras</button>
     <button class="tab-btn" onclick="openTab(event, 'dia29')">📅 29/05 (Sex) – Oficinas</button>
 </div>
 
@@ -361,11 +374,11 @@
 </div>
 
 
-            <!-- DIA 28 - MINICURSOS E PALESTRAS -->
+            <!-- DIA 28 - Palestras e apresentações -->
             <div id="dia28" class="tab-content">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
                     <div>
-                        <h3 style="color: var(--azul-petroleo); margin-bottom: 20px;">☕ Manhã – Minicursos</h3>
+                        <h3 style="color: var(--azul-petroleo); margin-bottom: 20px;">☕ Manhã – Apresentações Orais</h3>
                         <div class="event-list">
                             <div class="event-item">
                                 <span class="time">08h30 - 09h15</span>
@@ -777,13 +790,107 @@
 
             </div>
 
-            <h2 class="section-title" style="text-align: center; margin-top: 60px;">Patrocinadores</h2>
-            <div class="logos-grid">
-                <div class="logo-item"><img src="src/imagens/logo-cofruta.png" alt="Cofruta" class="logo-img"></div>
-                <div class="logo-item"><img src="src/imagens/logo-mamonas.png" alt="Mamonas" class="logo-img"></div>
-                  <div class="logo-item"><img src="src/imagens/Dhr-logo.png" alt="Dhr" class="logo-img"></div>
-                <div class="logo-item"><img src="src/imagens/logo-paulo-aluguel.png" alt="Paulo Aluguel" class="logo-img"></div>
-            </div>
+            <!-- ════════════════════════════════════════════════════
+     2. CARDS DE PATROCINADORES — seção de Patrocinadores no rodapé
+     Substitua o bloco:
+       <h2 class="section-title" style="...">Patrocinadores</h2>
+       <div class="logos-grid"> ... </div>
+     por este:
+════════════════════════════════════════════════════ -->
+ 
+<h2 class="section-title" style="text-align: center; margin-top: 60px;">Patrocinadores</h2>
+<p style="text-align:center; color:#888; margin-top: 8px; font-size:0.95rem;">
+    Empresas que tornaram o VIII Café com Ciência possível
+</p>
+ 
+<div class="patrocinadores-grid">
+ 
+    <!-- COFRUTA -->
+    <div class="patrocinador-card">
+        <img src="src/imagens/logo-cofruta.png" alt="Cofruta" class="patrocinador-logo">
+        <h4 class="patrocinador-nome">Cofruta</h4>
+        <div class="patrocinador-divider"></div>
+        <p class="patrocinador-desc">Cooperativa de frutas</p>
+        <div class="patrocinador-contato">
+            <a href="tel:+559100000000">
+                <i class="fas fa-phone"></i> (91) 0000-0000
+            </a>
+            <a href="mailto:contato@cofruta.com.br">
+                <i class="fas fa-envelope"></i> contato@cofruta.com.br
+            </a>
+        </div>
+        <div class="patrocinador-redes">
+            <a href="https://www.instagram.com/cofrutadobrasil/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/18Pqyo3Jee/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/559100000000" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+ 
+    <!-- CASTRO -->
+    <div class="patrocinador-card">
+        <img src="src/imagens/castro-logo.png" alt="Castro" class="patrocinador-logo">
+        <h4 class="patrocinador-nome">Castro</h4>
+        <div class="patrocinador-divider"></div>
+        <p class="patrocinador-desc">Produtos naturais do Pará</p>
+        <div class="patrocinador-contato">
+            <a href="tel:+5591981023748">
+                <i class="fas fa-phone"></i> (91) 98102-3748
+            </a>
+            <a href="mailto:contato@castro.com.br">
+                <i class="fas fa-envelope"></i> contato@castro.com.br
+            </a>
+        </div>
+        <div class="patrocinador-redes">
+            <a href="https://www.instagram.com/castroprodutos" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+           <!-- <a href="https://www.facebook.com/castroprodutos" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>-->
+            <a href="https://wa.me/5591981023748" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+ 
+    <!-- DHR -->
+    <div class="patrocinador-card">
+        <img src="src/imagens/Dhr-logo.png" alt="DHR" class="patrocinador-logo">
+        <h4 class="patrocinador-nome">DHR</h4>
+        <div class="patrocinador-divider"></div>
+        <p class="patrocinador-desc">Soluções em tecnologia e serviços</p>
+        <div class="patrocinador-contato">
+            <a href="tel:+5591993263204">
+                <i class="fas fa-phone"></i>  (91) 99326-3204
+            </a>
+            <a href="mailto:dhrfazenda@gmail.com">
+                <i class="fas fa-envelope"></i>  dhrfazenda@gmail.com
+            </a>
+        </div>
+        <div class="patrocinador-redes">
+            <a href="https://www.instagram.com/dohara_dhr" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+           
+            <a href="https://wa.me/5591993263204" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+ 
+    <!-- PAULO ALUGUEL 
+    <div class="patrocinador-card">
+        <img src="src/imagens/logo-paulo-aluguel.png" alt="Paulo Aluguel" class="patrocinador-logo">
+        <h4 class="patrocinador-nome">Paulo Aluguel</h4>
+        <div class="patrocinador-divider"></div>
+        <p class="patrocinador-desc">Locação de equipamentos e estruturas</p>
+        <div class="patrocinador-contato">
+            <a href="tel:+559100000000">
+                <i class="fas fa-phone"></i> (91) 0000-0000
+            </a>
+            <a href="mailto:contato@pauloaluguel.com.br">
+                <i class="fas fa-envelope"></i> pauloaluguel@email.com
+            </a>
+        </div>
+        <div class="patrocinador-redes">
+            <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>-->
+ 
+</div>
+<!-- fim .patrocinadores-grid -->
         </div>
     </section>
 
@@ -807,7 +914,8 @@
                     <i class="fas fa-envelope"></i>
                 </a>
             </div>
-            <p style="margin-top: 30px; font-size: 0.9rem;">© 2026 VIII Café com Ciência. desenvolvido por cauan Sergio(imagens não licenciadas)</p>
+            <p style="margin-top: 30px; font-size: 0.9rem;">© 2026 VIII Café com Ciência.</p>
+            <p style="margin-top: 5px; font-size: 0.8rem;">Desenvolvido por Cauan Sergio</p>
         </div>
     </footer>
 
