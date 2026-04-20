@@ -1074,51 +1074,46 @@ footer::before {
    RESPONSIVO
 ══════════════════════════════════════ */
 @media (max-width: 768px) {
-    .hero h1 { font-size: 2.6rem; }
-    .hero h2 { font-size: 1.1rem; }
-    .sobre-grid { grid-template-columns: 1fr; gap: 32px; }
-    .tab-buttons { flex-direction: column; }
-    .tab-btn { width: 100%; text-align: left; }
-    .tab-content { padding: 24px; }
-    .foto-container { width: 130px; height: 130px; }
-    .convidados-grid { gap: 20px; padding: 10px 16px; }
-    .logo-img { width: 110px; height: 56px; }
-    .card-img { width: 110px; height: 110px; }
-    .oficinas-grid-2 { grid-template-columns: 1fr; }
-    .section-title { font-size: 2rem; }
-    .sponsors-carousel img { height: 36px; }
-    .patrocinadores-grid { grid-template-columns: 1fr 1fr; gap: 14px; padding: 0 16px; }
-/* Correções mobile hero */
+
+    /* HERO */
     .hero {
-        padding: 60px 20px 40px;
-        align-items: flex-start;
+        background-size: cover;
+        background-position: center center;
+        background-attachment: scroll;
+        min-height: 100svh;
+        padding: 60px 16px 40px;
+        align-items: center;
         justify-content: center;
     }
 
     .hero-content {
         width: 100%;
         max-width: 100%;
-        padding: 0 8px;
+        padding: 0 4px;
+        align-items: center;
     }
 
     .hero h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
         word-break: break-word;
         hyphens: auto;
+        line-height: 1.15;
     }
 
     .hero h2 {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        max-width: 100%;
     }
 
     .btn {
         display: block;
-        width: 90%;
+        width: 88%;
         margin: 8px auto;
         font-size: 0.9rem;
         padding: 13px 20px;
     }
 
+    /* CARROSSEL */
     .sponsors-carousel-wrapper {
         max-width: 100%;
     }
@@ -1132,16 +1127,22 @@ footer::before {
         height: 52px;
         padding: 8px 14px;
     }
+
+    /* DEMAIS SEÇÕES */
+    .sobre-grid { grid-template-columns: 1fr; gap: 32px; }
+    .tab-buttons { flex-direction: column; }
+    .tab-btn { width: 100%; text-align: left; }
+    .tab-content { padding: 24px; }
+    .foto-container { width: 130px; height: 130px; }
+    .convidados-grid { gap: 20px; padding: 10px 16px; }
+    .logo-img { width: 110px; height: 56px; }
+    .card-img { width: 110px; height: 110px; }
+    .oficinas-grid-2 { grid-template-columns: 1fr; }
+    .section-title { font-size: 2rem; }
+    .patrocinadores-grid { grid-template-columns: 1fr 1fr; gap: 14px; padding: 0 16px; }
 }
 
 @media (max-width: 480px) {
     .patrocinadores-grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 768px) {
-    .hero {
-        background-size: cover;
-        background-position: center center;
-        background-attachment: scroll; /* important: remove fixed no mobile */
-        min-height: 100svh; /* usa svh no mobile para contar a barra do browser */
-    }
+    .hero h1 { font-size: 1.55rem; }
 }
