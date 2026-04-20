@@ -153,86 +153,56 @@ body {
 }
 
 /* Patrocinadores na hero — carrossel com fade */
-.hero-sponsors {
-    margin-top: 52px;
-    padding-top: 28px;
-    border-top: 1px solid rgba(255,255,255,0.18);
-    width: 100%;
-}
-
-.sponsors-label {
-    font-size: 0.68rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.45);
-    margin-bottom: 18px;
-}
+/* ===== CARROSSEL PREMIUM ===== */
 
 .sponsors-carousel-wrapper {
-    position: relative;
     overflow: hidden;
     width: 100%;
-    max-width: 640px;
-    margin: 0 auto;
-}
-
-.sponsors-carousel-wrapper::before,
-.sponsors-carousel-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 80px;
-    z-index: 2;
-    pointer-events: none;
-}
-
-.sponsors-carousel-wrapper::before {
-    left: 0;
-    background: linear-gradient(to right, rgba(13,46,63,0.85), transparent);
-}
-
-.sponsors-carousel-wrapper::after {
-    right: 0;
-    background: linear-gradient(to left, rgba(13,46,63,0.85), transparent);
+    margin-top: 20px;
+    position: relative;
 }
 
 .sponsors-carousel {
     display: flex;
-    align-items: center;
-    gap: 28px;
-    padding: 8px 0;
-    animation: sponsorScroll 18s linear infinite;
+    gap: 40px;
     width: max-content;
-}
-
-.sponsors-carousel:hover {
-    animation-play-state: paused;
-}
-
-@keyframes sponsorScroll {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    align-items: center;
 }
 
 .sponsors-carousel img {
-    height: 104px;
-    width: auto;
+    height: 60px;
     object-fit: contain;
-    background-color: rgba(253, 253, 253, 0.699);
-    padding: 8px 18px;
-    border-radius: 8px;
-    border: 1px solid rgb(9, 255, 0);
-    backdrop-filter: var(--branco);
-    transition: background 0.3s, transform 0.3s;
-    flex-shrink: 0;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: 0.3s;
 }
 
 .sponsors-carousel img:hover {
-    background-color: rgb(255, 255, 255);
-    transform: scale(1.07);
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
 }
 
+/* efeito fade lateral (premium) */
+.sponsors-carousel-wrapper::before,
+.sponsors-carousel-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    z-index: 2;
+}
+
+.sponsors-carousel-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, #0c2b36, transparent);
+}
+
+.sponsors-carousel-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, #0c2b36, transparent);
+}
 /* ══════════════════════════════════════
    MODAL
 ══════════════════════════════════════ */
