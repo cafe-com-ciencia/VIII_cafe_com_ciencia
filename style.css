@@ -1137,3 +1137,11 @@ footer::before {
 @media (max-width: 480px) {
     .patrocinadores-grid { grid-template-columns: 1fr; }
 }
+@media (max-width: 768px) {
+    .hero {
+        background-size: cover;
+        background-position: center center;
+        background-attachment: scroll; /* important: remove fixed no mobile */
+        min-height: 100svh; /* usa svh no mobile para contar a barra do browser */
+    }
+}
