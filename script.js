@@ -316,34 +316,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-/* ===== CARROSSEL PREMIUM ===== */
-
-const carousel = document.getElementById('sponsorsCarousel');
-
-let speed = 0.5; // velocidade (menor = mais suave)
-let scrollAmount = 0;
-let isHovered = false;
-
-function animateCarousel() {
-    if (!isHovered) {
-        scrollAmount += speed;
-        carousel.style.transform = `translateX(-${scrollAmount}px)`;
-
-        // reinicia loop suavemente
-        if (scrollAmount >= carousel.scrollWidth / 2) {
-            scrollAmount = 0;
-        }
-    }
-
-    requestAnimationFrame(animateCarousel);
-}
-
-carousel.addEventListener('mouseenter', () => {
-    isHovered = true;
-});
-
-carousel.addEventListener('mouseleave', () => {
-    isHovered = false;
-});
-
-animateCarousel();

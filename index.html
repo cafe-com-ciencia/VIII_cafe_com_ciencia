@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VIII Café com Ciência 2026 – Dia do Físico</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS2.css">
     <!-- Font Awesome para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -28,22 +28,18 @@
  
 <div class="hero-sponsors">
     <p class="sponsors-label">Patrocinadores</p>
-
     <div class="sponsors-carousel-wrapper">
         <div class="sponsors-carousel" id="sponsorsCarousel">
-
-            <!-- ORIGINAL -->
-            <img src="src/imagens/logo-cofruta.png">
-            <img src="src/imagens/castro-logo.png">
-            <img src="src/imagens/Dhr-logo.png">
-            <img src="src/imagens/logo-paulo-aluguel.png">
-
-            <!-- DUPLICADO (loop infinito) -->
-            <img src="src/imagens/logo-cofruta.png">
-            <img src="src/imagens/castro-logo.png">
-            <img src="src/imagens/Dhr-logo.png">
-            <img src="src/imagens/logo-paulo-aluguel.png">
-
+            <!-- imagens originais -->
+            <a href="#patrocinadores-grid"><img src="src/imagens/logo-cofruta.png" alt="Cofruta"></a>
+            <a href="#patrocinadores-grid"><img src="src/imagens/castro-logo.png" alt="Castro"></a>
+            <a href="#patrocinadores-grid"><img src="src/imagens/Dhr-logo.png" alt="DHR"></a>
+            <a href="#patrocinadores-grid"><img src="src/imagens/logo-paulo-aluguel.png" alt="Paulo Aluguel"></a>
+            <!-- duplicadas para loop contínuo -->
+            <a href="#patrocinadores-grid"><img src="src/imagens/logo-cofruta.png" alt="Cofruta"></a>
+            <a href="#patrocinadores-grid"><img src="src/imagens/castro-logo.png" alt="Castro"></a>
+            <a href="#patrocinadores-grid"><img src="src/imagens/Dhr-logo.png" alt="DHR"></a>
+            <a href="#patrocinadores-grid"><img src="src/imagens/logo-paulo-aluguel.png" alt="Paulo Aluguel"></a>
         </div>
     </div>
 </div>
@@ -281,8 +277,8 @@
         <div class="card" id="card-faraday">
             <div class="card-img lab-faraday"></div>
             <div class="card-content">
-                <h4>Laboratório Faraday</h4>
-                <p>Equipe Eletromagnetismo</p>
+                <h4>Exposição de Eletromagnetismo </h4>
+                <p> <strong>Local:</strong> Laboratório Faraday</p>
                 <button class="btn-card" onclick="toggleCard('faraday')">
                     <i class="fas fa-chevron-down"></i> Ver detalhes
                 </button>
@@ -297,8 +293,8 @@
         <div class="card" id="card-galileu">
             <div class="card-img lab-galileu"></div>
             <div class="card-content">
-                <h4>Laboratório Galileu</h4>
-                <p>Equipe Mecânica</p>
+                <h4>Exposição de Mecânica</h4>
+                <p> <strong>Local:</strong> Laboratório Galileu</p>
                 <button class="btn-card" onclick="toggleCard('galileu')">
                     <i class="fas fa-chevron-down"></i> Ver detalhes
                 </button>
@@ -313,8 +309,8 @@
         <div class="card" id="card-planck">
             <div class="card-img lab-planck"></div>
             <div class="card-content">
-                <h4>Laboratório Planck</h4>
-                <p>Equipe Física Moderna</p>
+                <h4>Exposição de Física</h4>
+                <p> <strong>Local:</strong> Laboratório Planck</p>
                 <button class="btn-card" onclick="toggleCard('planck')">
                     <i class="fas fa-chevron-down"></i> Ver detalhes
                 </button>
@@ -332,8 +328,8 @@
         <div class="card" id="card-lfca">
             <div class="card-img lab-lfca"></div>
             <div class="card-content">
-                <h4>LFCA – Laboratório de Nanomateriais</h4>
-                <p>Equipe Nanomateriais</p>
+                <h4>Exposição de Nanomateriais</h4>
+                <p> <strong>Local:</strong>  LFCA - Nano</p>
                 <button class="btn-card" onclick="toggleCard('lfca')">
                     <i class="fas fa-chevron-down"></i> Ver detalhes
                 </button>
@@ -347,8 +343,8 @@
         <div class="card" id="card-quadra">
             <div class="card-img lab-quadra"></div>
             <div class="card-content">
-                <h4>Quadra Poliesportiva</h4>
-                <p>Exposição de Experimentos</p>
+                <h4>Exposição de Experimentos</h4>
+                <p> <strong>Local:</strong> Quadra Poliesportiva</p>
                 <button class="btn-card" onclick="toggleCard('quadra')">
                     <i class="fas fa-chevron-down"></i> Ver detalhes
                 </button>
@@ -363,8 +359,8 @@
         <div class="card" id="card-facet">
             <div class="card-img lab-facet"></div>
             <div class="card-content">
-                <h4>Sala de Aula FACET</h4>
-                <p>1ª Exposição Científica.</p>
+                <h4>Exposição Científica</h4>
+                <p> <strong>Local:</strong> Sala de Aula FACET</p>
                 <button class="btn-card" onclick="toggleCard('facet')">
                     <i class="fas fa-chevron-down"></i> Ver detalhes
                 </button>
@@ -378,8 +374,8 @@
 </div>
 
 
-            <!-- DIA 28 - Palestras e apresentações -->
-            <div id="dia28" class="tab-content">
+ <!-- DIA 28 - Palestras e apresentações -->
+ <div id="dia28" class="tab-content">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
                     <div>
                         <h3 style="color: var(--azul-petroleo); margin-bottom: 20px;">☕ Manhã – Apresentações Orais</h3>
@@ -443,7 +439,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+ </div>
 
         
 
@@ -460,7 +456,7 @@
             <h4 style="color: var(--azul-petroleo); font-size: 1.5rem; margin-bottom: 10px;">Oficina de Mídia</h4>
             <h5 style="color: var(--azul-petroleo); margin-top: 2px;">Educomunicação e Divulgação Científica: Produção de Mídias Visuais e Audiovisuais</h5>
             <div style="background-color: var(--verde-folha); color: white; display: inline-block; padding: 5px 15px; border-radius: 50px; font-weight: bold; margin-bottom: 15px; align-self: flex-start; margin-top: 10px;">MANHÃ</div>
-            <p><strong>⏰ Horário:</strong> 10h00 - 12h00</p>
+            <p><strong>⏰ Horário:</strong> 08h00 - 09h40</p>
             <p><strong>📍 Local:</strong> Auditório central</p>
             <p><strong>👥 Vagas:</strong> 200 participantes</p>
             <p><strong>⏳ Carga horária:</strong> 2h</p>
@@ -551,7 +547,7 @@
             <h4 style="color: var(--azul-petroleo); font-size: 1.5rem; margin-bottom: 10px;">Oficina de Mídia</h4>
             <h5 style="color: var(--azul-petroleo); margin-top: 2px;">Educomunicação e Divulgação Científica: Produção de Mídias Visuais e Audiovisuais</h5>
             <div style="background-color: var(--laranja-queimado); color: white; display: inline-block; padding: 5px 15px; border-radius: 50px; font-weight: bold; margin-bottom: 15px; align-self: flex-start; margin-top: 10px;">TARDE</div>
-            <p><strong>⏰ Horário:</strong> 14h00 - 16h00</p>
+            <p><strong>⏰ Horário:</strong> 16h40 - 17h30</p>
             <p><strong>📍 Local:</strong> Auditório central</p>
             <p><strong>👥 Vagas:</strong> 200 participantes</p>
             <p><strong>⏳ Carga horária:</strong> 2h</p>
@@ -766,9 +762,8 @@
 
            
          </div>
-         </div>
-        </div>
-       
+    </div>
+    </div>  
     </div>
 </section>
 
