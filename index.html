@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VIII Café com Ciência 2026 – Dia do Físico</title>
+    <!-- CSS -->
     <link rel="stylesheet" href="CSS2.css">
+    <!-- Font Awesome para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-content">
@@ -19,452 +20,560 @@
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSec4xkJXMQehCAMhsRklvFNnPOOvXNdhwg5lZ9LJxS0Gt-omw/viewform?usp=publish-editor" class="btn" target="_blank">📝 INSCREVA-SE AGORA</a>
                 <a href="#" class="btn btn-outline" onclick="openModal(event)">📄 SUBMETER TRABALHO</a>
             </div>
+              <!-- Adicione isso dentro de .hero-content, logo abaixo do <div> com os botões -->
+<!-- ════════════════════════════════════════════════════
+     1. CARROSSEL DE PATROCINADORES — dentro de .hero-content
+     Substitua o bloco .hero-sponsors existente por este:
+════════════════════════════════════════════════════ -->
+ 
+<div class="hero-sponsors">
+    <p class="sponsors-label">Patrocinadores</p>
+    <div class="sponsors-carousel-wrapper">
+        <div class="sponsors-carousel" id="sponsorsCarousel">
+            <!-- imagens originais -->
+            <a href="#patrocinadores-grid"><img src="src/imagens/logo-cofruta.png" alt="Cofruta"></a>
+            <a href="#patrocinadores-grid"><img src="src/imagens/castro-logo.png" alt="Castro"></a>
+            <a href="#patrocinadores-grid"><img src="src/imagens/Dhr-logo.png" alt="DHR"></a>
+            <a href="#patrocinadores-grid"><img src="src/imagens/logo-paulo-aluguel.png" alt="Paulo Aluguel"></a>
+            <!-- duplicadas para loop contínuo -->
+            <a href="#patrocinadores-grid"><img src="src/imagens/logo-cofruta.png" alt="Cofruta"></a>
+            <a href="#patrocinadores-grid"><img src="src/imagens/castro-logo.png" alt="Castro"></a>
+            <a href="#patrocinadores-grid"><img src="src/imagens/Dhr-logo.png" alt="DHR"></a>
+            <a href="#patrocinadores-grid"><img src="src/imagens/logo-paulo-aluguel.png" alt="Paulo Aluguel"></a>
+        </div>
+    </div>
+</div>
 
-            <div class="hero-sponsors">
-                <p class="sponsors-label">Patrocinadores</p>
-                <div class="sponsors-carousel-wrapper">
-                    <div class="sponsors-carousel" id="sponsorsCarousel">
-                        <a href="#patrocinadores-grid"><img src="src/imagens/logo-cofruta.png" alt="Cofruta"></a>
-                        <a href="#patrocinadores-grid"><img src="src/imagens/castro-logo.png" alt="Castro"></a>
-                        <a href="#patrocinadores-grid"><img src="src/imagens/Dhr-logo.png" alt="DHR"></a>
-                        <a href="#patrocinadores-grid"><img src="src/imagens/logo-paulo-aluguel.png" alt="Paulo Aluguel"></a>
-                        <a href="#patrocinadores-grid"><img src="src/imagens/logo-cofruta.png" alt="Cofruta"></a>
-                        <a href="#patrocinadores-grid"><img src="src/imagens/castro-logo.png" alt="Castro"></a>
-                        <a href="#patrocinadores-grid"><img src="src/imagens/Dhr-logo.png" alt="DHR"></a>
-                        <a href="#patrocinadores-grid"><img src="src/imagens/logo-paulo-aluguel.png" alt="Paulo Aluguel"></a>
+        </div>
+      
+    </section>
+
+    <!-- PELO AMOR DE DEUS, NÃO MECHE NISSO -->
+<div class="modal" id="modalTrabalho">
+    <div class="modal-content" style="max-width: 700px;">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <h2 style="color: var(--verde-folha); margin-bottom: 10px;">📄 Submeter Trabalho</h2>
+        <p style="color: #666; margin-bottom: 30px; font-size: 0.95rem;">VIII Café com Ciência 2026 – Submissão de resumos</p>
+        
+        <!-- ══════════════════════════════════════════════════════════════
+             FORMULÁRIO WEB3FORMS — substituído conforme solicitado
+        ═══════════════════════════════════════════════════════════════ -->
+        <form id="formTrabalho">
+            <!-- Web3Forms Access Key -->
+            <input type="hidden" name="access_key" value="075d2395-7b75-4208-884d-6d5640dbda0e">
+            <input type="hidden" name="subject" value="Nova submissão de trabalho - Café com Ciência 2026">
+            <input type="hidden" name="from_name" value="Café com Ciência 2026">
+            <!-- Redireciona após envio (opcional, pode remover) -->
+            <!-- <input type="hidden" name="redirect" value="https://cauansergio.github.io/VII_cafe_com_ciencia/obrigado.html"> -->
+
+            <!-- Informação importante -->
+            <div style="background-color: #f0f7fa; padding: 15px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid var(--azul-petroleo);">
+                <p style="margin: 0; font-size: 0.9rem;">
+                    <strong>Instruções:</strong> Cada inscrição dá direito à submissão de um trabalho.
+                    O resumo deve ter no máximo 250 palavras e pode ser submetido para uma das áreas temáticas abaixo.
+                </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <!-- Coluna esquerda -->
+                <div>
+                    <div class="form-group">
+                        <label>Título do Trabalho *</label>
+                        <input type="text" name="titulo" placeholder="Digite o título completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Autor principal *</label>
+                        <input type="text" name="autor" placeholder="Nome completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label>E-mail para contato *</label>
+                        <input type="email" name="email" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Instituição *</label>
+                        <input type="text" name="instituicao" placeholder="UFPA / IFPA / etc" required>
+                    </div>
+                </div>
+
+                <!-- Coluna direita -->
+                <div>
+                    <div class="form-group">
+                        <label>Coautores</label>
+                        <input type="text" name="coautores" placeholder="Nome dos coautores (separados por vírgula)">
+                    </div>
+                    <div class="form-group">
+                        <label>Área temática *</label>
+                        <select name="area" required>
+                            <option value="">Selecione a área...</option>
+                            <option value="ensino">👉 Ensino de Física</option>
+                            <option value="pesquisa">🔬 Pesquisa em Física</option>
+                            <option value="extensao">🌱 Extensão Universitária</option>
+                            <option value="energia">⚡ Energia e Sustentabilidade</option>
+                            <option value="materiais">🧪 Ciência dos Materiais</option>
+                            <option value="amazonia">🌳 Física na Amazônia</option>
+                            <option value="outra">📌 Outra</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Tipo de Apresentação *</label>
+                        <select name="tipo_apresentacao" required>
+                            <option value="">Selecione...</option>
+                            <option value="oral">🎤 Apresentação Oral (28/05)</option>
+                            <option value="painel">📊 Pôster / Painel</option>
+                            <option value="experimento">⚗️ Apresentar Experimento</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="campo_experimento" style="display: none;">
+                        <label>Descrição do Experimento *</label>
+                        <textarea name="descricao_experimento" placeholder="Descreva o experimento, materiais necessários, espaço físico, duração, etc." rows="3"></textarea>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- MODAL SUBMETER TRABALHO (Web3Forms) -->
-    <div class="modal" id="modalTrabalho">
-        <div class="modal-content" style="max-width: 700px;">
-            <span class="modal-close" onclick="closeModal()">&times;</span>
-            <h2 style="color: var(--verde-folha); margin-bottom: 10px;">📄 Submeter Trabalho</h2>
-            <p style="color: #666; margin-bottom: 30px; font-size: 0.95rem;">VIII Café com Ciência 2026 – Submissão de resumos</p>
-
-            <form id="formTrabalho">
-                <!-- Web3Forms -->
-                <input type="hidden" name="access_key" value="075d2395-7b75-4208-884d-6d5640dbda0e">
-                <input type="hidden" name="subject" value="Nova submissão de trabalho - Café com Ciência 2026">
-                <input type="hidden" name="from_name" value="Café com Ciência 2026">
-
-                <!-- Instrução -->
-                <div style="background-color: #f0f7fa; padding: 15px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid var(--azul-petroleo);">
-                    <p style="margin: 0; font-size: 0.9rem;">
-                        <strong>Instruções:</strong> Cada inscrição dá direito à submissão de um trabalho.
-                        O resumo deve ter no máximo 250 palavras e pode ser submetido para uma das áreas temáticas abaixo.
-                    </p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;">
+                <div class="form-group">
+                    <label>Palavras-chave</label>
+                    <input type="text" name="palavras_chave" placeholder="Ex: energia solar; ensino; Amazônia">
+                    <small style="color: #666;">máx. 5 palavras-chave</small>
                 </div>
-
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                    <!-- Coluna esquerda -->
-                    <div>
-                        <div class="form-group">
-                            <label>Título do Trabalho *</label>
-                            <input type="text" name="titulo" placeholder="Digite o título completo" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Autor principal *</label>
-                            <input type="text" name="autor" placeholder="Nome completo" required>
-                        </div>
-                        <div class="form-group">
-                            <label>E-mail para contato *</label>
-                            <input type="email" name="email" placeholder="seu@email.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Instituição *</label>
-                            <input type="text" name="instituicao" placeholder="UFPA / IFPA / etc" required>
-                        </div>
-                    </div>
-
-                    <!-- Coluna direita -->
-                    <div>
-                        <div class="form-group">
-                            <label>Coautores</label>
-                            <input type="text" name="coautores" placeholder="Nome dos coautores (separados por vírgula)">
-                        </div>
-                        <div class="form-group">
-                            <label>Área temática *</label>
-                            <select name="area" required>
-                                <option value="">Selecione a área...</option>
-                                <option value="ensino">👉 Ensino de Física</option>
-                                <option value="pesquisa">🔬 Pesquisa em Física</option>
-                                <option value="extensao">🌱 Extensão Universitária</option>
-                                <option value="energia">⚡ Energia e Sustentabilidade</option>
-                                <option value="materiais">🧪 Ciência dos Materiais</option>
-                                <option value="amazonia">🌳 Física na Amazônia</option>
-                                <option value="outra">📌 Outra</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Tipo de Apresentação *</label>
-                            <select name="tipo_apresentacao" required>
-                                <option value="">Selecione...</option>
-                                <option value="oral">🎤 Apresentação Oral (28/05)</option>
-                                <option value="painel">📊 Pôster / Painel</option>
-                                <option value="experimento">⚗️ Apresentar Experimento</option>
-                            </select>
-                        </div>
-                        <div class="form-group" id="campo_experimento" style="display: none;">
-                            <label>Descrição do Experimento *</label>
-                            <textarea name="descricao_experimento" placeholder="Descreva o experimento, materiais necessários, espaço físico, duração, etc." rows="3"></textarea>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label>Link do arquivo (Google Drive ou similar) *</label>
+                    <input type="url" name="link_arquivo" placeholder="https://drive.google.com/..." required>
+                    <small style="color: #666;">
+                        Suba o PDF/Word no Google Drive (compartilhado como "qualquer pessoa com o link") e cole o link aqui.
+                    </small>
                 </div>
+            </div>
 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;">
-                    <div class="form-group">
-                        <label>Palavras-chave</label>
-                        <input type="text" name="palavras_chave" placeholder="Ex: energia solar; ensino; Amazônia">
-                        <small style="color: #666;">máx. 5 palavras-chave</small>
-                    </div>
-                    <div class="form-group">
-                        <label>Link do arquivo (Google Drive ou similar) *</label>
-                        <input type="url" name="link_arquivo" placeholder="https://drive.google.com/..." required>
-                        <small style="color: #666;">
-                            Suba o PDF/Word no Google Drive (compartilhado como "qualquer pessoa com o link") e cole o link aqui.
-                        </small>
-                        • <a href="src/imagens/modelo-de-submis.jpeg" download style="color: var(--azul-petroleo);">Baixar modelo</a>
-                    </div>
-                </div>
+            <!-- Termo de concordância -->
+            <div style="margin: 25px 0 20px; padding: 15px; background-color: #f9f9f9; border-radius: 8px;">
+                <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                    <input type="checkbox" name="concordo" required style="margin-top: 3px;">
+                    <span style="font-size: 0.9rem; color: #444;">
+                        Declaro que li e concordo com as normas de submissão do VIII Café com Ciência,
+                        que todos os coautores estão cientes da submissão.
+                        Autorizo a publicação do resumo nos Anais do evento em caso de aceite.
+                    </span>
+                </label>
+            </div>
 
-                <!-- Termo de concordância -->
-                <div style="margin: 25px 0 20px; padding: 15px; background-color: #f9f9f9; border-radius: 8px;">
-                    <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
-                        <input type="checkbox" name="concordo" required style="margin-top: 3px;">
-                        <span style="font-size: 0.9rem; color: #444;">
-                            Declaro que li e concordo com as normas de submissão do VIII Café com Ciência,
-                            que todos os coautores estão cientes da submissão.
-                            Autorizo a publicação do resumo nos Anais do evento em caso de aceite.
-                        </span>
-                    </label>
-                </div>
+            <!-- Mensagem de status -->
+            <div id="form-status" style="display:none; padding: 12px; border-radius: 8px; margin-bottom: 15px; font-weight: bold; text-align: center;"></div>
 
-                <!-- Mensagem de status -->
-                <div id="form-status" style="display:none; padding: 12px; border-radius: 8px; margin-bottom: 15px; font-weight: bold; text-align: center;"></div>
+            <!-- Botões -->
+            <div style="display: flex; gap: 15px; margin-top: 20px;">
+                <button type="submit" class="btn" style="flex: 2;">📨 Enviar Trabalho</button>
+                <button type="button" class="btn btn-outline" onclick="closeModal()" style="flex: 1;">Cancelar</button>
+            </div>
 
-                <!-- Botões -->
-                <div style="display: flex; gap: 15px; margin-top: 20px;">
-                    <button type="submit" class="btn" style="flex: 2;">📨 Enviar Trabalho</button>
-                    <button type="button" class="btn btn-outline" onclick="closeModal()" style="flex: 1;">Cancelar</button>
-                </div>
-
-                <p style="text-align: center; margin-top: 20px; font-size: 0.8rem; color: #999;">
-                    ⏱️ Prazo final para submissão: 21 de maio de 2026
-                </p>
-            </form>
-        </div>
+            <p style="text-align: center; margin-top: 20px; font-size: 0.8rem; color: #999;">
+                ⏱️ Prazo final para submissão: 21 de maio de 2026
+            </p>
+        </form>
     </div>
+</div>
 
     <!-- SOBRE O EVENTO -->
     <section class="container">
         <div class="sobre-grid">
             <div class="sobre-texto">
                 <h2 class="section-title">Sobre o VIII Café com Ciência</h2>
-                <p>O Café com Ciência consolida-se como um importante espaço de diálogo entre a universidade e a sociedade, promovendo a socialização do conhecimento científico de forma acessível, interdisciplinar e inovadora. Em sua oitava edição, o evento reafirma o compromisso com a divulgação científica, reunindo estudantes, professores, pesquisadores e a comunidade em geral em torno de discussões que integram ciência, tecnologia, cultura e educação.</p>
-                <p style="margin-top: 20px;">O evento será realizado nos dias 27, 28 e 29 de maio de 2026, na UFPA- campus Abaetetuba, em comemoração ao Dia do Físico (19 de maio) — data que remete ao ano extraordinário de Albert Einstein — prestando homenagem à importância da Física para o desenvolvimento científico e tecnológico. Em 2026, o tema central "Ciência, Energia e Natureza: o papel da Física na Amazônia" orienta as atividades, buscando promover a ampliação do conhecimento, o estabelecimento de conexões e o fortalecimento de colaborações entre pesquisadores, instituições e empresas.</p>
-                <p>A proposta do evento valoriza a construção coletiva do saber, incentivando a troca de experiências e a apresentação de trabalhos que evidenciam o papel transformador da ciência no cotidiano. Por meio de oficinas, palestras e apresentações, o Café com Ciência busca ampliar a compreensão sobre ensino, pesquisa, extensão e as possibilidades de inserção no mercado de trabalho, envolvendo estudantes do ensino básico, graduação e pós-graduação, professores da UFPA e membros de outras instituições da comunidade externa.</p>
+                <p>O Café com Ciência consolida-se como um importante espaço de diálogo entre a universidad
+                    e e a sociedade, promovendo a socialização do conhecimento científico de forma acessível, interdisciplinar e inovadora. Em sua oitava edição, o evento reafirma o compromisso com a divulgação científica, reunindo estudantes, professores, pesquisadores e a comunidade em geral em torno de discussões que integram ciência, tecnologia, cultura e educação.</p>
+               
+                <p style="margin-top: 20px;">O evento será realizado nos dias 27, 28 e 29 de maio de 
+                    2026,  na UFPA- campus Abaetetuba, em comemoração ao Dia do Físico (19 de maio)
+                     — data que remete ao ano extraordinário de Albert Einstein — prestando homenagem à importânc
+                     ia da Física para o desenvolvimento científico e tecnológico. Em 2026, o tema ce
+                     ntral "Ciência, Energia e Natureza: o papel da Física na Amazônia" or
+                     ienta as atividades, buscando promover a ampliação do conhecimento, o estab
+                     elecimento de conexões e o fortalecimento de colaborações entre pesquisadores, instituições e empresas.</p>
+                     <p>A proposta do evento valoriza a construção coletiva do saber, incentivando a troca de experiências e a apresentação de trabalhos que evidenciam o papel transformador da ciência no cotidiano. Por meio de oficinas, palestras e apresentações, o Café com Ciência busca ampliar a compreensão sobre ensino, pesquisa, extensão e as possibilidades de inserção no mercado de trabalho, envolvendo estudantes do ensino básico, 
+                        graduação e pós-graduação, professores da UFPA e membros de outras instituições da comunidade externa.</p>
             </div>
             <div class="sobre-imagem">
                 <img src="src/imagens/logo-cafe.png" alt="">
             </div>
         </div>
-
-        <div style="background-color: #e8f5e9; padding: 20px; border-radius: 12px; margin-top: 25px; border-left: 5px solid var(--verde-folha);">
-            <h4 style="color: var(--azul-petroleo); margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-                <i class="fas fa-pen-fancy" style="color: var(--verde-folha);"></i>
-                Período de Inscrições
-            </h4>
-            <p style="margin: 0; font-size: 1.1rem;">
-                <strong>📅 De 1º de abril a 22 de maio de 2026</strong><br>
-                <span style="color: #666;">Garanta sua participação! Vagas limitadas para minicursos e oficinas.</span>
-            </p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSec4xkJXMQehCAMhsRklvFNnPOOvXNdhwg5lZ9LJxS0Gt-omw/viewform?usp=pp_url" target="_blank" class="btn" style="margin-top: 15px; display: inline-block;">📝 FAZER INSCRIÇÃO</a>
-        </div>
-    </section>
+    
+    <div style="background-color: #e8f5e9; padding: 20px; border-radius: 12px; margin-top: 25px; border-left: 5px solid var(--verde-folha);">
+                <h4 style="color: var(--azul-petroleo); margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-pen-fancy" style="color: var(--verde-folha);"></i> 
+                    Período de Inscrições
+                </h4>
+                <p style="margin: 0; font-size: 1.1rem;">
+                    <strong>📅 De 1º de abril a 22 de maio de 2026</strong><br>
+                    <span style="color: #666;">Garanta sua participação! Vagas limitadas para minicursos e oficinas.</span>
+                </p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSec4xkJXMQehCAMhsRklvFNnPOOvXNdhwg5lZ9LJxS0Gt-omw/viewform?usp=pp_url" target="_blank" class="btn" style="margin-top: 15px; display: inline-block;">📝 FAZER INSCRIÇÃO</a>
+            </div>
+        </section>
 
     <!-- PROGRAMAÇÃO INTERATIVA -->
     <section class="container" style="background-color: var(--cinza-claro); border-radius: 40px 40px 0 0;" id="programacao">
         <h2 class="section-title">Programação</h2>
         <p class="section-subtitle">Navegue pelos dias e descubra todas as atividades do evento.</p>
 
-        <div class="tab-buttons">
-            <button class="tab-btn active" onclick="openTab(event, 'dia27')">📅 27/05 (Qua) – Abertura & Exposições</button>
-            <button class="tab-btn" onclick="openTab(event, 'dia28')">📅 28/05 (Qui) – Apresentações Orais & Palestras</button>
-            <button class="tab-btn" onclick="openTab(event, 'dia29')">📅 29/05 (Sex) – Oficinas</button>
+       <div class="tab-buttons">
+    <button class="tab-btn active" onclick="openTab(event, 'dia27')">📅 27/05 (Qua) – Abertura & Exposições</button>
+    <button class="tab-btn" onclick="openTab(event, 'dia28')">📅 28/05 (Qui) – Apresentações Orais & Palestras</button>
+    <button class="tab-btn" onclick="openTab(event, 'dia29')">📅 29/05 (Sex) – Oficinas</button>
+</div>
+
+    <!-- DIA 27 - EXPOSIÇÕES E ABERTURA -->
+<div id="dia27" class="tab-content active">
+   
+    <!-- PRONUNCIAMENTO DE ABERTURA -->
+    <div style="background: linear-gradient(135deg, #1a3b4f, #2a5f7a); color: white; padding: 25px; border-radius: 20px; margin-bottom: 30px;">
+        <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+            <div style="font-size: 3rem;">🎤</div>
+            <div>
+                <h4 style="color: var(--verde-folha); font-size: 1.5rem; margin-bottom: 10px;">Pronunciamento de Abertura</h4>
+                <p style="font-size: 1.1rem;"><strong>Horário:</strong> 8h00 - 9h00</p>
+                <p style="font-size: 1.1rem;"><strong>Local:</strong> Auditorio central</p>
+                <p style="margin-top: 10px;">Mesa redonda com autoridades acadêmicas e abertura oficial do VIII Café com Ciência.</p>
+            </div>
+        </div>
+    </div>
+    
+    <h3 style="color: var(--azul-petroleo); margin-bottom: 20px;">🔬 Exploração Científica nos Laboratórios e Espaços</h3>
+    
+    <p style="margin-bottom: 25px; font-size: 1.1rem;">Visitas guiadas e experimentos interativos nos principais laboratórios e espaços da UFPA.</p>
+    
+    <!-- PRIMEIRA LINHA: 3 CARDS -->
+    <div class="cards-grid cards-grid-3">
+        <!-- Laboratório Faraday -->
+        <div class="card" id="card-faraday">
+            <div class="card-img lab-faraday"></div>
+            <div class="card-content">
+                <h4>Exposição de Eletromagnetismo</h4>
+                <p><strong>Local:</strong> Laboratório Faraday</p>
+                <button class="btn-card" onclick="toggleCard('faraday')">
+                    <i class="fas fa-chevron-down"></i> Ver detalhes
+                </button>
+                <div class="card-details" id="details-faraday">
+                    <p><strong>🧪 Experimento:</strong> A preencher.</p>
+                </div>
+            </div>
         </div>
 
-        <!-- DIA 27 -->
-        <div id="dia27" class="tab-content active">
-            <div style="background: linear-gradient(135deg, #1a3b4f, #2a5f7a); color: white; padding: 25px; border-radius: 20px; margin-bottom: 30px;">
-                <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
-                    <div style="font-size: 3rem;">🎤</div>
+        <!-- Laboratório Galileu -->
+        <div class="card" id="card-galileu">
+            <div class="card-img lab-galileu"></div>
+            <div class="card-content">
+                <h4>Exposição de Mecânica</h4>
+                <p><strong>Local:</strong> Laboratório Galileu</p>
+                <button class="btn-card" onclick="toggleCard('galileu')">
+                    <i class="fas fa-chevron-down"></i> Ver detalhes
+                </button>
+                <div class="card-details" id="details-galileu">
+                    <p><strong>🧪 Experimento:</strong> A preencher.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Laboratório Planck -->
+        <div class="card" id="card-planck">
+            <div class="card-img lab-planck"></div>
+            <div class="card-content">
+                <h4>Exposição de Física</h4>
+                <p><strong>Local:</strong> Laboratório Planck</p>
+                <button class="btn-card" onclick="toggleCard('planck')">
+                    <i class="fas fa-chevron-down"></i> Ver detalhes
+                </button>
+                <div class="card-details" id="details-planck">
+                    <p><strong>🧪 Experimento:</strong> A preencher.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- SEGUNDA LINHA: 3 CARDS -->
+    <div class="cards-grid cards-grid-3" style="margin-top: 25px;">
+        <!-- LFCA - Nano -->
+        <div class="card" id="card-lfca">
+            <div class="card-img lab-lfca"></div>
+            <div class="card-content">
+                <h4>Exposição de Nanomateriais</h4>
+                <p><strong>Local:</strong> LFCA - Nano</p>
+                <button class="btn-card" onclick="toggleCard('lfca')">
+                    <i class="fas fa-chevron-down"></i> Ver detalhes
+                </button>
+                <div class="card-details" id="details-lfca">
+                    <p><strong>🧪 Experimentos:</strong></p>
+                    <ul>
+                        <li><strong>Desenvolvimento de Bioplasticos com DNA Amazônico</strong><br><em>Por: Rayna Kessia R e Rodrigues e João Henrik Farias da Silva</em></li>
+                        <li><strong>A preencher</strong><br><em>Por: Cauan Sergio P. Marques e Camila Martins</em></li>
+                        <li><strong>Prancha</strong><br><em>Por: Railson Lago e Jao</em></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quadra Poliesportiva -->
+        <div class="card" id="card-quadra">
+            <div class="card-img lab-quadra"></div>
+            <div class="card-content">
+                <h4>Exposição de Experimentos</h4>
+                <p><strong>Local:</strong> Quadra Poliesportiva</p>
+                <button class="btn-card" onclick="toggleCard('quadra')">
+                    <i class="fas fa-chevron-down"></i> Ver detalhes
+                </button>
+                <div class="card-details" id="details-quadra">
+                    <p><strong>🧪 Atividades:</strong> Apresentações de experimentos de física e exposição de HQs da física.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sala de Aula FACET -->
+        <div class="card" id="card-facet">
+            <div class="card-img lab-facet"></div>
+            <div class="card-content">
+                <h4>Exposição Científica</h4>
+                <p><strong>Local:</strong> Sala de Aula FACET</p>
+                <button class="btn-card" onclick="toggleCard('facet')">
+                    <i class="fas fa-chevron-down"></i> Ver detalhes
+                </button>
+                <div class="card-details" id="details-facet">
+                    <p><strong>☢️ Muito além do que se vê:</strong> conheça o universo da Radiação</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ 
+
+
+        
+
+
+ <!-- DIA 28 - Palestras e apresentações -->
+ <div id="dia28" class="tab-content">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
                     <div>
-                        <h4 style="color: var(--verde-folha); font-size: 1.5rem; margin-bottom: 10px;">Pronunciamento de Abertura</h4>
-                        <p style="font-size: 1.1rem;"><strong>Horário:</strong> 8h00 - 9h00</p>
-                        <p style="font-size: 1.1rem;"><strong>Local:</strong> Auditório central</p>
-                        <p style="margin-top: 10px;">Mesa redonda com autoridades acadêmicas e abertura oficial do VIII Café com Ciência.</p>
+                        <h3 style="color: var(--azul-petroleo); margin-bottom: 20px;">☕ Manhã – Apresentações Orais</h3>
+                        <div class="event-list">
+                            <div class="event-item">
+                                <span class="time">08h30 - 09h15</span>
+                               
+                                <div class="title">a prencher</div>
+                                <div class="speaker">Prof.Sonclayton</div>
+                                <div>Sala A</div>
+                            </div>
+                            <div class="event-item">
+                                <span class="time">09h15 - 10h00</span>
+                                  
+                                <div class="title"><strong>Relato de experiência:</strong>Sequência didática no ensino
+                                de eletrostática via google classroon</div>
+                                <div class="speaker">Prof. Me. Clemersom santos silva</div>
+                                <div>Auditório central</div>
+                            </div>
+                            <div class="event-item">
+                                <span class="time">10h15 - 11h00</span>
+                                <div class="title">DHR</div>
+                                <div class="speaker">Prof. a prencher</div>
+                                <div>Auditório central</div>
+                            </div>
+                            <div class="event-item">
+                                <span class="time">11h00 - 11h45</span>
+                                <div class="title">Comunições orais </div>
+                                <div>comunicação oral 1 <h6>11h00 - 11h15</h6></div>
+                                <div>comunicação oral 2 <h6>11h15 - 11h30</h6></div>
+                                <div>comunicação oral 3 <h6>11h30-11h45</h6></div>
+                                <div class="speaker"></div>
+                                <div>Sala auditório central</div>
+                                 <p style="text-align: center; margin-top: 20px; font-size: 0.8rem; color: #999;">
+                As comunicações orais serão escritas por meio de submição    <a href="#" class="btn btn-outline" onclick="openModal(event)">SUBMETER</a>
+                
+            </p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-
-            <h3 style="color: var(--azul-petroleo); margin-bottom: 20px;">🔬 Exploração Científica nos Laboratórios e Espaços</h3>
-            <p style="margin-bottom: 25px; font-size: 1.1rem;">Visitas guiadas e experimentos interativos nos principais laboratórios e espaços da UFPA.</p>
-
-            <div class="cards-grid cards-grid-3">
-                <div class="card" id="card-faraday">
-                    <div class="card-img lab-faraday"></div>
-                    <div class="card-content">
-                        <h4>Exposição de Eletromagnetismo</h4>
-                        <p><strong>Local:</strong> Laboratório Faraday</p>
-                        <button class="btn-card" onclick="toggleCard('faraday')"><i class="fas fa-chevron-down"></i> Ver detalhes</button>
-                        <div class="card-details" id="details-faraday"><p><strong>🧪 Experimento:</strong> A preencher.</p></div>
-                    </div>
-                </div>
-                <div class="card" id="card-galileu">
-                    <div class="card-img lab-galileu"></div>
-                    <div class="card-content">
-                        <h4>Exposição de Mecânica</h4>
-                        <p><strong>Local:</strong> Laboratório Galileu</p>
-                        <button class="btn-card" onclick="toggleCard('galileu')"><i class="fas fa-chevron-down"></i> Ver detalhes</button>
-                        <div class="card-details" id="details-galileu"><p><strong>🧪 Experimento:</strong> A preencher.</p></div>
-                    </div>
-                </div>
-                <div class="card" id="card-planck">
-                    <div class="card-img lab-planck"></div>
-                    <div class="card-content">
-                        <h4>Exposição de Física</h4>
-                        <p><strong>Local:</strong> Laboratório Planck</p>
-                        <button class="btn-card" onclick="toggleCard('planck')"><i class="fas fa-chevron-down"></i> Ver detalhes</button>
-                        <div class="card-details" id="details-planck"><p><strong>🧪 Experimento:</strong> A preencher.</p></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cards-grid cards-grid-3" style="margin-top: 25px;">
-                <div class="card" id="card-lfca">
-                    <div class="card-img lab-lfca"></div>
-                    <div class="card-content">
-                        <h4>Exposição de Nanomateriais</h4>
-                        <p><strong>Local:</strong> LFCA - Nano</p>
-                        <button class="btn-card" onclick="toggleCard('lfca')"><i class="fas fa-chevron-down"></i> Ver detalhes</button>
-                        <div class="card-details" id="details-lfca">
-                            <p><strong>🧪 Experimentos:</strong></p>
-                            <ul>
-                                <li><strong>Desenvolvimento de Bioplasticos com DNA Amazônico</strong><br><em>Por: Rayna Kessia R e Rodrigues e João Henrik Farias da Silva</em></li>
-                                <li><strong>A preencher</strong><br><em>Por: Cauan Sergio P. Marques e Camila Martins</em></li>
-                                <li><strong>Prancha</strong><br><em>Por: Railson Lago e Jao</em></li>
-                            </ul>
+                    <div>
+                        <h3 style="color: var(--azul-petroleo); margin-bottom: 20px;">🎤 Tarde – Palestras</h3>
+                        <div class="event-list">
+                            <div class="event-item">
+                                <span class="time">14h00 - 15h00</span>
+                                <div class="title">Utilização de IA como ferramenta no aprendizado de fisica </div>
+                                <div class="speaker">Prof. Dr. Messias Costa</div>
+                                <div>Auditório central</div>
+                            </div>
+                            <div class="event-item">
+                                <span class="time">15h00 - 15h45</span>
+                                <div class="title">Entrevista com o Einstein</div>
+                                <div class="speaker">Turma de física 2024</div>
+                                <div>Auditório central</div>
+                                
+                            </div>
+                             <div class="event-item">
+                                <span class="time">16h00 - 16h30</span>
+                                <div class="title"><strong>Relatividade geral:</strong>um breve contato com a gravitação atual</div>
+                                <div class="speaker">Prof. Dr. Mateus Malato</div>
+                                <div>Auditório central</div>
+                                
+                            </div>
+                            <div class="event-item">
+                                <span class="time">16h30 - 17h10</span>
+                                <div class="title">Encerramento</div>
+                                <div class="speaker"></div>
+                                <div>Auditório central</div>
+                                
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="card" id="card-quadra">
-                    <div class="card-img lab-quadra"></div>
-                    <div class="card-content">
-                        <h4>Exposição de Experimentos</h4>
-                        <p><strong>Local:</strong> Quadra Poliesportiva</p>
-                        <button class="btn-card" onclick="toggleCard('quadra')"><i class="fas fa-chevron-down"></i> Ver detalhes</button>
-                        <div class="card-details" id="details-quadra"><p><strong>🧪 Atividades:</strong> Apresentações de experimentos de física e exposição de HQs da física.</p></div>
-                    </div>
-                </div>
-                <div class="card" id="card-facet">
-                    <div class="card-img lab-facet"></div>
-                    <div class="card-content">
-                        <h4>Exposição Científica</h4>
-                        <p><strong>Local:</strong> Sala de Aula FACET</p>
-                        <button class="btn-card" onclick="toggleCard('facet')"><i class="fas fa-chevron-down"></i> Ver detalhes</button>
-                        <div class="card-details" id="details-facet"><p><strong>☢️ Muito além do que se vê:</strong> conheça o universo da Radiação</p></div>
-                    </div>
-                </div>
+ </div>
+
+        
+
+<!-- DIA 29 - OFICINAS -->
+<div id="dia29" class="tab-content">
+    <h3 style="color: var(--azul-petroleo); margin-bottom: 30px; text-align: center;">🎯 Oficinas</h3> 
+    
+    <!-- PRIMEIRA LINHA: OFICINAS DA MANHÃ -->
+    <div class="oficinas-grid-2">
+        
+        <!-- Oficina de Mídia - Manhã -->
+        <div style="background: linear-gradient(135deg, #30cfd020, #460b8f20); border-radius: 20px; padding: 25px; display: flex; flex-direction: column;">
+            <div style="font-size: 3rem; margin-bottom: 15px;">🎙️</div>
+            <h4 style="color: var(--azul-petroleo); font-size: 1.5rem; margin-bottom: 10px;">Oficina de Mídia</h4>
+            <h5 style="color: var(--azul-petroleo); margin-top: 2px;">Educomunicação e Divulgação Científica: Produção de Mídias Visuais e Audiovisuais</h5>
+            <div style="background-color: var(--verde-folha); color: white; display: inline-block; padding: 5px 15px; border-radius: 50px; font-weight: bold; margin-bottom: 15px; align-self: flex-start; margin-top: 10px;">MANHÃ</div>
+            <p><strong>⏰ Horário:</strong> 08h00 - 09h40</p>
+            <p><strong>📍 Local:</strong> Auditório central</p>
+            <p><strong>👥 Vagas:</strong> 200 participantes</p>
+            <p><strong>⏳ Carga horária:</strong> 2h</p>
+          
+            <p><strong>Palestrantes:</strong><br>
+                João Luiz Ferreira de Araujo;<br>
+                Dielson Barros Monteiro;<br>
+                Edson Vasconcelos Nunes;<br>
+                Joseane Rosa Ferreira Lima;<br>
+                Jodiane Cristina Pinheiro Alfais;<br>
+                Cleidilane Sena Costa.
+            </p>
+              <p style="margin-top: 10px; flex-grow: 1;">Aprenda técnicas de comunicação para mídias digitais, produção de conteúdo científico e divulgação nas redes sociais.</p>
+            
+            <button class="btn-saiba-mais" onclick="toggleProgramacao(this)" style="margin-top: 15px;">
+                <i class="fas fa-info-circle"></i> Mais detalhes
+            </button>
+            <div class="programacao-detalhes" style="display: none;">
+                <p>A oficina "Educomunicação e Divulgação Científica: Produção de Mídias Visuais e Audiovisuais" tem como objetivo capacitar estudantes e colaboradores na criação de conteúdos digitais voltados à popularização da ciência e à comunicação institucional. A proposta destaca o uso de ferramentas acessíveis, em sua maioria livres, como Canva e GIMP para produção gráfica, e Kdenlive e CapCut para edição de áudio e vídeo, promovendo a democratização das tecnologias digitais. A atividade será ofertada pela equipe do programa "A Hora da Universidade" e articula fundamentos da educomunicação com práticas colaborativas, permitindo o desenvolvimento de materiais para rádio, redes sociais e ações educativas, com atenção à inclusão e acessibilidade. A oficina busca fortalecer a relação entre universidade e sociedade, incentivando a produção de conteúdos criativos, críticos e socialmente relevantes. A metodologia integra momentos teóricos e práticos, estimulando a autonomia dos participantes na produção de narrativas midiáticas voltadas à ciência, cultura e cidadania.</p>
             </div>
+            
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe_UJta8rpUpJsDbgV-jGw8rql_PUpWpO6plnt_N2Hn-l5fFw/viewform?usp=publish-editor" target="_blank" class="btn" style="margin-top: 20px; text-align: center; width: 100%;">📝 INSCREVER-SE</a>
         </div>
-
-        <!-- DIA 28 -->
-        <div id="dia28" class="tab-content">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
-                <div>
-                    <h3 style="color: var(--azul-petroleo); margin-bottom: 20px;">☕ Manhã – Apresentações Orais</h3>
-                    <div class="event-list">
-                        <div class="event-item">
-                            <span class="time">08h30 - 09h15</span>
-                            <div class="title">A preencher</div>
-                            <div class="speaker">Prof. Sonclayton</div>
-                            <div>Sala A</div>
-                        </div>
-                        <div class="event-item">
-                            <span class="time">09h15 - 10h00</span>
-                            <div class="title"><strong>Relato de experiência:</strong> Sequência didática no ensino de eletrostática via Google Classroom</div>
-                            <div class="speaker">Prof. Me. Clemersom Santos Silva</div>
-                            <div>Auditório central</div>
-                        </div>
-                        <div class="event-item">
-                            <span class="time">10h15 - 11h00</span>
-                            <div class="title">DHR</div>
-                            <div class="speaker">Prof. a preencher</div>
-                            <div>Auditório central</div>
-                        </div>
-                        <div class="event-item">
-                            <span class="time">11h00 - 11h45</span>
-                            <div class="title">Comunicações Orais</div>
-                            <div>Comunicação oral 1 <h6>11h00 - 11h15</h6></div>
-                            <div>Comunicação oral 2 <h6>11h15 - 11h30</h6></div>
-                            <div>Comunicação oral 3 <h6>11h30 - 11h45</h6></div>
-                            <div>Auditório central</div>
-                            <p style="text-align: center; margin-top: 20px; font-size: 0.8rem; color: #999;">
-                                As comunicações orais serão inscritas por meio de submissão
-                                <a href="#" class="btn btn-outline" onclick="openModal(event)">SUBMETER</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h3 style="color: var(--azul-petroleo); margin-bottom: 20px;">🎤 Tarde – Palestras</h3>
-                    <div class="event-list">
-                        <div class="event-item">
-                            <span class="time">14h00 - 15h00</span>
-                            <div class="title">Utilização de IA como ferramenta no aprendizado de Física</div>
-                            <div class="speaker">Prof. Dr. Messias Costa</div>
-                            <div>Auditório central</div>
-                        </div>
-                        <div class="event-item">
-                            <span class="time">15h00 - 15h45</span>
-                            <div class="title">Entrevista com o Einstein</div>
-                            <div class="speaker">Turma de Física 2024</div>
-                            <div>Auditório central</div>
-                        </div>
-                        <div class="event-item">
-                            <span class="time">16h00 - 16h30</span>
-                            <div class="title"><strong>Relatividade geral:</strong> um breve contato com a gravitação atual</div>
-                            <div class="speaker">Prof. Dr. Mateus Malato</div>
-                            <div>Auditório central</div>
-                        </div>
-                        <div class="event-item">
-                            <span class="time">16h30 - 17h10</span>
-                            <div class="title">Encerramento</div>
-                            <div>Auditório central</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- DIA 29 -->
-        <div id="dia29" class="tab-content">
-            <h3 style="color: var(--azul-petroleo); margin-bottom: 30px; text-align: center;">🎯 Oficinas</h3>
-
-            <div class="oficinas-grid-2">
-                <!-- Oficina de Mídia - Manhã -->
-                <div style="background: linear-gradient(135deg, #30cfd020, #460b8f20); border-radius: 20px; padding: 25px; display: flex; flex-direction: column;">
-                    <div style="font-size: 3rem; margin-bottom: 15px;">🎙️</div>
-                    <h4 style="color: var(--azul-petroleo); font-size: 1.5rem; margin-bottom: 10px;">Oficina de Mídia</h4>
-                    <h5 style="color: var(--azul-petroleo); margin-top: 2px;">Educomunicação e Divulgação Científica: Produção de Mídias Visuais e Audiovisuais</h5>
-                    <div style="background-color: var(--verde-folha); color: white; display: inline-block; padding: 5px 15px; border-radius: 50px; font-weight: bold; margin-bottom: 15px; align-self: flex-start; margin-top: 10px;">MANHÃ</div>
-                    <p><strong>⏰ Horário:</strong> 08h00 - 09h40</p>
-                    <p><strong>📍 Local:</strong> Auditório central</p>
-                    <p><strong>👥 Vagas:</strong> 200 participantes</p>
-                    <p><strong>⏳ Carga horária:</strong> 2h</p>
-                    <p><strong>Palestrantes:</strong><br>
-                        João Luiz Ferreira de Araujo;<br>Dielson Barros Monteiro;<br>Edson Vasconcelos Nunes;<br>Joseane Rosa Ferreira Lima;<br>Jodiane Cristina Pinheiro Alfais;<br>Cleidilane Sena Costa.
-                    </p>
-                    <p style="margin-top: 10px; flex-grow: 1;">Aprenda técnicas de comunicação para mídias digitais, produção de conteúdo científico e divulgação nas redes sociais.</p>
-                    <button class="btn-saiba-mais" onclick="toggleProgramacao(this)" style="margin-top: 15px;"><i class="fas fa-info-circle"></i> Mais detalhes</button>
-                    <div class="programacao-detalhes" style="display: none;">
-                        <p>A oficina tem como objetivo capacitar estudantes e colaboradores na criação de conteúdos digitais voltados à popularização da ciência e à comunicação institucional. A proposta destaca o uso de ferramentas acessíveis, como Canva, GIMP, Kdenlive e CapCut. A atividade será ofertada pela equipe do programa "A Hora da Universidade" e articula fundamentos da educomunicação com práticas colaborativas, com atenção à inclusão e acessibilidade.</p>
-                    </div>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe_UJta8rpUpJsDbgV-jGw8rql_PUpWpO6plnt_N2Hn-l5fFw/viewform?usp=publish-editor" target="_blank" class="btn" style="margin-top: 20px; text-align: center; width: 100%;">📝 INSCREVER-SE</a>
-                </div>
-
-                <!-- Oficina de Oratória - Manhã -->
-                <div style="background: linear-gradient(135deg, #0cec1752, #8324b942); border-radius: 20px; padding: 25px; display: flex; flex-direction: column;">
-                    <div style="font-size: 3rem; margin-bottom: 15px;">🗣️</div>
-                    <h4 style="color: var(--azul-petroleo); font-size: 1.5rem; margin-bottom: 15px;">Oficina de Oratória</h4>
-                    <div style="background-color: var(--verde-folha); color: white; display: inline-block; padding: 5px 15px; border-radius: 50px; font-weight: bold; margin-bottom: 15px; align-self: flex-start;">MANHÃ</div>
-                    <p><strong>⏰ Horário:</strong> 10h00 - 12h00</p>
-                    <p><strong>📍 Local:</strong> Auditório central</p>
-                    <p><strong>👥 Vagas:</strong> 200 participantes</p>
-                    <p><strong>⏳ Carga horária:</strong> 4h</p>
-                    <p style="margin-top: 10px;"><strong>🎤 Palestrante:</strong> Prof. Jorge Luiz Vidal<br><small>Jornalista, Assessor de Comunicação e Marketing</small></p>
-                    <p style="margin-top: 10px; flex-grow: 1;">Desenvolva sua capacidade de falar em público com segurança, dicção clara e presença de palco.</p>
-                    <button class="btn-saiba-mais" onclick="toggleProgramacao(this)" style="margin-top: 15px;"><i class="fas fa-info-circle"></i> Mais detalhes</button>
-                    <div class="programacao-detalhes" style="display: none;">
-                        <ul style="margin-top: 15px; padding-left: 20px; text-align: left; font-size: 0.9rem;">
-                            <li><strong>1.</strong> Considerações iniciais sobre Dicção e Oratória</li>
-                            <li><strong>2.</strong> Técnica de Respiração Diafragmática</li>
-                            <li><strong>3.</strong> Técnica de Silabação</li>
-                            <li><strong>4.</strong> Variação Tonal</li>
-                            <li><strong>5.</strong> Desenvoltura Corporal</li>
-                        </ul>
-                    </div>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdacZqt3hfFmyhWm9XpKmh1KnQxXw1OLcEXPILV5uxoQZ1dbQ/viewform?usp=publish-editor" target="_blank" class="btn" style="margin-top: 20px; text-align: center; width: 100%;">📝 INSCREVER-SE</a>
-                </div>
-            </div>
-
-            <div class="oficinas-grid-2" style="margin-top: 25px;">
-                <!-- Oficina de Oratória - Tarde -->
-                <div style="background: linear-gradient(135deg, #fa709a20, #fee14020); border-radius: 20px; padding: 25px; display: flex; flex-direction: column;">
-                    <div style="font-size: 3rem; margin-bottom: 15px;">🎤</div>
-                    <h4 style="color: var(--azul-petroleo); font-size: 1.5rem; margin-bottom: 15px;">Oficina de Oratória</h4>
-                    <div style="background-color: var(--laranja-queimado); color: white; display: inline-block; padding: 5px 15px; border-radius: 50px; font-weight: bold; margin-bottom: 15px; align-self: flex-start;">TARDE</div>
-                    <p><strong>⏰ Horário:</strong> 14h00 - 16h00</p>
-                    <p><strong>📍 Local:</strong> Auditório central</p>
-                    <p><strong>👥 Vagas:</strong> 200 participantes</p>
-                    <p><strong>⏳ Carga horária:</strong> 4h</p>
-                    <p style="margin-top: 10px;"><strong>🎤 Palestrante:</strong> Prof. Jorge Luiz Vidal<br><small>Jornalista, Assessor de Comunicação e Marketing</small></p>
-                    <p style="margin-top: 10px; flex-grow: 1;">Desenvolva sua capacidade de falar em público com segurança, dicção clara e presença de palco.</p>
-                    <button class="btn-saiba-mais" onclick="toggleProgramacao(this)" style="margin-top: 15px;"><i class="fas fa-info-circle"></i> Mais detalhes</button>
-                    <div class="programacao-detalhes" style="display: none;">
-                        <ul style="margin-top: 15px; padding-left: 20px; text-align: left; font-size: 0.9rem;">
-                            <li><strong>1.</strong> Considerações iniciais sobre Dicção e Oratória</li>
-                            <li><strong>2.</strong> Técnica de Respiração Diafragmática</li>
-                            <li><strong>3.</strong> Técnica de Silabação</li>
-                            <li><strong>4.</strong> Variação Tonal</li>
-                            <li><strong>5.</strong> Desenvoltura Corporal</li>
-                        </ul>
-                    </div>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdacZqt3hfFmyhWm9XpKmh1KnQxXw1OLcEXPILV5uxoQZ1dbQ/viewform?usp=publish-editor" target="_blank" class="btn" style="margin-top: 20px; text-align: center; width: 100%;">📝 INSCREVER-SE</a>
-                </div>
-
-                <!-- Oficina de Mídia - Tarde -->
-                <div style="background: linear-gradient(135deg, #30cfd020, #460b8f20); border-radius: 20px; padding: 25px; display: flex; flex-direction: column;">
-                    <div style="font-size: 3rem; margin-bottom: 15px;">📱</div>
-                    <h4 style="color: var(--azul-petroleo); font-size: 1.5rem; margin-bottom: 10px;">Oficina de Mídia</h4>
-                    <h5 style="color: var(--azul-petroleo); margin-top: 2px;">Educomunicação e Divulgação Científica: Produção de Mídias Visuais e Audiovisuais</h5>
-                    <div style="background-color: var(--laranja-queimado); color: white; display: inline-block; padding: 5px 15px; border-radius: 50px; font-weight: bold; margin-bottom: 15px; align-self: flex-start; margin-top: 10px;">TARDE</div>
-                    <p><strong>⏰ Horário:</strong> 16h40 - 17h30</p>
-                    <p><strong>📍 Local:</strong> Auditório central</p>
-                    <p><strong>👥 Vagas:</strong> 200 participantes</p>
-                    <p><strong>⏳ Carga horária:</strong> 2h</p>
-                    <p><strong>Palestrantes:</strong><br>
-                        João Luiz Ferreira de Araujo;<br>Dielson Barros Monteiro;<br>Edson Vasconcelos Nunes;<br>Joseane Rosa Ferreira Lima;<br>Jodiane Cristina Pinheiro Alfais;<br>Cleidilane Sena Costa.
-                    </p>
-                    <p style="margin-top: 10px; flex-grow: 1;">Estratégias práticas para melhorar a comunicação visual e textual dos projetos de pesquisa e extensão.</p>
-                    <button class="btn-saiba-mais" onclick="toggleProgramacao(this)" style="margin-top: 15px;"><i class="fas fa-info-circle"></i> Mais detalhes</button>
-                    <div class="programacao-detalhes" style="display: none;">
-                        <p>A oficina tem como objetivo capacitar estudantes e colaboradores na criação de conteúdos digitais voltados à popularização da ciência e à comunicação institucional. A metodologia integra momentos teóricos e práticos, estimulando a autonomia dos participantes na produção de narrativas midiáticas voltadas à ciência, cultura e cidadania.</p>
-                    </div>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe_UJta8rpUpJsDbgV-jGw8rql_PUpWpO6plnt_N2Hn-l5fFw/viewform?usp=publish-editor" target="_blank" class="btn" style="margin-top: 20px; text-align: center; width: 100%;">📝 INSCREVER-SE</a>
-                </div>
-            </div>
-
-            <div style="background-color: var(--cinza-claro); padding: 25px; border-radius: 20px; margin-top: 40px;">
-                <h4 style="color: var(--azul-petroleo); margin-bottom: 15px;">📌 Informações importantes:</h4>
-                <ul style="list-style-type: none; padding: 0;">
-                    <li style="margin-bottom: 10px;">✓ <strong>Inscrições:</strong> As vagas são limitadas e serão preenchidas por ordem de inscrição</li>
-                    <li style="margin-bottom: 10px;">✓ <strong>Certificação:</strong> Haverá certificado de participação para cada oficina</li>
-                    <li style="margin-bottom: 10px;">✓ <strong>Material:</strong> Recomendamos levar notebook ou tablet para as oficinas de mídia</li>
-                    <li style="margin-bottom: 10px;">✓ <strong>Contato:</strong> Dúvidas sobre as oficinas? Entre em contato pelo e-mail <a href="mailto:cafe.ciencia0@gmail.com" style="color: var(--azul-petroleo); font-weight: bold;">cafe.ciencia0@gmail.com</a></li>
+        
+        <!-- OFICINA DE ORATÓRIA - MANHÃ -->
+        <div style="background: linear-gradient(135deg, #0cec1752, #8324b942); border-radius: 20px; padding: 25px; display: flex; flex-direction: column;">
+            <div style="font-size: 3rem; margin-bottom: 15px;">🗣️</div>
+            <h4 style="color: var(--azul-petroleo); font-size: 1.5rem; margin-bottom: 15px;">Oficina de Oratória</h4>
+            <div style="background-color: var(--verde-folha); color: white; display: inline-block; padding: 5px 15px; border-radius: 50px; font-weight: bold; margin-bottom: 15px; align-self: flex-start;">MANHÃ</div>
+            <p><strong>⏰ Horário:</strong> 10h00 - 12h00</p>
+            <p><strong>📍 Local:</strong> Auditório central</p>
+            <p><strong>👥 Vagas:</strong> 200 participantes</p>
+            <p><strong>⏳ Carga horária:</strong> 4h</p>
+            <p style="margin-top: 10px;"><strong>🎤 Palestrante:</strong> Prof. Jorge Luiz Vidal<br><small>Jornalista, Assessor de Comunicação e Marketing</small></p>
+            <p style="margin-top: 10px; flex-grow: 1;">Desenvolva sua capacidade de falar em público com segurança, dicção clara e presença de palco.</p>
+            
+            <button class="btn-saiba-mais" onclick="toggleProgramacao(this)" style="margin-top: 15px;">
+                <i class="fas fa-info-circle"></i> Mais detalhes
+            </button>
+            <div class="programacao-detalhes" style="display: none;">
+                <ul style="margin-top: 15px; padding-left: 20px; text-align: left; font-size: 0.9rem;">
+                    <li><strong>1.</strong> Considerações iniciais sobre Dicção e Oratória</li>
+                    <li><strong>2.</strong> Técnica de Respiração Diafragmática (eliminar ansiedade e redescobrir o timbre natural)</li>
+                    <li><strong>3.</strong> Técnica de Silabação (melhorar pronúncia, desacelerar a fala e projeção vocal)</li>
+                    <li><strong>4.</strong> Variação Tonal (tons agudo, médio e grave para evitar monotonia)</li>
+                    <li><strong>5.</strong> Desenvoltura Corporal (sincronização de palavras e gestos)</li>
                 </ul>
             </div>
-        </div>
-    </section>
 
-    <!-- ÁREA DAS ESCOLAS -->
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdacZqt3hfFmyhWm9XpKmh1KnQxXw1OLcEXPILV5uxoQZ1dbQ/viewform?usp=publish-editor" target="_blank" class="btn" style="margin-top: 20px; text-align: center; width: 100%;">📝 INSCREVER-SE</a>
+        </div>
+    </div>
+    
+    <!-- SEGUNDA LINHA: OFICINAS DA TARDE -->
+    <div class="oficinas-grid-2" style="margin-top: 25px;">
+        
+        <!-- OFICINA DE ORATÓRIA - TARDE -->
+        <div style="background: linear-gradient(135deg, #fa709a20, #fee14020); border-radius: 20px; padding: 25px; display: flex; flex-direction: column;">
+            <div style="font-size: 3rem; margin-bottom: 15px;">🎤</div>
+            <h4 style="color: var(--azul-petroleo); font-size: 1.5rem; margin-bottom: 15px;">Oficina de Oratória</h4>
+            <div style="background-color: var(--laranja-queimado); color: white; display: inline-block; padding: 5px 15px; border-radius: 50px; font-weight: bold; margin-bottom: 15px; align-self: flex-start;">TARDE</div>
+            <p><strong>⏰ Horário:</strong> 14h00 - 16h00</p>
+            <p><strong>📍 Local:</strong> Auditório central</p>
+            <p><strong>👥 Vagas:</strong> 200 participantes</p>
+            <p><strong>⏳ Carga horária:</strong> 4h</p>
+            <p style="margin-top: 10px;"><strong>🎤 Palestrante:</strong> Prof. Jorge Luiz Vidal<br><small>Jornalista, Assessor de Comunicação e Marketing</small></p>
+            <p style="margin-top: 10px; flex-grow: 1;">Desenvolva sua capacidade de falar em público com segurança, dicção clara e presença de palco.</p>
+            
+            <button class="btn-saiba-mais" onclick="toggleProgramacao(this)" style="margin-top: 15px;">
+                <i class="fas fa-info-circle"></i> Mais detalhes
+            </button>
+            <div class="programacao-detalhes" style="display: none;">
+                <ul style="margin-top: 15px; padding-left: 20px; text-align: left; font-size: 0.9rem;">
+                    <li><strong>1.</strong> Considerações iniciais sobre Dicção e Oratória</li>
+                    <li><strong>2.</strong> Técnica de Respiração Diafragmática (eliminar ansiedade e redescobrir o timbre natural)</li>
+                    <li><strong>3.</strong> Técnica de Silabação (melhorar pronúncia, desacelerar a fala e projeção vocal)</li>
+                    <li><strong>4.</strong> Variação Tonal (tons agudo, médio e grave para evitar monotonia)</li>
+                    <li><strong>5.</strong> Desenvoltura Corporal (sincronização de palavras e gestos)</li>
+                </ul>
+            </div>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdacZqt3hfFmyhWm9XpKmh1KnQxXw1OLcEXPILV5uxoQZ1dbQ/viewform?usp=publish-editor" target="_blank" class="btn" style="margin-top: 20px; text-align: center; width: 100%;">📝 INSCREVER-SE</a>
+        </div>
+        
+        <!-- Oficina de Mídia - Tarde -->
+        <div style="background: linear-gradient(135deg, #30cfd020, #460b8f20); border-radius: 20px; padding: 25px; display: flex; flex-direction: column;">
+            <div style="font-size: 3rem; margin-bottom: 15px;">📱</div>
+            <h4 style="color: var(--azul-petroleo); font-size: 1.5rem; margin-bottom: 10px;">Oficina de Mídia</h4>
+            <h5 style="color: var(--azul-petroleo); margin-top: 2px;">Educomunicação e Divulgação Científica: Produção de Mídias Visuais e Audiovisuais</h5>
+            <div style="background-color: var(--laranja-queimado); color: white; display: inline-block; padding: 5px 15px; border-radius: 50px; font-weight: bold; margin-bottom: 15px; align-self: flex-start; margin-top: 10px;">TARDE</div>
+            <p><strong>⏰ Horário:</strong> 16h40 - 17h30</p>
+            <p><strong>📍 Local:</strong> Auditório central</p>
+            <p><strong>👥 Vagas:</strong> 200 participantes</p>
+            <p><strong>⏳ Carga horária:</strong> 2h</p>
+          
+            <p><strong>Palestrantes:</strong><br>
+                João Luiz Ferreira de Araujo;<br>
+                Dielson Barros Monteiro;<br>
+                Edson Vasconcelos Nunes;<br>
+                Joseane Rosa Ferreira Lima;<br>
+                Jodiane Cristina Pinheiro Alfais;<br>
+                Cleidilane Sena Costa.
+            </p>
+              <p style="margin-top: 10px; flex-grow: 1;">Estratégias práticas para melhorar a comunicação visual e textual dos projetos de pesquisa e extensão.</p>
+            
+            <button class="btn-saiba-mais" onclick="toggleProgramacao(this)" style="margin-top: 15px;">
+                <i class="fas fa-info-circle"></i> Mais detalhes
+            </button>
+            <div class="programacao-detalhes" style="display: none;">
+                <p>A oficina "Educomunicação e Divulgação Científica: Produção de Mídias Visuais e Audiovisuais" tem como objetivo capacitar estudantes e colaboradores na criação de conteúdos digitais voltados à popularização da ciência e à comunicação institucional. A proposta destaca o uso de ferramentas acessíveis, em sua maioria livres, como Canva e GIMP para produção gráfica, e Kdenlive e CapCut para edição de áudio e vídeo, promovendo a democratização das tecnologias digitais. A atividade será ofertada pela equipe do programa "A Hora da Universidade" e articula fundamentos da educomunicação com práticas colaborativas, permitindo o desenvolvimento de materiais para rádio, redes sociais e ações educativas, com atenção à inclusão e acessibilidade. A oficina busca fortalecer a relação entre universidade e sociedade, incentivando a produção de conteúdos criativos, críticos e socialmente relevantes. A metodologia integra momentos teóricos e práticos, estimulando a autonomia dos participantes na produção de narrativas midiáticas voltadas à ciência, cultura e cidadania.</p>
+            </div>
+                     
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe_UJta8rpUpJsDbgV-jGw8rql_PUpWpO6plnt_N2Hn-l5fFw/viewform?usp=publish-editor" target="_blank" class="btn" style="margin-top: 20px; text-align: center; width: 100%;">📝 INSCREVER-SE</a>
+        </div>
+    </div>
+    
+    <!-- Informações adicionais -->
+    <div style="background-color: var(--cinza-claro); padding: 25px; border-radius: 20px; margin-top: 40px;">
+        <h4 style="color: var(--azul-petroleo); margin-bottom: 15px;">📌 Informações importantes:</h4>
+        <ul style="list-style-type: none; padding: 0;">
+            <li style="margin-bottom: 10px;">✓ <strong>Inscrições:</strong> As vagas são limitadas e serão preenchidas por ordem de inscrição</li>
+            <li style="margin-bottom: 10px;">✓ <strong>Certificação:</strong> Haverá certificado de participação para cada oficina</li>
+            <li style="margin-bottom: 10px;">✓ <strong>Material:</strong> Recomendamos levar notebook ou tablet para as oficinas de mídia</li>
+            <li style="margin-bottom: 10px;">✓ <strong>Contato:</strong> Dúvidas sobre as oficinas? Entre em contato pelo e-mail <a href="mailto:cafe.ciencia0@gmail.com" style="color: var(--azul-petroleo); font-weight: bold;">cafe.ciencia0@gmail.com</a></li>
+        </ul>
+    </div>
+</div>
+
+    <!-- ÁREA DAS ESCOLAS (FILTRO) -->
     <section class="container">
         <h2 class="section-title">🚌 Programação para Escolas</h2>
         <p class="section-subtitle">algum TEXTO.</p>
+
         <div class="filtro-escolas">
             <select id="escolaSelect" onchange="mostrarEscola()">
                 <option value="">-- Escolha sua escola --</option>
@@ -474,30 +583,35 @@
                 <option value="pedro">Escola Pedro Amazonas</option>
                 <option value="santa">Colégio Santa Maria</option>
             </select>
+
             <div id="info-terezinha" class="escola-info">
                 <div class="info-row"><span class="info-label">Escola:</span><span class="info-value">EEEFM Terezinha de Souza</span></div>
                 <div class="info-row"><span class="info-label">Horário saída:</span><span class="info-value">08h00</span></div>
                 <div class="info-row"><span class="info-label">Ônibus:</span><span class="info-value">Ônibus 01 (Azul)</span></div>
                 <div class="info-row"><span class="info-label">Rota:</span><span class="info-value">09h Lab. Faraday | 10h Lab. Galileu | 11h Lab. Planck</span></div>
             </div>
+
             <div id="info-visconde" class="escola-info">
                 <div class="info-row"><span class="info-label">Escola:</span><span class="info-value">Escola Estadual Visconde de Mauá</span></div>
                 <div class="info-row"><span class="info-label">Horário saída:</span><span class="info-value">08h30</span></div>
                 <div class="info-row"><span class="info-label">Ônibus:</span><span class="info-value">Ônibus 02 (Verde)</span></div>
                 <div class="info-row"><span class="info-label">Rota:</span><span class="info-value">09h Lab. Planck | 10h Lab. Faraday | 11h Lab. Galileu</span></div>
             </div>
+
             <div id="info-apoio" class="escola-info">
                 <div class="info-row"><span class="info-label">Escola:</span><span class="info-value">Colégio Apoio</span></div>
                 <div class="info-row"><span class="info-label">Horário saída:</span><span class="info-value">09h00</span></div>
                 <div class="info-row"><span class="info-label">Ônibus:</span><span class="info-value">Ônibus 03 (Amarelo)</span></div>
                 <div class="info-row"><span class="info-label">Rota:</span><span class="info-value">10h Lab. Galileu | 11h Lab. Planck | 14h Lab. Faraday</span></div>
             </div>
+
             <div id="info-pedro" class="escola-info">
                 <div class="info-row"><span class="info-label">Escola:</span><span class="info-value">Escola Pedro Amazonas</span></div>
                 <div class="info-row"><span class="info-label">Horário saída:</span><span class="info-value">08h15</span></div>
                 <div class="info-row"><span class="info-label">Ônibus:</span><span class="info-value">Ônibus 04 (Vermelho)</span></div>
                 <div class="info-row"><span class="info-label">Rota:</span><span class="info-value">09h LFCA Nano | 10h Lab. Planck | 11h Lab. Faraday</span></div>
             </div>
+
             <div id="info-santa" class="escola-info">
                 <div class="info-row"><span class="info-label">Escola:</span><span class="info-value">Colégio Santa Maria</span></div>
                 <div class="info-row"><span class="info-label">Horário saída:</span><span class="info-value">09h30</span></div>
@@ -506,106 +620,178 @@
             </div>
         </div>
     </section>
-
-    <!-- CONVIDADOS ESPECIAIS -->
-    <section class="convidados-section">
-        <div class="container">
-            <h2 class="section-title" style="text-align: center;">🎤 Convidados Especiais</h2>
-            <p class="section-subtitle" style="text-align: center; margin-bottom: 40px;">Conheça os palestrantes e convidados que farão parte do VIII Café com Ciência</p>
-
-            <div class="convidados-grid">
-                <div class="convidado-card">
-                    <div class="foto-container"><img src="src/imagens/convidados/bruno.png" alt="Dr. Bruno" onerror="this.src='https://via.placeholder.com/180x180?text=Foto'"></div>
-                    <h3 class="convidado-nome">Dr. Bruno Correa</h3>
-                    <div class="convidado-funcao">Pesquisador em Física.</div>
-                    <div class="convidado-instituicao">Universidade Federal do Pará (UFPA)</div>
-                    <button class="btn-convidado" onclick="event.stopPropagation(); toggleDescricao(this)"><i class="fas fa-chevron-down"></i> Sobre</button>
-                    <div class="convidado-descricao"><p>Doutor em Tecnologia Nuclear - Aplicações pela Universidade de São Paulo (USP) no Instituto de Pesquisas Energéticas e Nucleares (IPEN/USP), com mestrado em Engenharia Química pela Universidade Federal do Pará (UFPA) e especialização em Engenharia da Qualidade pela mesma instituição. Graduado em Engenharia Industrial pela UFPA, Campus Abaetetuba. Atualmente, atua no projeto de Desenvolvimento e Caracterização de Células Fotovoltaicas aprovado pelo CNPq/MCTI. Membro e colaborador em quatro projetos no CERN, com participação em experimentos entre 2022 e 2024.</p></div>
+<!-- SEÇÃO DE CONVIDADOS -->
+<section class="convidados-section">
+    <div class="container">
+        <h2 class="section-title" style="text-align: center;">🎤 Convidados Especiais</h2>
+        <p class="section-subtitle" style="text-align: center; margin-bottom: 40px;">
+            Conheça os palestrantes e convidados que farão parte do VIII Café com Ciência
+        </p>
+        
+        <div class="convidados-grid">
+            <!-- Convidado 1 -->
+            <div class="convidado-card">
+                <div class="foto-container">
+                    <img src="src/imagens/convidados/bruno.png" alt="Dr. Bruno" onerror="this.src='https://via.placeholder.com/180x180?text=Foto'">
                 </div>
-
-                <div class="convidado-card">
-                    <div class="foto-container"><img src="src/imagens/convidados/cleidlane.webp" alt="Profa. Cleidlane" onerror="this.src='https://via.placeholder.com/180x180?text=Foto'"></div>
-                    <h3 class="convidado-nome">Dra. Cleidilane Sena</h3>
-                    <div class="convidado-funcao">Pesquisadora em Física</div>
-                    <div class="convidado-instituicao">Universidade Federal do Pará (UFPA)</div>
-                    <button class="btn-convidado" onclick="event.stopPropagation(); toggleDescricao(this)"><i class="fas fa-chevron-down"></i> Sobre</button>
-                    <div class="convidado-descricao"><p>Possui graduação em Física Licenciatura pela UFPA (2005), mestrado (2007) e doutorado (2011) pela USP, com doutorado-sanduíche na Universidade Nova de Lisboa, e pós-doutorado pelo IPEN. Professora da UFPA – Campus Abaetetuba. Líder do grupo de pesquisa Materiais Nano e Microestruturados da Amazônia (MNMA).</p></div>
-                </div>
-
-                <div class="convidado-card">
-                    <div class="foto-container"><img src="src/imagens/convidados/messias.webp" alt="Dr. Messias" onerror="this.src='https://via.placeholder.com/180x180?text=Foto'"></div>
-                    <h3 class="convidado-nome">Dr. Messias Costa</h3>
-                    <div class="convidado-funcao">Pesquisador em Física</div>
-                    <div class="convidado-instituicao">Laboratório LFCA - UFPA</div>
-                    <button class="btn-convidado" onclick="event.stopPropagation(); toggleDescricao(this)"><i class="fas fa-chevron-down"></i> Sobre</button>
-                    <div class="convidado-descricao"><p>Possui graduação em Física Licenciatura pela UFPA (2003), doutorado em Física pela USP (2009) e Pós-doutorado pelo IPEN (2013). Atualmente é Professor Adjunto IV na UFPA – Campus Abaetetuba. Tem experiência em Física da Matéria Condensada, atuando com materiais magnéticos e semicondutores.</p></div>
-                </div>
-
-                <div class="convidado-card">
-                    <div class="foto-container"><img src="src/imagens/convidados/elder.webp" alt="Dr. Elder" onerror="this.src='https://via.placeholder.com/180x180?text=Foto'"></div>
-                    <h3 class="convidado-nome">Dr. Elder Mota</h3>
-                    <div class="convidado-funcao">Pesquisador em Física</div>
-                    <div class="convidado-instituicao">Instituto de Física - UFPA</div>
-                    <button class="btn-convidado" onclick="event.stopPropagation(); toggleDescricao(this)"><i class="fas fa-chevron-down"></i> Sobre</button>
-                    <div class="convidado-descricao"><p>Professor da FACET/UFPA – Campus Abaetetuba. Doutor em Física da Matéria Condensada pela UFPA (2023). Trabalha com caracterização eletrônica, estrutural e transporte eletrônico de alótropos do carbono utilizando métodos Ab-Initio. Membro do Grupo MNMA.</p></div>
-                </div>
-
-                <div class="convidado-card">
-                    <div class="foto-container"><img src="src/imagens/convidados/gabriel.webp" alt="Dr. Gabriel" onerror="this.src='https://via.placeholder.com/180x180?text=Foto'"></div>
-                    <h3 class="convidado-nome">Dr. Gabriel Cabrera</h3>
-                    <div class="convidado-funcao">Pesquisador em Física</div>
-                    <div class="convidado-instituicao">Laboratório de Física do campus de Abaetetuba - LFCA</div>
-                    <button class="btn-convidado" onclick="event.stopPropagation(); toggleDescricao(this)"><i class="fas fa-chevron-down"></i> Sobre</button>
-                    <div class="convidado-descricao"><p>Bacharelado pela Universidad Nacional de San Agustín de Arequipa (2001), Mestrado (2005) e Doutorado (2010) pela USP. Pós-doutorados no CBPF, IPEN, McGill University (Canadá) e UFABC. Professor da UFPA desde 2016. Coordenador do LFCAnano, primeiro laboratório de nanotecnologia do interior do Baixo Tocantins.</p></div>
-                </div>
-
-                <div class="convidado-card">
-                    <div class="foto-container"><img src="src/imagens/convidados/flavio.webp" alt="Dr. Flávio" onerror="this.src='https://via.placeholder.com/180x180?text=Foto'"></div>
-                    <h3 class="convidado-nome">Dr. Flávio</h3>
-                    <div class="convidado-funcao">Doutor em Química</div>
-                    <div class="convidado-instituicao">Universidade Federal do Pará - UFPA</div>
-                    <button class="btn-convidado" onclick="event.stopPropagation(); toggleDescricao(this)"><i class="fas fa-chevron-down"></i> Sobre</button>
-                    <div class="convidado-descricao"><p>Graduação em Química Bacharelado pela UFPA, Mestrado e Doutorado em Química (Físico-Química) pela USP e UFPA. Professor Associado 1 na UFPA – Campus Abaetetuba. Ex-Diretor da FACET (2017–2021). Experiência em Eletroquímica e eletro-oxidação de combustíveis.</p></div>
-                </div>
-
-                <div class="convidado-card">
-                    <div class="foto-container"><img src="src/imagens/convidados/milena_barbosa.jpeg" alt="Me. Milena Pinheiro Barbosa" onerror="this.src='https://via.placeholder.com/180x180?text=Foto'"></div>
-                    <h3 class="convidado-nome">Me. Milena Pinheiro Barbosa</h3>
-                    <div class="convidado-funcao">Mestre em Física</div>
-                    <div class="convidado-instituicao">Universidade Federal do Pará - UFPA</div>
-                    <button class="btn-convidado" onclick="event.stopPropagation(); toggleDescricao(this)"><i class="fas fa-chevron-down"></i> Sobre</button>
-                    <div class="convidado-descricao"><p>Mestranda em Engenharia Elétrica (PPGEE/UFPA). Mestre em Ensino de Física pelo MNPEF/SBF (2022–2024). Especialização em Educação Especial e Neuropsicopedagogia. Graduada em Física Licenciatura pela UFPA com Título de Destaque Acadêmico. Integrante dos grupos GPECF e GEMA/CNPq.</p></div>
-                </div>
-
-                <div class="convidado-card">
-                    <div class="foto-container"><img src="src/imagens/convidados/clemersom.jpg" alt="Me. Clemerson Silva" onerror="this.src='https://via.placeholder.com/180x180?text=Foto'"></div>
-                    <h3 class="convidado-nome">Me. Clemerson Santos Silva</h3>
-                    <div class="convidado-funcao">Mestre em Ensino de Física e professor da SEDUC</div>
-                    <div class="convidado-instituicao">Universidade Federal do Pará - UFPA</div>
-                    <button class="btn-convidado" onclick="event.stopPropagation(); toggleDescricao(this)"><i class="fas fa-chevron-down"></i> Sobre</button>
-                    <div class="convidado-descricao"><p>A preencher.</p></div>
-                </div>
-
-                <div class="convidado-card">
-                    <div class="foto-container"><img src="src/imagens/convidados/jorge luiz.jpeg" alt="Prof. Jorge Luiz" onerror="this.src='https://via.placeholder.com/180x180?text=Foto'"></div>
-                    <h3 class="convidado-nome">Prof. Jorge Luiz</h3>
-                    <div class="convidado-funcao">Professor, Jornalista de mídia e Assessor de Comunicação e Marketing</div>
-                    <div class="convidado-instituicao"></div>
-                    <button class="btn-convidado" onclick="event.stopPropagation(); toggleDescricao(this)"><i class="fas fa-chevron-down"></i> Sobre</button>
-                    <div class="convidado-descricao"><p>A preencher.</p></div>
+                <h3 class="convidado-nome">Dr. Bruno Correa</h3>
+                <div class="convidado-funcao">Pesquisador em Física.</div>
+                <div class="convidado-instituicao">Universidade Federal do Pará (UFPA)</div>
+                <button class="btn-convidado" onclick="event.stopPropagation(); toggleDescricao(this)">
+                    <i class="fas fa-chevron-down"></i> Sobre
+                </button>
+                <div class="convidado-descricao">
+                    <p>Doutor em Tecnologia Nuclear - Aplicações pela Universidade de São Paulo (USP) no Instituto de Pesquisas Energéticas e Nucleares (IPEN/USP), com mestrado em Engenharia Química pela Universidade Federal do Pará (UFPA)
+                        e especialização em Engenharia da Qualidade pela mesma instituição. Graduado em Engenharia Industrial pela UFPA, Campus Abaetetuba.
+                        Atualmente, atuo no projeto ''Desenvolvimento e Caracterização de Células Fotovoltaicas Fabricadas com Silício Tipo-N Dopado com Fósforo pelo Método de Transmutação com Nêutrons'', aprovado pelo CNPq/MCTI.
+                        Possuo vasta experiência em pesquisa científica, incluindo a síntese e caracterização de nanopartículas para as mais diversas aplicações. No doutorado trabalhei na síntese de sistemas intermetálicos do tipo RECrGe3 e sua caracterização estrutural e magnética. Além disso, realizo importantes colaborações no Laboratório de Interações Hiperfinas do IPEN/USP, no grupo Materiais Nano e Microestruturados da Amazônia (MNMA) da UFPA - Campus Abaetetuba, e no Grupo de Fluídos Complexos, RMN e Superfícies do Instituto Superior Técnico (IST), em Lisboa. Também participei de experimentos de difração de nêutrons no National Institute of Standards and Technology (NIST), EUA, e tenho colaborações contínuas com pesquisadores desse instituto. Além dessas atuações, sou membro e colaborador em quatro projetos de pesquisa no European Organization for Nuclear Research (CERN), onde participei de experimentos em diversas ocasiões entre 2022 e 2024.
+                        Assim, possuo sólida expertise na área de física e engenharia (nano)materiais, contribuindo para avanços científicos e tecnológicos na área de energias renováveis e novos materiais.</p>
                 </div>
             </div>
-        </div>
-    </section>
+            
+            <!-- Convidado 2 -->
+            <div class="convidado-card">
+                <div class="foto-container">
+                    <img src="src/imagens/convidados/cleidlane.webp" alt="Profa. Cleidlane" onerror="this.src='https://via.placeholder.com/180x180?text=Foto'">
+                </div>
+                <h3 class="convidado-nome">Dra. Cleidilane Sena</h3>
+                <div class="convidado-funcao">Pesquisadora em Física</div>
+                <div class="convidado-instituicao">Universidade Federal do Pará (UFPA)</div>
+                <button class="btn-convidado" onclick="event.stopPropagation(); toggleDescricao(this)">
+                    <i class="fas fa-chevron-down"></i> Sobre
+                </button>
+                <div class="convidado-descricao">
+                    <p> Possui graduação em Física Licenciatura pela Universidade Federal do Pará (2005), mestrado (2007) e doutorado (2011) em Ciências (Área:Física) pela Universidade de São Paulo, com doutorado-sanduíche na Universidade Nova de Lisboa (Portugal), e pós doutorado em Física pelo Instituto de Pesquisas Energéticas e Nucleares (IPEN). Atualmente é professora da Universidade Federal do Pará- Campus de Abaetetuba. Desenvolve pesquisas com ênfase na síntese e caracterização de nanopartículas, óxidos metálicos, materiais compósitos e elastoméricos, além de trabalhar com polímeros naturais da Amazônia voltados ao desenvolvimento de bioplásticos e sensores. Tem experiência em diferentes técnicas experimentais como difração de raios X, espectroscopia Raman, microscopia eletrônica de varredura e transmissão, além de espectroscopia de correlação angular perturbada (CAP) e ensaios mecânicos. Atua também na formação de professores, ministrando disciplinas como Estágio Supervisionado em Física, Física Estatística e Eletromagnetismo Clássico, além de compor o núcleo docente estruturante do curso de Licenciatura em Física da UFPA. É líder do grupo de pesquisa Materiais Nano e Microestruturados da Amazônia (MNMA) e coordenadora de projetos interdisciplinares que envolvem ensino, pesquisa e extensão, com destaque para temas como o uso sustentável da água, tecnologias da informação aplicadas à educação e valorização de recursos naturais amazônicos, o qual engloba o programa de rádio "A Hora da Universidade".</p>
+                </div>
+            </div>
+            
+            <!-- Convidado 3 -->
+            <div class="convidado-card">
+                <div class="foto-container">
+                    <img src="src/imagens/convidados/messias.webp" alt="Dr. Messias" onerror="this.src='https://via.placeholder.com/180x180?text=Foto'">
+                </div>
+                <h3 class="convidado-nome">Dr. Messias Costa </h3>
+                <div class="convidado-funcao">Pesquisador em Física</div>
+                <div class="convidado-instituicao">Laboratório LFCA - UFPA</div>
+                <button class="btn-convidado" onclick="event.stopPropagation(); toggleDescricao(this)">
+                    <i class="fas fa-chevron-down"></i> Sobre
+                </button>
+                <div class="convidado-descricao">
+                    <p>Possui graduação em Física Licenciatura pela Universidade Federal do Pará (2003), doutorado em Física pela Universidade de São Paulo (2009) e Pós doutorado em Física pelo Instituto de Pesquisas Energéticas e Nucleares (2013). Atualmente é Professor Adjunto IV com dedicação exclusiva na Universidade Federal do Pará - Campus de Abaetetuba-PA. Tem experiência na área de Física, com ênfase em Física da Matéria Condensada, atuando principalmente nos seguintes temas: estudo de interações hiperfinas em materiais magnéticos, semicondutores na forma de compostos intermetálicos ou óxidos pela técnica de correlação angular gama-gama perturbada. Desenvolve pesquisas experimentais e cálculos de primeiros princípios de propriedades estruturais, eletrônicas e magnéticas da matéria.</p>
+                </div>
+            </div>
+            
+            <!-- Convidado 4 -->
+            <div class="convidado-card">
+                <div class="foto-container">
+                    <img src="src/imagens/convidados/elder.webp" alt="Dr. Elder" onerror="this.src='https://via.placeholder.com/180x180?text=Foto'">
+                </div>
+                <h3 class="convidado-nome">Dr. Elder Mota</h3>
+                <div class="convidado-funcao">Pesquisador em Física</div>
+                <div class="convidado-instituicao">Instituto de Física - UFPA</div>
+                <button class="btn-convidado" onclick="event.stopPropagation(); toggleDescricao(this)">
+                    <i class="fas fa-chevron-down"></i> Sobre
+                </button>
+                <div class="convidado-descricao">
+                    <p>Professor da Faculdade de Ciências Exatas e Tecnologia (FACET) pertencente a UFPA - Campus Abaetetuba; Doutor em Física da Matéria Condensada pela UFPA (Belém/PPGF/2023 - Conceito CAPES 6); Mestre em Física da Matéria Condensada pela UFPA (Belém/PPGF/2019 - Conceito CAPES 5); Bacharel em Física pela UFPA (Belém/FACFIS - 2018); Licenciado em Física pela UFPA (Belém/FACFIS - 2017); Trabalhou no Laboratório de Preparação e Computação de Nanomateirais (Belém/LPCN-UFPA/2014-2016), com simulações computacionais baseadas em DFT, que visavam propor novos fotocatalizadores baseados em grafeno dopado com metais de transição, e a sua utilização na conversão de energia solar e produção de hidrogênio; Tem experiência com simulações computacionais de transporte eletrônico em estruturas de DNA e nanofitas de carbono. Atualmente, trabalha com caracterização eletrônica, estrutural e transporte eletrônico de alótropos do carbono utilizando métodos Ab-Initio, visando novos materiais para serem aplicados em diversos campos: nanoeletrônica, sensores, baterias, dentre outros. Membro do Grupo de Materiais Nano e Microestruturados da Amazônia.
 
-    <!-- MODAL FOTO AMPLIADA -->
-    <div id="modalFoto" class="modal-foto" onclick="fecharModalFoto()">
-        <span class="modal-foto-close" onclick="fecharModalFoto()">&times;</span>
-        <div class="modal-foto-content" onclick="event.stopPropagation()">
-            <img id="fotoAmpliada" src="" alt="Foto ampliada">
-        </div>
+</p>
+                </div>
+            </div>
+        
+
+            <div class="convidado-card">
+                <div class="foto-container">
+                    <img src="src/imagens/convidados/gabriel.webp" alt="Dr. Gabriel" onerror="this.src='https://via.placeholder.com/180x180?text=Foto'">
+                </div>
+                <h3 class="convidado-nome">Dr. Gabriel Cabrera</h3>
+                <div class="convidado-funcao">Pesquisador em Física</div>
+                <div class="convidado-instituicao">laboratorio de Física do campus de abaetetuba - LFCA</div>
+                <button class="btn-convidado" onclick="event.stopPropagation(); toggleDescricao(this)">
+                    <i class="fas fa-chevron-down"></i> Sobre
+                </button>
+                <div class="convidado-descricao">
+                    <p>Com sólida formação acadêmica, obteve o Bacharelado em Física pela Universidad Nacional de San Agustín de Arequipa, Peru, em 2001. Posteriormente, concluiu o Mestrado (2005) e o Doutorado (2010) em Ciências pela Universidade de São Paulo. Realizou estágios de pós-doutorado entre 2011 e 2014 no Centro Brasileiro de Pesquisas Físicas e no Instituto de Pesquisas Energéticas e Nucleares, no Laboratório de Interações Hiperfinas, com apoio de bolsas da Conselho Nacional de Desenvolvimento Científico e Tecnológico e da Fundação de Amparo à Pesquisa do Estado de São Paulo. Em 2014, foi contemplado com a bolsa BEPE-FAPESP para estágio de pós-doutorado na McGill University, em Montreal, Canadá, onde desenvolveu pesquisas avançadas nas áreas de difração de nêutrons e espectroscopia Mössbauer. Em 2015, realizou pós-doutorado junto ao grupo de pesquisa PENSE da Universidade Federal do ABC, com foco na caracterização de materiais semicondutores e magnéticos por meio de técnicas macroscópicas, como medidas de resistência elétrica e magnetização. Desde 2016, atua como professor da Universidade Federal do Pará, contribuindo para atividades de ensino, pesquisa e formação de recursos humanos. Entre 2024 e 2025, foi bolsista de pós-doutorado da Fundação de Apoio à Universidade de São Paulo no Research Centre for Greenhouse Gas Innovation, sediado na Escola Politécnica da Universidade de São Paulo. Atualmente, coordena o LFCAnano, o primeiro laboratório de nanotecnologia localizado no interior da região do Baixo Tocantins, onde desenvolve pesquisas em nanomateriais e tecnologias avançadas de caracterização.</p>
+                </div>
+            </div>
+ <div class="convidado-card">
+                <div class="foto-container">
+                    <img src="src/imagens/convidados/flavio.webp" alt="Dr. Flávio" onerror="this.src='https://via.placeholder.com/180x180?text=Foto'">
+                </div>
+                <h3 class="convidado-nome">Dr. Flávio</h3>
+                <div class="convidado-funcao">Doutor em química</div>
+                <div class="convidado-instituicao">universidade federal do pará - UFPA</div>
+                <button class="btn-convidado" onclick="event.stopPropagation(); toggleDescricao(this)">
+                    <i class="fas fa-chevron-down"></i> Sobre
+                </button>
+                <div class="convidado-descricao">
+                    <p>Possui graduação em Química Bacharelado pela Universidade Federal do Pará (UFPA) (1999-2003), Mestrado em Química (Físico-Química) pela Universidade de São Paulo (USP) (2004-2006), Doutorado em Química (Físico-Química) pela Universidade Federal do Pará. Foi Professor Substituto da Faculdade de Química da Universidade Federal do Pará (UFPA) (2006-2008) e Químico Responsável da Branmix (2006-2009). Atualmente é Professor Associado 1.Foi representante do Campus de Abaetetuba no Conselho Superior de Ensino, Pesquisa e Extensão - CONSEPE - UFPA. Foi Vice- Coordenador do Campus Universitário do Baixo Tocantins - Abaetetuba (2022-2023). Foi Diretor da Faculdade de Ciências Exatas e Tecnologia, Campus Abaetetuba (2017-2021) .Foi Coordenador do Curso de Licenciatura em Física do Campus de Abaetetuba - UFPA Tem experiência na área de Química, com ênfase em Eletroquímica, atuando principalmente nos seguintes temas: Nitrato, Dems, Eletro-oxidação de Metanol e Etanol, Método Borohidreto de Sódio, Eletrocatalisadores de PtRu, PtRuRh</p>
+                </div>
+            </div>
+            <div class="convidado-card">
+                <div class="foto-container">
+                    <img src="src/imagens/convidados/milena_barbosa.jpeg" alt="Me. Milena Pinheiro Barbosa" onerror="this.src='https://via.placeholder.com/180x180?text=Foto'">
+                    
+                </div>
+                <h3 class="convidado-nome">Me. Milena Pinheiro Barbosa</h3>
+                <div class="convidado-funcao">Mestre em Física</div>
+                <div class="convidado-instituicao">universidade federal do pará - UFPA</div>
+                <button class="btn-convidado" onclick="event.stopPropagation(); toggleDescricao(this)">
+                    <i class="fas fa-chevron-down"></i> Sobre
+                </button>
+                <div class="convidado-descricao">
+                    <p>Mestranda no Programa de Pós Graduação em Engenharia Elétrica PPGEE, da Universidade Federal do Pará - UFPA. Discente no curso de bacharelado em Engenharia Biomédica, vinculando ao Instituto de Tecnologia da Universidade Federal do Pará (ITEC/UFPA), com intuito de desenvolver pesquisas nas áreas de: Nanodispositivos, Física Computacional, Ciências dos Materiais atrelado a conceitos Biomédicos. Mestre em Ensino de Física pelo Programa de Pós-Graduação do Mestrado Nacional Profissional em Ensino de Física- MNPEF/SBF, do Instituto de Ciências Exatas e Naturais- ICEN, da Universidade Federal do Pará - UFPA (2022-2024). Especialização em Educação Especial e Neuropsicopedagogia Institucional pela Faculdade Focus (2022-2023). Graduação em Física, Licenciatura Plena, com o Título de Destaque Acadêmico, pela Universidade Federal do Pará - UFPA (2016-2020). Cursos de extensão nas áreas: Educação para Alunos com Autismo, Ensino Interdisciplinar de Biofísica e Física Médica, Libras e Robótica Educacional para ensino de Ciências. Integrante do Grupo de Pesquisa do CNPq: Grupo de Pesquisa em Ensino de Ciências e Física da UFPA (GPECF) e Grupo de Eletrônica Molecular de Ananindeua (GEMA). Atuou como Professora de Física na rede particular de ensino (2019-2024) e desenvolveu atividades na área da Educação Especial na Empresa STUDY, como colaboradora e gestora de Projetos Educacionais para pessoas com Transtornos Globais do Desenvolvimento (TGD) (2023-2025) e atuou no Programa Universidade Aberta (UAB/UFPA) como Tutora na Faculdade de Física EaD da Universidade Federal do Pará (FACFÍS/UFPA) (2023-2025). Tem experiência nas áreas de Educação Especial, Ensino Interdisciplinar, com ênfase em Metodologias Ativas e Ensino Multidisciplinar, nas áreas da Biofísica e Arqueoastronomia para a Educação Básica.
+
+                    </p>
+                </div>
+            </div>
+            <div class="convidado-card">
+                <div class="foto-container">
+                    <img src="src/imagens/convidados/clemersom.jpg" alt="Me. Clemerson silva" onerror="this.src='https://via.placeholder.com/180x180?text=Foto'">
+
+                </div>
+                <h3 class="convidado-nome">Me. Clemerson Santos Silva</h3>
+                <div class="convidado-funcao">Mestre em ensino de  Física e professor da SEDUC</div>
+                <div class="convidado-instituicao">universidade federal do pará - UFPA</div>
+                <button class="btn-convidado" onclick="event.stopPropagation(); toggleDescricao(this)">
+                    <i class="fas fa-chevron-down"></i> Sobre
+                </button>
+                <div class="convidado-descricao">
+                    <p>a preencher
+                    
+</p>
+                </div>
+            </div>
+            <div class="convidado-card">
+                <div class="foto-container">
+                    <img src="src/imagens/convidados/jorge luiz.jpeg" alt="Dr. Jorge Luiz" onerror="this.src='https://via.placeholder.com/180x180?text=Foto'">
+                </div>
+                <h3 class="convidado-nome">Prof. Jorge Luiz</h3>
+                <div class="convidado-funcao"> Professor, Jornalista de mídia e Assessor de Comunicação e Marketing </div>
+                <div class="convidado-instituicao"></div>
+                <button class="btn-convidado" onclick="event.stopPropagation(); toggleDescricao(this)">
+                    <i class="fas fa-chevron-down"></i> Sobre
+                </button>
+                <div class="convidado-descricao">
+                    <p>a prencher
+                    </p>
+                </div>
+            </div>
+
+           
+         </div>
     </div>
+    </div>  
+    </div>
+</section>
 
+<!-- MODAL PARA AMPLIAR FOTO -->
+<div id="modalFoto" class="modal-foto" onclick="fecharModalFoto()">
+    <span class="modal-foto-close" onclick="fecharModalFoto()">&times;</span>
+    <div class="modal-foto-content" onclick="event.stopPropagation()">
+        <img id="fotoAmpliada" src="" alt="Foto ampliada">
+    </div>
+</div>
     <!-- ORGANIZAÇÃO E PATROCÍNIO -->
     <section class="logos-section">
         <div class="container">
@@ -615,74 +801,113 @@
                 <div class="logo-item"><img src="src/imagens/logo-facet.png" alt="FACET" class="logo-img"></div>
                 <div class="logo-item"><img src="src/imagens/logo-mnma.png" alt="MNMA" class="logo-img"></div>
                 <div class="logo-item"><img src="src/imagens/logo-lfca.png" alt="LFCA" class="logo-img"></div>
-                <div class="logo-item"><img src="src/imagens/cafe-logo.png" alt="Café com Ciência" class="logo-img"></div>
-                <div class="logo-item"><img src="src/imagens/lfcananologo.png" alt="LFCAnano" class="logo-img"></div>
+                  <div class="logo-item"><img src="src/imagens/cafe-logo.png" alt="Café com Ciência" class="logo-img"></div>
+                  <div class="logo-item"><img src="src/imagens/lfcananologo.png" alt="LFCAnano" class="logo-img"></div>
             </div>
 
-            <h2 class="section-title" style="text-align: center; margin-top: 60px;">Patrocinadores</h2>
-            <p style="text-align:center; color:#888; margin-top: 8px; font-size:0.95rem;">Empresas que tornaram o VIII Café com Ciência possível</p>
-
-            <div class="patrocinadores-grid" id="patrocinadores-grid">
-                <div class="patrocinador-card">
-                    <img src="src/imagens/logo-cofruta.png" alt="Cofruta" class="patrocinador-logo">
-                    <h4 class="patrocinador-nome">Cofruta</h4>
-                    <div class="patrocinador-divider"></div>
-                    <p class="patrocinador-desc">Cooperativa de frutas</p>
-                    <div class="patrocinador-contato">
-                        <a href="tel:+559100000000"><i class="fas fa-phone"></i> (91) 0000-0000</a>
-                        <a href="mailto:contato@cofruta.com.br"><i class="fas fa-envelope"></i> contato@cofruta.com.br</a>
-                    </div>
-                    <div class="patrocinador-redes">
-                        <a href="https://www.instagram.com/cofrutadobrasil/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/share/18Pqyo3Jee/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://wa.me/559100000000" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-
-                <div class="patrocinador-card">
-                    <img src="src/imagens/castro-logo.png" alt="Castro" class="patrocinador-logo">
-                    <h4 class="patrocinador-nome">Castro</h4>
-                    <div class="patrocinador-divider"></div>
-                    <p class="patrocinador-desc">Produtos naturais do Pará</p>
-                    <div class="patrocinador-contato">
-                        <a href="tel:+5591981023748"><i class="fas fa-phone"></i> (91) 98102-3748</a>
-                        <a href="mailto:contato@castro.com.br"><i class="fas fa-envelope"></i> contato@castro.com.br</a>
-                    </div>
-                    <div class="patrocinador-redes">
-                        <a href="https://www.instagram.com/castroprodutos" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/5591981023748" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-
-                <div class="patrocinador-card">
-                    <img src="src/imagens/Dhr-logo.png" alt="DHR" class="patrocinador-logo">
-                    <h4 class="patrocinador-nome">DHR</h4>
-                    <div class="patrocinador-divider"></div>
-                    <p class="patrocinador-desc">Soluções em tecnologia e serviços</p>
-                    <div class="patrocinador-contato">
-                        <a href="tel:+5591993263204"><i class="fas fa-phone"></i> (91) 99326-3204</a>
-                        <a href="mailto:dhrfazenda@gmail.com"><i class="fas fa-envelope"></i> dhrfazenda@gmail.com</a>
-                    </div>
-                    <div class="patrocinador-redes">
-                        <a href="https://www.instagram.com/dohara_dhr" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/5591993263204" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-
-                <div class="patrocinador-card">
-                    <img src="src/imagens/logo-paulo-aluguel.png" alt="Paulo Aluguel" class="patrocinador-logo">
-                    <h4 class="patrocinador-nome">Paulo Aluguel</h4>
-                    <div class="patrocinador-divider"></div>
-                    <p class="patrocinador-desc">Locação de equipamentos e estruturas</p>
-                    <div class="patrocinador-contato">
-                        <a href="https://wa.me/55919982134049"><i class="fas fa-phone"></i> (91) 98213-4049</a>
-                        <a href="mailto:contato@pauloaluguel.com.br"><i class="fas fa-envelope"></i> pauloaluguel@email.com</a>
-                    </div>
-                    <div class="patrocinador-redes">
-                        <a href="https://wa.me/55919982134049" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
             </div>
+
+            <!-- ════════════════════════════════════════════════════
+     2. CARDS DE PATROCINADORES — seção de Patrocinadores no rodapé
+     Substitua o bloco:
+       <h2 class="section-title" style="...">Patrocinadores</h2>
+       <div class="logos-grid"> ... </div>
+     por este:
+════════════════════════════════════════════════════ -->
+ 
+<h2 class="section-title" style="text-align: center; margin-top: 60px;">Patrocinadores</h2>
+<p style="text-align:center; color:#888; margin-top: 8px; font-size:0.95rem;">
+    Empresas que tornaram o VIII Café com Ciência possível
+</p>
+ 
+<div class="patrocinadores-grid">
+ 
+    <!-- COFRUTA -->
+    <div class="patrocinador-card">
+        <img src="src/imagens/logo-cofruta.png" alt="Cofruta" class="patrocinador-logo">
+        <h4 class="patrocinador-nome">Cofruta</h4>
+        <div class="patrocinador-divider"></div>
+        <p class="patrocinador-desc">Cooperativa de frutas</p>
+        <div class="patrocinador-contato">
+            <a href="tel:+559100000000">
+                <i class="fas fa-phone"></i> (91) 0000-0000
+            </a>
+            <a href="mailto:contato@cofruta.com.br">
+                <i class="fas fa-envelope"></i> contato@cofruta.com.br
+            </a>
+        </div>
+        <div class="patrocinador-redes">
+            <a href="https://www.instagram.com/cofrutadobrasil/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/18Pqyo3Jee/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/559100000000" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+ 
+    <!-- CASTRO -->
+    <div class="patrocinador-card">
+        <img src="src/imagens/castro-logo.png" alt="Castro" class="patrocinador-logo">
+        <h4 class="patrocinador-nome">Castro</h4>
+        <div class="patrocinador-divider"></div>
+        <p class="patrocinador-desc">Produtos naturais do Pará</p>
+        <div class="patrocinador-contato">
+            <a href="tel:+5591981023748">
+                <i class="fas fa-phone"></i> (91) 98102-3748
+            </a>
+            <a href="mailto:contato@castro.com.br">
+                <i class="fas fa-envelope"></i> contato@castro.com.br
+            </a>
+        </div>
+        <div class="patrocinador-redes">
+            <a href="https://www.instagram.com/castroprodutos" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+           <!-- <a href="https://www.facebook.com/castroprodutos" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>-->
+            <a href="https://wa.me/5591981023748" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+ 
+    <!-- DHR -->
+    <div class="patrocinador-card">
+        <img src="src/imagens/Dhr-logo.png" alt="DHR" class="patrocinador-logo">
+        <h4 class="patrocinador-nome">DHR</h4>
+        <div class="patrocinador-divider"></div>
+        <p class="patrocinador-desc">Soluções em tecnologia e serviços</p>
+        <div class="patrocinador-contato">
+            <a href="tel:+5591993263204">
+                <i class="fas fa-phone"></i>  (91) 99326-3204
+            </a>
+            <a href="mailto:dhrfazenda@gmail.com">
+                <i class="fas fa-envelope"></i>  dhrfazenda@gmail.com
+            </a>
+        </div>
+        <div class="patrocinador-redes">
+            <a href="https://www.instagram.com/dohara_dhr" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+           
+            <a href="https://wa.me/5591993263204" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+ 
+    <!-- PAULO ALUGUEL -->
+    <div class="patrocinador-card">
+        <img src="src/imagens/logo-paulo-aluguel.png" alt="Paulo Aluguel" class="patrocinador-logo">
+        <h4 class="patrocinador-nome">Paulo Aluguel</h4>
+        <div class="patrocinador-divider"></div>
+        <p class="patrocinador-desc">Locação de equipamentos e estruturas</p>
+        <div class="patrocinador-contato">
+            <a href="https://wa.me/55919982134049">
+                <i class="fas fa-phone"></i> (91) 98213-4049
+            </a>
+            <a href="mailto:contato@pauloaluguel.com.br">
+                <i class="fas fa-envelope"></i> pauloaluguel@email.com
+            </a>
+        </div>
+        <div class="patrocinador-redes">
+            <!--<a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>-->
+            <a href="https://wa.me/55919982134049" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+ 
+</div>
+<!-- fim .patrocinadores-grid -->
         </div>
     </section>
 
@@ -693,19 +918,30 @@
             <p>Curso de Física – Universidade Federal do Pará (UFPA)</p>
             <p>Campus Universitário de Abaetetuba - PA</p>
             <div class="social-icons">
-                <a href="https://www.instagram.com/cafecomciencia_ufpa/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/share/v/1CzgucBdns/" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://youtube.com/shorts/BmYcSkB1yfk?si=aydjt973rU95ovrd" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="mailto:cafe.ciencia0@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.instagram.com/cafecomciencia_ufpa/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/share/v/1CzgucBdns/" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://youtube.com/shorts/BmYcSkB1yfk?si=aydjt973rU95ovrd" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="mailto:cafe.ciencia0@gmail.com" target="_blank">
+                    <i class="fas fa-envelope"></i>
+                </a>
             </div>
             <p style="margin-top: 30px; font-size: 0.9rem;">© 2026 VIII Café com Ciência.</p>
             <p style="margin-top: 5px; font-size: 0.8rem;">Desenvolvido por Cauan Sergio</p>
         </div>
     </footer>
 
-    <!-- JAVASCRIPT -->
+    <!-- JavaScript -->
     <script src="script.js"></script>
-
+    
+    <!-- ══════════════════════════════════════════════════════════════
+         SCRIPT WEB3FORMS — adicionado antes do </body>
+    ═══════════════════════════════════════════════════════════════ -->
     <script>
     document.addEventListener('DOMContentLoaded', function () {
 
@@ -724,7 +960,7 @@
             });
         }
 
-        // Envio via Web3Forms
+        // Envio via Web3Forms (sem redirecionamento, sem recarregar a página)
         const form = document.getElementById('formTrabalho');
         const statusDiv = document.getElementById('form-status');
 
@@ -737,6 +973,8 @@
                 submitBtn.textContent = '⏳ Enviando...';
 
                 const formData = new FormData(form);
+                // Web3Forms não aceita upload de arquivo, por isso usamos link.
+                // O campo "arquivo" foi substituído por "link_arquivo".
 
                 try {
                     const response = await fetch('https://api.web3forms.com/submit', {
@@ -752,6 +990,7 @@
                         statusDiv.style.color = '#2e7d32';
                         statusDiv.textContent = '✅ Trabalho enviado com sucesso! Em breve você receberá uma confirmação.';
                         form.reset();
+                        // Fecha o modal após 3 segundos
                         setTimeout(() => { closeModal(); statusDiv.style.display = 'none'; }, 3000);
                     } else {
                         throw new Error(data.message || 'Erro desconhecido');
@@ -769,7 +1008,5 @@
         }
     });
     </script>
-
 </body>
-</html>
-
+    </html>
