@@ -18,7 +18,7 @@
             <h2>Ciência, Energia e Natureza:<span> o papel da Física na Amazônia</span>"</h2>
             <div>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSec4xkJXMQehCAMhsRklvFNnPOOvXNdhwg5lZ9LJxS0Gt-omw/viewform?usp=publish-editor" class="btn" target="_blank">📝 INSCREVA-SE AGORA</a>
-                <a href="#" class="btn btn-outline" onclick="openModal(event)">📄 SUBMETER TRABALHO</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfiCMXgIDE2YZWOElBePc3-iwqaisxBJf333i_gXTgwWCa0xA/viewform?usp=publish-editorS" class="btn btn-outline" target="_blank">📄 SUBMETER TRABALHO</a>
             </div>
               <!-- Adicione isso dentro de .hero-content, logo abaixo do <div> com os botões -->
 <!-- ════════════════════════════════════════════════════
@@ -48,130 +48,7 @@
       
     </section>
 
-    <!-- PELO AMOR DE DEUS, NÃO MECHE NISSO -->
-<div class="modal" id="modalTrabalho">
-    <div class="modal-content" style="max-width: 700px;">
-        <span class="modal-close" onclick="closeModal()">&times;</span>
-        <h2 style="color: var(--verde-folha); margin-bottom: 10px;">📄 Submeter Trabalho</h2>
-        <p style="color: #666; margin-bottom: 30px; font-size: 0.95rem;">VIII Café com Ciência 2026 – Submissão de resumos</p>
-        
-        <!-- ══════════════════════════════════════════════════════════════
-             FORMULÁRIO WEB3FORMS — substituído conforme solicitado
-        ═══════════════════════════════════════════════════════════════ -->
-        <form id="formTrabalho">
-            <!-- Web3Forms Access Key -->
-            <input type="hidden" name="access_key" value="075d2395-7b75-4208-884d-6d5640dbda0e">
-            <input type="hidden" name="subject" value="Nova submissão de trabalho - Café com Ciência 2026">
-            <input type="hidden" name="from_name" value="Café com Ciência 2026">
-            <!-- Redireciona após envio (opcional, pode remover) -->
-            <!-- <input type="hidden" name="redirect" value="https://cauansergio.github.io/VII_cafe_com_ciencia/obrigado.html"> -->
-
-            <!-- Informação importante -->
-            <div style="background-color: #f0f7fa; padding: 15px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid var(--azul-petroleo);">
-                <p style="margin: 0; font-size: 0.9rem;">
-                    <strong>Instruções:</strong> Cada inscrição dá direito à submissão de um trabalho.
-                    O resumo deve ter no máximo 400 palavras e pode ser submetido para uma das áreas temáticas abaixo.
-                </p>
-            </div>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                <!-- Coluna esquerda -->
-                <div>
-                    <div class="form-group">
-                        <label>Título do Trabalho *</label>
-                        <input type="text" name="titulo" placeholder="Digite o título completo" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Autor principal *</label>
-                        <input type="text" name="autor" placeholder="Nome completo" required>
-                    </div>
-                    <div class="form-group">
-                        <label>E-mail para contato *</label>
-                        <input type="email" name="email" placeholder="seu@email.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Instituição *</label>
-                        <input type="text" name="instituicao" placeholder="UFPA / IFPA / etc" required>
-                    </div>
-                </div>
-
-                <!-- Coluna direita -->
-                <div>
-                    <div class="form-group">
-                        <label>Coautores</label>
-                        <input type="text" name="coautores" placeholder="Nome dos coautores (separados por vírgula)">
-                    </div>
-                    <div class="form-group">
-                        <label>Área temática *</label>
-                        <select name="area" required>
-                            <option value="">Selecione a área...</option>
-                            <option value="ensino">👉 Ensino de Física</option>
-                            <option value="pesquisa">🔬 Pesquisa em Física</option>
-                            <option value="extensao">🌱 Extensão Universitária</option>
-                            <option value="energia">⚡ Energia e Sustentabilidade</option>
-                            <option value="materiais">🧪 Ciência dos Materiais</option>
-                            <option value="amazonia">🌳 Física na Amazônia</option>
-                            <option value="outra">📌 Outra</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Tipo de Apresentação *</label>
-                        <select name="tipo_apresentacao" required>
-                            <option value="">Selecione...</option>
-                            <option value="oral">🎤 Apresentação Oral (28/05)</option>
-                            <option value="painel">📊 Pôster / Painel</option>
-                            <option value="experimento">⚗️ Apresentar Experimento</option>
-                        </select>
-                    </div>
-                    <div class="form-group" id="campo_experimento" style="display: none;">
-                        <label>Descrição do Experimento *</label>
-                        <textarea name="descricao_experimento" placeholder="Descreva o experimento, materiais necessários, espaço físico, duração, etc." rows="3"></textarea>
-                    </div>
-                </div>
-            </div>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;">
-                <div class="form-group">
-                    <label>Palavras-chave</label>
-                    <input type="text" name="palavras_chave" placeholder="Ex: energia solar; ensino; Amazônia">
-                    <small style="color: #666;">máx. 5 palavras-chave</small>
-                </div>
-                <div class="form-group">
-                    <label>Link do arquivo (Google Drive ou similar) *</label>
-                    <input type="url" name="link_arquivo" placeholder="https://drive.google.com/..." required>
-                    <small style="color: #666;">
-                        Suba o PDF/Word no Google Drive (compartilhado como "qualquer pessoa com o link") e cole o link aqui.
-                    </small>
-                </div>
-            </div>
-
-            <!-- Termo de concordância -->
-            <div style="margin: 25px 0 20px; padding: 15px; background-color: #f9f9f9; border-radius: 8px;">
-                <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
-                    <input type="checkbox" name="concordo" required style="margin-top: 3px;">
-                    <span style="font-size: 0.9rem; color: #444;">
-                        Declaro que li e concordo com as normas de submissão do VIII Café com Ciência,
-                        que todos os coautores estão cientes da submissão.
-                        Autorizo a publicação do resumo nos Anais do evento em caso de aceite.
-                    </span>
-                </label>
-            </div>
-
-            <!-- Mensagem de status -->
-            <div id="form-status" style="display:none; padding: 12px; border-radius: 8px; margin-bottom: 15px; font-weight: bold; text-align: center;"></div>
-
-            <!-- Botões -->
-            <div style="display: flex; gap: 15px; margin-top: 20px;">
-                <button type="submit" class="btn" style="flex: 2;">📨 Enviar Trabalho</button>
-                <button type="button" class="btn btn-outline" onclick="closeModal()" style="flex: 1;">Cancelar</button>
-            </div>
-
-            <p style="text-align: center; margin-top: 20px; font-size: 0.8rem; color: #999;">
-                ⏱️ Prazo final para submissão: 21 de maio de 2026
-            </p>
-        </form>
-    </div>
-</div>
+   
 
     <!-- SOBRE O EVENTO -->
     <section class="container">
@@ -357,9 +234,9 @@
                             <div class="event-item">
                                 <span class="time">08h30 - 09h15</span>
                                
-                                <div class="title">a prencher</div>
-                                <div class="speaker">Prof.Sonclayton</div>
-                                <div>Sala A</div>
+                                <div class="title"><strong>Do etanol ao hidrogênio:</strong> A era das células a combustível cerâmicas</div>
+                                <div class="speaker">Dr. Prof. Gabriel A.C. Pasca</div>
+                                <div>Auditório central</div>
                             </div>
                             <div class="event-item">
                                 <span class="time">09h15 - 10h00</span>
@@ -924,7 +801,7 @@
                 <a href="https://www.facebook.com/share/v/1CzgucBdns/" target="_blank">
                     <i class="fab fa-facebook"></i>
                 </a>
-                <a href="https://youtube.com/shorts/BmYcSkB1yfk?si=aydjt973rU95ovrd" target="_blank">
+                <a href="chess.html" target="_blank">
                     <i class="fab fa-youtube"></i>
                 </a>
                 <a href="mailto:cafe.ciencia0@gmail.com" target="_blank">
